@@ -68,7 +68,7 @@
 					label="TPL_PROTOSTAR_LOGO_FILE_PHONE_LABEL"
 					description="TPL_PROTOSTAR_LOGO_FILE_PHONE_DESC" />
 
-				<field name="sitetitlePhone"  type="text" default=""
+				<field name="siteTitlePhone"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_PHONE_LABEL"
 					description="TPL_PROTOSTAR_SITETITLE_PHONE_DESC"
 					filter="string" />
@@ -93,7 +93,7 @@
 					label="TPL_PROTOSTAR_LOGO_FILE_TABLET_LABEL"
 					description="TPL_PROTOSTAR_LOGO_FILE_TABLET_DESC" />
 
-				<field name="sitetitleTablet"  type="text" default=""
+				<field name="siteTitleTablet"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_TABLET_LABEL"
 					description="TPL_PROTOSTAR_SITETITLE_TABLET_DESC"
 					filter="string" />
@@ -118,7 +118,7 @@
 					label="TPL_PROTOSTAR_LOGO_FILE_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_LOGO_FILE_DESKTOP_DESC" />
 
-				<field name="sitetitleDesktop"  type="text" default=""
+				<field name="siteTitleDesktop"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_SITETITLE_DESKTOP_DESC"
 					filter="string" />

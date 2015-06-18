@@ -74,10 +74,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$logo = '<img src="' . JUri::root() . $params->get('logoFilePhone') .'" ' .
 			'alt="' . $sitename . '" />';
 	}
-	if ($params->get('sitetitlePhone'))
+	if ($params->get('siteTitlePhone'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($params->get('sitetitlePhone')) . '</span>';
+			htmlspecialchars($params->get('siteTitlePhone')) . '</span>';
 	}
 	if ($params->get('showSiteNamePhone'))
 	{
@@ -92,10 +92,10 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 		$logo = '<img src="' . JUri::root() . $params->get('logoFileTablet') . '" ' .
 			'alt="' . $sitename . '" />';
 	}
-	if ($params->get('sitetitleTablet'))
+	if ($params->get('siteTitleTablet'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($params->get('sitetitleTablet')) . '</span>';
+			htmlspecialchars($params->get('siteTitleTablet')) . '</span>';
 	}
 	if ($params->get('showSiteNameTablet'))
 	{
@@ -110,10 +110,10 @@ else   // default to/assume we are on a desktop browser
 		$logo = '<img src="' . JUri::root() . $params->get('logoFileDesktop') . '" ' .
 			'alt="' . $sitename . '" />';
 	}
-	if ($params->get('sitetitleDesktop'))
+	if ($params->get('siteTitleDesktop'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($params->get('sitetitleDesktop')) . '</span>';
+			htmlspecialchars($params->get('siteTitleDesktop')) . '</span>';
 	}
 	if ($params->get('showSiteNameDesktop'))
 	{

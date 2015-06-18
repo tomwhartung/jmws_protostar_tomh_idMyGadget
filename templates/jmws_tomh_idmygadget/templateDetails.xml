@@ -103,6 +103,17 @@
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_TABLET_DESC"
 					filter="string" />
 
+				<field name="showSiteNameTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
 				<field name="logoFileDesktop" class="" type="media" default=""
 					label="TPL_PROTOSTAR_LOGO_FILE_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_LOGO_FILE_DESKTOP_DESC" />
@@ -116,6 +127,17 @@
 					label="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_DESC"
 					filter="string" />
+
+					<field name="showSiteNameDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 			</fieldset>
 
 			<fieldset name="advanced">

@@ -67,6 +67,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 }
 
 // Logo file or site title param
+$logo = "";
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	if ($params->get('logoFilePhone'))

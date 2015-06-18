@@ -145,6 +145,21 @@ else   // default to/assume we are on a desktop browser
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 }
+//
+// Set data-role attributes to be used with jQuery Mobile
+//
+$jqm_data_role_page = '';
+$jqm_data_role_header = '';
+$jqm_data_role_content = '';
+$jqm_data_role_footer = '';
+
+if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+{
+	$jqm_data_role_page = 'data-role="page"';
+	$jqm_data_role_header = 'data-role="header"';
+	$jqm_data_role_content = 'data-role="content"';
+	$jqm_data_role_footer = 'data-role="footer"';
+}
 
 ?>
 <!DOCTYPE html>
@@ -200,10 +215,10 @@ else   // default to/assume we are on a desktop browser
 ?>">
 
 	<!-- Body -->
-	<div class="body">
+	<div class="body" <?php echo $jqm_data_role_page ?> >
 			<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
-			<header class="header" role="banner">
+			<header class="header" role="banner" <?php echo $jqm_data_role_header ?> >
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
@@ -222,7 +237,7 @@ else   // default to/assume we are on a desktop browser
 				</nav>
 			<?php endif; ?>
 			<jdoc:include type="modules" name="banner" style="xhtml" />
-			<div class="row-fluid">
+			<div class="row-fluid" <?php echo $jqm_data_role_content ?> >
 				<?php if ($this->countModules('position-8')) : ?>
 					<!-- Begin Sidebar -->
 					<div id="sidebar" class="span3">
@@ -247,11 +262,11 @@ else   // default to/assume we are on a desktop browser
 						<!-- End Right Sidebar -->
 					</div>
 				<?php endif; ?>
-			</div>
-		</div>
-	</div>
+			</div> <!-- .row-fluid -->
+		</div> <!-- .container -->
+	</div> <!-- .body -->
 	<!-- Footer -->
-	<footer class="footer" role="contentinfo">
+	<footer class="footer" role="contentinfo"  <?php echo $jqm_data_role_footer ?> >
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<hr />
 			<jdoc:include type="modules" name="footer" style="none" />

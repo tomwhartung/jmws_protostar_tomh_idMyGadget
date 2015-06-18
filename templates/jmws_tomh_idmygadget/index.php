@@ -274,7 +274,7 @@ else   // default to/assume we are on a desktop browser
 						'the appropriate README.md file on github.</a>';
 					$application = JFactory::getApplication();
 					$application->enqueueMessage(
-						JText::_('TPL_PROTOSTAR_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
+						JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
 						'error'
 					);
 				}

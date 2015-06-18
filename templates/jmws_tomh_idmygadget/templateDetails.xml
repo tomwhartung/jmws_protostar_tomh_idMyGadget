@@ -56,8 +56,8 @@
 					type="radio"
 					class="btn-group"
 					default="detect_mobile_browsers"
-					label="TPL_PROTOSTAR_IDMYGADGET_DETECTOR_LABEL"
-					description="TPL_PROTOSTAR_IDMYGADGET_DETECTOR_DESC"
+					label="TPL_IDMYGADGET_DETECTOR_LABEL"
+					description="TPL_IDMYGADGET_DETECTOR_DESC"
 				>
 					<option value="detect_mobile_browsers">Detect Mobile Browsers</option>
 					<option value="mobile_detect">Mobile Detect</option>

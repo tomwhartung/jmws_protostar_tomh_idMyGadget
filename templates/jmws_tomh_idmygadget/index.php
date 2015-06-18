@@ -103,7 +103,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
 			htmlspecialchars($this->params->get('sitetitlePhone')) . '</span>';
 	}
-	if ($this->params->get('showSiteNameDesktop'))
+	if ($this->params->get('showSiteNamePhone'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
@@ -121,7 +121,7 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
 			htmlspecialchars($this->params->get('sitetitleTablet')) . '</span>';
 	}
-	if ($this->params->get('showSiteNameDesktop'))
+	if ($this->params->get('showSiteNameTablet'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}

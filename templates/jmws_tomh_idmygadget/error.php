@@ -83,7 +83,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $params->get('sitedescriptionPhone');
+	$siteDescription = $params->get('siteDescriptionPhone');
 }
 else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
 {
@@ -101,7 +101,7 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $params->get('sitedescriptionTablet');
+	$siteDescription = $params->get('siteDescriptionTablet');
 }
 else   // default to/assume we are on a desktop browser
 {
@@ -119,7 +119,7 @@ else   // default to/assume we are on a desktop browser
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $params->get('sitedescriptionDesktop');
+	$siteDescription = $params->get('siteDescriptionDesktop');
 }
 ?>
 <!DOCTYPE html>

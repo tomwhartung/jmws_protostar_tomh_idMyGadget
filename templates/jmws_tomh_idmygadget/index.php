@@ -107,7 +107,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $this->params->get('sitedescriptionPhone');
+	$siteDescription = $this->params->get('siteDescriptionPhone');
 }
 else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
 {
@@ -125,7 +125,7 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $this->params->get('sitedescriptionTablet');
+	$siteDescription = $this->params->get('siteDescriptionTablet');
 }
 else   // default to/assume we are on a desktop browser
 {
@@ -143,7 +143,7 @@ else   // default to/assume we are on a desktop browser
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
-	$sitedescription = $this->params->get('sitedescriptionDesktop');
+	$siteDescription = $this->params->get('siteDescriptionDesktop');
 }
 
 ?>
@@ -207,8 +207,8 @@ else   // default to/assume we are on a desktop browser
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
-						<?php if ($sitedescription) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($sitedescription) . '</div>'; ?>
+						<?php if ($siteDescription) : ?>
+							<?php echo '<div class="site-description">' . htmlspecialchars($siteDescription) . '</div>'; ?>
 						<?php endif; ?>
 					</a>
 					<div class="header-search pull-right">

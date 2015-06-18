@@ -73,7 +73,7 @@
 					description="TPL_PROTOSTAR_SITETITLE_PHONE_DESC"
 					filter="string" />
 
-				<field name="sitedescriptionPhone"  type="text" default=""
+				<field name="siteDescriptionPhone"  type="text" default=""
 					label="TPL_PROTOSTAR_SITEDESCRIPTION_PHONE_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_PHONE_DESC"
 					filter="string" />
@@ -98,7 +98,7 @@
 					description="TPL_PROTOSTAR_SITETITLE_TABLET_DESC"
 					filter="string" />
 
-				<field name="sitedescriptionTablet"  type="text" default=""
+				<field name="siteDescriptionTablet"  type="text" default=""
 					label="TPL_PROTOSTAR_SITEDESCRIPTION_TABLET_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_TABLET_DESC"
 					filter="string" />
@@ -123,7 +123,7 @@
 					description="TPL_PROTOSTAR_SITETITLE_DESKTOP_DESC"
 					filter="string" />
 
-				<field name="sitedescriptionDesktop"  type="text" default=""
+				<field name="siteDescriptionDesktop"  type="text" default=""
 					label="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_DESC"
 					filter="string" />

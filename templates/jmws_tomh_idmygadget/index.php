@@ -98,12 +98,12 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$logo = '<img src="' . JUri::root() . $this->params->get('logoFilePhone') .'" ' .
 			'alt="' . $sitename . '" />';
 	}
-	elseif ($this->params->get('sitetitlePhone'))
+	if ($this->params->get('sitetitlePhone'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
 			htmlspecialchars($this->params->get('sitetitlePhone')) . '</span>';
 	}
-	else
+	if ($this->params->get('showSiteNameDesktop'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
@@ -116,12 +116,12 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 		$logo = '<img src="' . JUri::root() . $this->params->get('logoFileTablet') . '" ' .
 			'alt="' . $sitename . '" />';
 	}
-	elseif ($this->params->get('sitetitleTablet'))
+	if ($this->params->get('sitetitleTablet'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
 			htmlspecialchars($this->params->get('sitetitleTablet')) . '</span>';
 	}
-	else
+	if ($this->params->get('showSiteNameDesktop'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
@@ -134,12 +134,12 @@ else   // default to/assume we are on a desktop browser
 		$logo = '<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
 			'alt="' . $sitename . '" />';
 	}
-	elseif ($this->params->get('sitetitleDesktop'))
+	if ($this->params->get('sitetitleDesktop'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' .
 			htmlspecialchars($this->params->get('sitetitleDesktop')) . '</span>';
 	}
-	else
+	if ($this->params->get('showSiteNameDesktop'))
 	{
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}

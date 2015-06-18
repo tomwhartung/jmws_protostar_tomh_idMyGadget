@@ -107,8 +107,8 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_DESC"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_DESC"
 				>
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -132,8 +132,8 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SHOW_SITE_NAME_PHONE_DESC"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_DESC"
 				>
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>

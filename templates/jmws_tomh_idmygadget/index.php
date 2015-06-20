@@ -89,8 +89,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 }
-
+//
 // Logo file or site title param
+//
+$logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	if ($this->params->get('logoFilePhone'))
@@ -108,6 +110,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
+	$fluidContainer = $params->get('fluidContainerPhone');
 }
 else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
 {
@@ -126,6 +129,7 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
+	$fluidContainer = $params->get('fluidContainerTablet');
 }
 else   // default to/assume we are on a desktop browser
 {
@@ -144,6 +148,7 @@ else   // default to/assume we are on a desktop browser
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
+	$fluidContainer = $params->get('fluidContainerDesktop');
 }
 //
 // Set data-role attributes to be used with jQuery Mobile
@@ -206,17 +211,18 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	<![endif]-->
 </head>
 
-<body class="site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
-?>">
+<body class="site
+		<?php echo $option .
+			' view-' . $view .
+			($layout ? ' layout-' . $layout : ' no-layout') .
+			($task ? ' task-' . $task : ' no-task') .
+			($itemid ? ' itemid-' . $itemid : '') .
+			($fluidContainer ? ' fluid' : '');
+		?>">
 
 	<!-- Body -->
 	<div class="body" <?php echo $jqm_data_role_page ?> >
-			<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner" <?php echo $jqm_data_role_header ?> >
 				<div class="header-inner clearfix">
@@ -263,11 +269,11 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 					</div>
 				<?php endif; ?>
 			</div> <!-- .row-fluid -->
-		</div> <!-- .container -->
+		</div> <!-- .container or .container-fluid -->
 	</div> <!-- .body -->
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo"  <?php echo $jqm_data_role_footer ?> >
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<hr />
 			<jdoc:include type="modules" name="footer" style="none" />
 			<p class="pull-right">
@@ -301,7 +307,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			<?php if ( $jmwsIdMyGadget->isInstalled() ) : ?>
 				<p>$jmwsIdMyGadget->getGadgetString() = <?php echo $jmwsIdMyGadget->getGadgetString() ?></p>
 			<?php endif; ?>
-		</div>
+		</div> <!-- .container or .container-fluid -->
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>

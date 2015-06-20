@@ -65,9 +65,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 }
-
+//
 // Logo file or site title param
-$logo = "";
+//
+$logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	if ($params->get('logoFilePhone'))
@@ -85,6 +86,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $params->get('siteDescriptionPhone');
+	$fluidContainer = $params->get('fluidContainerPhone');
 }
 else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
 {
@@ -103,6 +105,7 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $params->get('siteDescriptionTablet');
+	$fluidContainer = $params->get('fluidContainerTablet');
 }
 else   // default to/assume we are on a desktop browser
 {
@@ -121,6 +124,7 @@ else   // default to/assume we are on a desktop browser
 		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 	}
 	$siteDescription = $params->get('siteDescriptionDesktop');
+	$fluidContainer = $params->get('fluidContainerDesktop');
 }
 ?>
 <!DOCTYPE html>
@@ -181,12 +185,12 @@ else   // default to/assume we are on a desktop browser
 	. ($layout ? ' layout-' . $layout : ' no-layout')
 	. ($task ? ' task-' . $task : ' no-task')
 	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
+	. ($fluidContainer ? ' fluid' : '');
 ?>">
 
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -246,7 +250,7 @@ else   // default to/assume we are on a desktop browser
 	</div>
 	<!-- Footer -->
 	<div class="footer">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<hr />
 			<?php echo $doc->getBuffer('modules', 'footer', array('style' => 'none')); ?>
 			<p class="pull-right">

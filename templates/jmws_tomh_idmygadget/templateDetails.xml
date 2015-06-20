@@ -67,7 +67,7 @@
 				<field type="spacer" name="spacerPhone" class="text"
 					label="TPL_IDMYGADGET_HEADER_PARAMS_PHONE" />
 				<field name="logoFilePhone" class="" type="media" default=""
-					label="TPL_PROTOSTAR_LOGO_FILE_PHONE_LABEL"
+					label="TPL_IDMYGADGET_LOGO_FILE_PHONE_LABEL"
 					description="TPL_PROTOSTAR_LOGO_FILE_PHONE_DESC" />
 				<field name="siteTitlePhone"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_PHONE_LABEL"

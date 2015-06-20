@@ -74,7 +74,7 @@
 					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
 					filter="string" />
 				<field name="siteDescriptionPhone"  type="text" default=""
-					label="TPL_PROTOSTAR_SITEDESCRIPTION_PHONE_LABEL"
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_PHONE_DESC"
 					filter="string" />
 				<field name="showSiteNamePhone"

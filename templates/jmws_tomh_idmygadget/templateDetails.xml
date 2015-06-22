@@ -100,7 +100,7 @@
 					label="TPL_IDMYGADGET_HEADER_PARAMS_TABLET" />
 				<field name="logoFileTablet" class="" type="media" default=""
 					label="TPL_IDMYGADGET_LOGO_FILE_TABLET_LABEL"
-					description="TPL_PROTOSTAR_LOGO_FILE_TABLET_DESC" />
+					description="TPL_IDMYGADGET_LOGO_FILE_TABLET_DESC" />
 				<field name="siteTitleTablet"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_TABLET_LABEL"
 					description="TPL_PROTOSTAR_SITETITLE_TABLET_DESC"

@@ -107,7 +107,7 @@
 					filter="string" />
 				<field name="siteDescriptionTablet"  type="text" default=""
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_LABEL"
-					description="TPL_PROTOSTAR_SITEDESCRIPTION_TABLET_DESC"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_DESC"
 					filter="string" />
 				<field name="showSiteNameTablet"
 					type="radio"

@@ -226,6 +226,11 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner" <?php echo $jqm_data_role_header ?> >
+				<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+					<div>
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div>
+				<?php endif; ?>
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
@@ -233,9 +238,11 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 							<?php echo '<div class="site-description">' . htmlspecialchars($siteDescription) . '</div>'; ?>
 						<?php endif; ?>
 					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
-					</div>
+					<?php if ( $jmwsIdMyGadget->getGadgetString() !== JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+						<div class="header-search pull-right">
+							<jdoc:include type="modules" name="position-0" style="none" />
+						</div>
+					<?php endif; ?>
 				</div>
 			</header>
 			<?php if ($this->countModules('position-1')) : ?>

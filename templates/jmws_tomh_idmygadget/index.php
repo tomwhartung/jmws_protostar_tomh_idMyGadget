@@ -65,6 +65,7 @@ else
 //
 // Initialize Device Detection
 //
+global $jmwsIdMyGadget;
 $jmwsIdMyGadget = null;
 require_once 'jmws_idMyGadget_for_joomla/JmwsIdMyGadget.php';
 $gadgetDetector = $this->params->get('gadgetDetector');

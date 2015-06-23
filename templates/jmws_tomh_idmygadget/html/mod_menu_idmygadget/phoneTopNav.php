@@ -25,7 +25,6 @@ global $jmwsIdMyGadget;
 		}
 	?>>
 	<?php
-	print '<li>first li elt</li>';
 	foreach ($list as $i => &$item)
 	{
 		$class = 'item-' . $item->id;
@@ -81,9 +80,7 @@ global $jmwsIdMyGadget;
 			case 'url':
 			case 'component':
 			case 'heading':
-				print 'Hi';
 				require JModuleHelper::getLayoutPath('mod_menu', 'default_' . $item->type);
-				print 'bye';
 				break;
 	
 			default:
@@ -108,7 +105,6 @@ global $jmwsIdMyGadget;
 			echo '</li>';
 		}
 	}
-	print '<li>last li elt</li>';
 	?></ul>
 	</div>
 <?php else : ?>

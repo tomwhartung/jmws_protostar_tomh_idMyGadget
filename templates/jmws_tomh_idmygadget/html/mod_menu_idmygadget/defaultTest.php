@@ -14,6 +14,7 @@ global $jmwsIdMyGadget;
 <?php // The menu class is deprecated. Use nav instead. ?>
 <p>BeforeList</p>
 <p>$jmwsIdMyGadget->getGadgetDetector() = <?php echo  $jmwsIdMyGadget->getGadgetDetector() ?></p>
+<p>$jmwsIdMyGadget->getGadgetString() = <?php echo  $jmwsIdMyGadget->getGadgetString() ?></p>
 <ul class="nav menu<?php echo $class_sfx;?>"<?php
 	$tag = '';
 

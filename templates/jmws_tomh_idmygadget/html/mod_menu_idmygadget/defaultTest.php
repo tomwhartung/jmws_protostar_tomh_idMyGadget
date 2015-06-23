@@ -8,11 +8,12 @@
  */
 
 defined('_JEXEC') or die;
-
+global $jmwsIdMyGadget;
 // Note. It is important to remove spaces between elements.
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
 <p>BeforeList</p>
+<p>$jmwsIdMyGadget->getGadgetDetector() = <?php echo  $jmwsIdMyGadget->getGadgetDetector() ?></p>
 <ul class="nav menu<?php echo $class_sfx;?>"<?php
 	$tag = '';
 

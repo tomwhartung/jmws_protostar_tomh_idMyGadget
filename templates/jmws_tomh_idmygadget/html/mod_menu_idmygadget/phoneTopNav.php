@@ -9,11 +9,12 @@
 
 defined('_JEXEC') or die;
 global $jmwsIdMyGadget;
+
 // Note. It is important to remove spaces between elements.
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
 <?php if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-	<p>$jmwsIdMyGadget->getGadgetDetector() = <?php echo  $jmwsIdMyGadget->getGadgetDetector() ?></p>
+	<div data-role="navbar">
 	<ul class="nav menu<?php echo $class_sfx;?>"<?php
 		$tag = '';
 	
@@ -109,7 +110,7 @@ global $jmwsIdMyGadget;
 	}
 	print '<li>last li elt</li>';
 	?></ul>
-	<p>AfterList</p>
+	</div>
 <?php else : ?>
-	<p>No menu on tablets and phones</p>
+	<p>No menu on desktops and tablets</p>
 <?php endif; ?>

@@ -228,7 +228,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			<header class="header" role="banner" <?php echo $jqm_data_role_header ?> >
 				<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
 					<div>
-						<jdoc:include type="modules" name="position-0" style="none" />
+						<jdoc:include type="modules" name="phone-header-nav" style="none" />
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
@@ -238,11 +238,9 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 							<?php echo '<div class="site-description">' . htmlspecialchars($siteDescription) . '</div>'; ?>
 						<?php endif; ?>
 					</a>
-					<?php if ( $jmwsIdMyGadget->getGadgetString() !== JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-						<div class="header-search pull-right">
-							<jdoc:include type="modules" name="position-0" style="none" />
-						</div>
-					<?php endif; ?>
+					<div class="header-search pull-right">
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div>
 				</div>
 			</header>
 			<?php if ($this->countModules('position-1')) : ?>

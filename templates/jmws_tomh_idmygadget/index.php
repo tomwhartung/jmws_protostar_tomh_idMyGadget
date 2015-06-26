@@ -165,10 +165,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$jqm_data_role_header = 'data-role="header" data-theme="b"';
 	$jqm_data_role_content = 'data-role="content"';
 	$jqm_data_role_footer = 'data-role="footer"';
-	if ( $this->countModules('phone-footer-nav') )
-	{
-		$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
-	}
 }
 
 ?>
@@ -283,15 +279,20 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 
 		<!-- Footer -->
 		<?php
-			$jqm_data_role_footer = 'data-role="footer"';
-			if ( $this->countModules('phone-footer-nav') )
-			{
-				$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
-			}
 			if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 			{
-				$footerAttributes = 'class="ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
-			} else {
+				if ( $this->countModules('phone-footer-nav') )
+				{
+					$footerAttributes = 'class="ui-bar" ' . $jqm_data_role_footer .
+						' data-position="fixed" data-theme="b"';
+				}
+				else
+				{
+					$footerAttributes = $jqm_data_role_footer;
+				}
+			}
+			else
+			{
 				$footerAttributes = 'class="footer" role="contentinfo"';
 			}
 		?>

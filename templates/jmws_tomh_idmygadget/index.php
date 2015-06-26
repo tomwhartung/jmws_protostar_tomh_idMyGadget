@@ -281,60 +281,60 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->
 
-	<!-- Footer -->
-	<?php
-		$jqm_data_role_footer = 'data-role="footer"';
-		if ( $this->countModules('phone-footer-nav') )
+		<!-- Footer -->
+		<?php
+			$jqm_data_role_footer = 'data-role="footer"';
+			if ( $this->countModules('phone-footer-nav') )
+			{
+				$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
+			}
+		?>
+		<?php
+		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 		{
-			$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
+			$footerAttributes = 'class="ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
+		} else {
+			$footerAttributes = 'class="footer" role="contentinfo"';
 		}
-	?>
-	<?php
-	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
-	{
-		$footerAttributes = 'class="ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
-	} else {
-		$footerAttributes = 'class="footer" role="contentinfo"';
-	}
-	?>
-	<footer <?php echo $footerAttributes; ?> >
-		<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-			<jdoc:include type="modules" name="footer" style="none" />
-			<div>
-				<jdoc:include type="modules" name="phone-footer-nav" style="none" />
-			</div>
-		<?php else : ?>
-			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
-				<hr />
+		?>
+		<footer <?php echo $footerAttributes; ?> >
+			<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
 				<jdoc:include type="modules" name="footer" style="none" />
-				<p class="pull-right">
-					<a href="#top" id="back-top">
-						<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-					</a>
-				</p>
-				<p>
-					&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-				</p>
-			</div> <!-- .container or .container-fluid -->
-		<?php endif; ?>
+				<div>
+					<jdoc:include type="modules" name="phone-footer-nav" style="none" />
+				</div>
+			<?php else : ?>
+				<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
+					<hr />
+					<jdoc:include type="modules" name="footer" style="none" />
+					<p class="pull-right">
+						<a href="#top" id="back-top">
+							<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
+						</a>
+					</p>
+					<p>
+						&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+					</p>
+				</div> <!-- .container or .container-fluid -->
+			<?php endif; ?>
 
-			<?php
-				// If the gadget-detector is not installed, generate an error message
-				//
-				if ( ! $jmwsIdMyGadget->isInstalled() )
-				{
-					$linkToReadmeOnGithub =
-						'<a href="' . $jmwsIdMyGadget->getLinkToReadme() . '" target="_blank">' .
-						'the appropriate README.md file on github.</a>';
-					$application = JFactory::getApplication();
-					$application->enqueueMessage(
-						JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
-						'error'
-					);
-				}
-			?>
-	</footer>
-	<jdoc:include type="modules" name="debug" style="none" />
+				<?php
+					// If the gadget-detector is not installed, generate an error message
+					//
+					if ( ! $jmwsIdMyGadget->isInstalled() )
+					{
+						$linkToReadmeOnGithub =
+							'<a href="' . $jmwsIdMyGadget->getLinkToReadme() . '" target="_blank">' .
+							'the appropriate README.md file on github.</a>';
+						$application = JFactory::getApplication();
+						$application->enqueueMessage(
+							JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
+							'error'
+						);
+					}
+				?>
+		</footer>
+		<jdoc:include type="modules" name="debug" style="none" />
 	</div> <!-- .body -->
 </body>
 </html>

@@ -303,7 +303,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		?>
 		<footer <?php echo $footerAttributes; ?> >
 			<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-				<p>$jqm_data_theme = <?php echo $jqm_data_theme; ?></p>
 				<jdoc:include type="modules" name="footer" style="none" />
 				<jdoc:include type="modules" name="phone-footer-nav" style="none" />
 			<?php else : ?>

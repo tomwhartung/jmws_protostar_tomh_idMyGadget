@@ -293,23 +293,31 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	<?php
 	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
-		$footerAttributes = 'class="footer ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
+		$footerAttributes = 'class="ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
 	} else {
 		$footerAttributes = 'class="footer" role="contentinfo"';
 	}
 	?>
 	<footer <?php echo $footerAttributes; ?> >
-		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
-			<hr />
+		<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
 			<jdoc:include type="modules" name="footer" style="none" />
-			<p class="pull-right">
-				<a href="#top" id="back-top">
-					<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-				</a>
-			</p>
-			<p>
-				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-			</p>
+			<div>
+				<jdoc:include type="modules" name="phone-footer-nav" style="none" />
+			</div>
+		<?php else : ?>
+			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
+				<hr />
+				<jdoc:include type="modules" name="footer" style="none" />
+				<p class="pull-right">
+					<a href="#top" id="back-top">
+						<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
+					</a>
+				</p>
+				<p>
+					&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+				</p>
+			</div> <!-- .container or .container-fluid -->
+		<?php endif; ?>
 
 			<?php
 				// If the gadget-detector is not installed, generate an error message
@@ -326,12 +334,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 					);
 				}
 			?>
-			<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-				<div>
-					<jdoc:include type="modules" name="phone-footer-nav" style="none" />
-				</div>
-			<?php endif; ?>
-		</div> <!-- .container or .container-fluid -->
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>

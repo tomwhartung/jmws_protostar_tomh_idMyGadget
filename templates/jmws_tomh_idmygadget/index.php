@@ -158,6 +158,7 @@ $jqm_data_role_page = '';
 $jqm_data_role_header = '';
 $jqm_data_role_content = '';
 $jqm_data_role_footer = '';
+$jqm_data_theme = '';
 
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
@@ -165,8 +166,13 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$jqm_data_role_header = 'data-role="header"';
 	$jqm_data_role_content = 'data-role="content"';
 	$jqm_data_role_footer = 'data-role="footer"';
-	$jqm_data_theme = '';
-	if ( $this->countModules('phone-footer-nav') )
+	if ( $this->countModules('phone-header-nav') )
+	{
+		$mod_menu_idmygadget = JModuleHelper::getModule('mod_menu_idmygadget');
+		$idMyGadgetParams = new JRegistry($mod_menu_idmygadget->params);
+		$jqm_data_theme = 'data-theme="' . $idMyGadgetParams['jqm_data_theme'] . '"';
+	}
+	else if ( $this->countModules('phone-footer-nav') )
 	{
 		$mod_menu_idmygadget = JModuleHelper::getModule('mod_menu_idmygadget');
 		$idMyGadgetParams = new JRegistry($mod_menu_idmygadget->params);
@@ -227,10 +233,16 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			($itemid ? ' itemid-' . $itemid : '') .
 			($fluidContainer ? ' fluid' : '');
 		?>">
+	<?php
+		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+		{
+			print '<div ' .$jqm_data_role_page . '>';
+		}
+	?>
 
 	<!-- Body -->
-	<div class="body" <?php echo $jqm_data_role_page ?> >
-			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
+	<div class="body">
+		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner"
 				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme ?> >
@@ -284,44 +296,43 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 				<?php endif; ?>
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->
-
-		<!-- Footer -->
-		<?php
-			$footerAttributes = '';
-			if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
-			{
-				$footerAttributes = $jqm_data_role_footer . ' ' . $jqm_data_theme;
-				if ( $this->countModules('phone-footer-nav') )
-				{
-					$footerAttributes .= 'class="ui-bar" data-position="fixed" ';
-				}
-			}
-			else
-			{
-				$footerAttributes = 'class="footer" role="contentinfo"';
-			}
-		?>
-		<footer <?php echo $footerAttributes; ?> >
-			<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-				<jdoc:include type="modules" name="footer" style="none" />
-				<jdoc:include type="modules" name="phone-footer-nav" style="none" />
-			<?php else : ?>
-				<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
-					<hr />
-					<jdoc:include type="modules" name="footer" style="none" />
-					<p class="pull-right">
-						<a href="#top" id="back-top">
-							<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-						</a>
-					</p>
-					<p>
-						&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-					</p>
-				</div> <!-- .container or .container-fluid -->
-			<?php endif; ?>
-		</footer>
-		<jdoc:include type="modules" name="debug" style="none" />
 	</div> <!-- .body -->
+	<!-- Footer -->
+	<?php
+		$footerAttributes = '';
+		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+		{
+			$footerAttributes = $jqm_data_role_footer . ' ' . $jqm_data_theme;
+			if ( $this->countModules('phone-footer-nav') )
+			{
+				$footerAttributes .= 'class="ui-bar" data-position="fixed" ';
+			}
+		}
+		else
+		{
+			$footerAttributes = 'class="footer" role="contentinfo"';
+		}
+	?>
+	<footer <?php echo $footerAttributes; ?> >
+		<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+			<jdoc:include type="modules" name="footer" style="none" />
+			<jdoc:include type="modules" name="phone-footer-nav" style="none" />
+		<?php else : ?>
+			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
+				<hr />
+				<jdoc:include type="modules" name="footer" style="none" />
+				<p class="pull-right">
+					<a href="#top" id="back-top">
+						<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
+					</a>
+				</p>
+				<p>
+					&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+				</p>
+			</div> <!-- .container or .container-fluid -->
+		<?php endif; ?>
+	</footer>
+	<jdoc:include type="modules" name="debug" style="none" />
 	<?php
 		// If the gadget-detector is not installed, generate an error message
 		//
@@ -335,6 +346,12 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 				JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
 				'error'
 			);
+		}
+	?>
+	<?php
+		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+		{
+			print '</div> <!-- ' . $jqm_data_role_page . ' -->';
 		}
 	?>
 </body>

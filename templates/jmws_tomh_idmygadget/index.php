@@ -319,23 +319,23 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 					</p>
 				</div> <!-- .container or .container-fluid -->
 			<?php endif; ?>
-			<?php
-				// If the gadget-detector is not installed, generate an error message
-				//
-				if ( ! $jmwsIdMyGadget->isInstalled() )
-				{
-					$linkToReadmeOnGithub =
-						'<a href="' . $jmwsIdMyGadget->getLinkToReadme() . '" target="_blank">' .
-						'the appropriate README.md file on github.</a>';
-					$application = JFactory::getApplication();
-					$application->enqueueMessage(
-						JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
-						'error'
-					);
-				}
-			?>
 		</footer>
 		<jdoc:include type="modules" name="debug" style="none" />
 	</div> <!-- .body -->
+	<?php
+		// If the gadget-detector is not installed, generate an error message
+		//
+		if ( ! $jmwsIdMyGadget->isInstalled() )
+		{
+			$linkToReadmeOnGithub =
+				'<a href="' . $jmwsIdMyGadget->getLinkToReadme() . '" target="_blank">' .
+				'the appropriate README.md file on github.</a>';
+			$application = JFactory::getApplication();
+			$application->enqueueMessage(
+				JText::_('TPL_IDMYGADGET_DETECTOR_NOT_INSTALLED') . $linkToReadmeOnGithub ,
+				'error'
+			);
+		}
+	?>
 </body>
 </html>

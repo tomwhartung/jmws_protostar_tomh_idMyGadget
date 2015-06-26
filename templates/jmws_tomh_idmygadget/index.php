@@ -162,9 +162,13 @@ $jqm_data_role_footer = '';
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	$jqm_data_role_page = 'data-role="page"';
-	$jqm_data_role_header = 'data-role="header"';
+	$jqm_data_role_header = 'data-role="header" data-theme="b"';
 	$jqm_data_role_content = 'data-role="content"';
 	$jqm_data_role_footer = 'data-role="footer"';
+	if ( $this->countModules('phone-footer-nav') )
+	{
+		$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
+	}
 }
 
 ?>
@@ -277,8 +281,24 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->
 	</div> <!-- .body -->
+
 	<!-- Footer -->
-	<footer class="footer" role="contentinfo"  <?php echo $jqm_data_role_footer ?> >
+	<?php
+		$jqm_data_role_footer = 'data-role="footer"';
+		if ( $this->countModules('phone-footer-nav') )
+		{
+			$jqm_data_role_footer .= ' data-position="fixed" class="ui-bar" data-theme="b"';
+		}
+	?>
+	<?php
+	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+	{
+		$footerAttributes = 'class="footer ui-bar" data-role="footer" data-position="fixed" data-theme="b"';
+	} else {
+		$footerAttributes = 'class="footer" role="contentinfo"';
+	}
+	?>
+	<footer <?php echo $footerAttributes; ?> >
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<hr />
 			<jdoc:include type="modules" name="footer" style="none" />
@@ -306,12 +326,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 					);
 				}
 			?>
-			<!-- ---------------------------------------------------- -->
-			<!-- values that might help with debugging - ok to remove -->
-			<!-- ---------------------------------------------------- -->
-			<p>$jmwsIdMyGadget->getGadgetDetector() = <?php echo $jmwsIdMyGadget->getGadgetDetector() ?></p>
-			<?php if ( $jmwsIdMyGadget->isInstalled() ) : ?>
-				<p>$jmwsIdMyGadget->getGadgetString() = <?php echo $jmwsIdMyGadget->getGadgetString() ?></p>
+			<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+				<div>
+					<jdoc:include type="modules" name="phone-footer-nav" style="none" />
+				</div>
 			<?php endif; ?>
 		</div> <!-- .container or .container-fluid -->
 	</footer>

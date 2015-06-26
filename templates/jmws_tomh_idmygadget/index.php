@@ -280,7 +280,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 				<?php endif; ?>
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->
-	</div> <!-- .body -->
 
 	<!-- Footer -->
 	<?php
@@ -336,5 +335,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			?>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
+	</div> <!-- .body -->
 </body>
 </html>

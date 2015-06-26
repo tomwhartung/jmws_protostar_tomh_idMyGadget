@@ -281,14 +281,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		<?php
 			if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 			{
+				$footerAttributes = $jqm_data_role_footer;
 				if ( $this->countModules('phone-footer-nav') )
 				{
-					$footerAttributes = 'class="ui-bar" ' . $jqm_data_role_footer .
-						' data-position="fixed" data-theme="b"';
-				}
-				else
-				{
-					$footerAttributes = $jqm_data_role_footer;
+					$footerAttributes .= 'class="ui-bar" data-position="fixed" data-theme="b"';
 				}
 			}
 			else

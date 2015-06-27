@@ -158,7 +158,7 @@ $jqm_data_role_page = '';
 $jqm_data_role_header = '';
 $jqm_data_role_content = '';
 $jqm_data_role_footer = '';
-$jqm_data_theme = '';
+$jqm_data_theme_attribute = '';
 
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
@@ -166,17 +166,24 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$jqm_data_role_header = 'data-role="header"';
 	$jqm_data_role_content = 'data-role="content"';
 	$jqm_data_role_footer = 'data-role="footer"';
-	if ( $this->countModules('phone-header-nav') )
+
+	if ( $this->countModules('phone-header-nav') ||
+	     $this->countModules('phone-footer-nav')   )
 	{
-		$mod_menu_idmygadget = JModuleHelper::getModule('mod_menu_idmygadget');
-		$idMyGadgetParams = new JRegistry($mod_menu_idmygadget->params);
-		$jqm_data_theme = 'data-theme="' . $idMyGadgetParams['jqm_data_theme'] . '"';
-	}
-	else if ( $this->countModules('phone-footer-nav') )
-	{
-		$mod_menu_idmygadget = JModuleHelper::getModule('mod_menu_idmygadget');
-		$idMyGadgetParams = new JRegistry($mod_menu_idmygadget->params);
-		$jqm_data_theme = 'data-theme="' . $idMyGadgetParams['jqm_data_theme'] . '"';
+		$jqm_data_theme_template = $this->params->get('jqm_data_theme');
+		if ( $jqm_data_theme_template == 'none' )
+		{
+			// Although we might have multiple modules, we can access only one value
+			// Therefore we prefer that it be set in the template
+			$mod_menu_idmygadget = JModuleHelper::getModule('mod_menu_idmygadget');
+			$idMyGadgetParams = new JRegistry($mod_menu_idmygadget->params);
+			$jqm_data_theme_letter = $idMyGadgetParams['jqm_data_theme'];
+		}
+		else
+		{
+			$jqm_data_theme_letter = $jqm_data_theme_template;
+		}
+		$jqm_data_theme_attribute = 'data-theme="' . $jqm_data_theme_letter . '"';
 	}
 }
 
@@ -245,7 +252,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner"
-				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme ?> >
+				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme_attribute ?> >
 				<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
 					<div>
 						<jdoc:include type="modules" name="phone-header-nav" style="none" />
@@ -302,7 +309,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 		$footerAttributes = '';
 		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 		{
-			$footerAttributes = $jqm_data_role_footer . ' ' . $jqm_data_theme;
+			$footerAttributes = $jqm_data_role_footer . ' ' . $jqm_data_theme_attribute;
 			if ( $this->countModules('phone-footer-nav') )
 			{
 				$footerAttributes .= 'class="ui-bar" data-position="fixed" ';

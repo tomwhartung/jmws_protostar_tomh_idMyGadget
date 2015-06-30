@@ -103,12 +103,12 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	}
 	if ($this->params->get('siteTitlePhone'))
 	{
-		$logo = '<span class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($this->params->get('siteTitlePhone')) . '</span>';
+		$logo = '<h2 class="site-title" title="' . $sitename . '">' .
+			htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>';
 	}
 	if ($this->params->get('showSiteNamePhone'))
 	{
-		$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+		$logo = '<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');

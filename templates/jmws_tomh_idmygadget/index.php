@@ -124,17 +124,17 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	if ($this->params->get('siteTitlePhone'))
 	{
 		$logo =
-			'<a href="pbm-left" class="phone-burger-left">' . $phone_burger_menu_left . '</a>' .
+			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
 			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
-			'<a href="pbm-right" class="phone-burger-right">' . $phone_burger_menu_right . '</a>';
+			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
 	}
 	if ($this->params->get('showSiteNamePhone'))
 	{
 		$logo =
-			'<a href="pbm-left" class="phone-burger-left">' . $phone_burger_menu_left . '</a>' .
+			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
 			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
-			'<a href="pbm-right" class="phone-burger-right">' . $phone_burger_menu_right . '</a>';
+			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');

@@ -28,6 +28,8 @@
 	<positions>
 		<position>banner</position>
 		<position>debug</position>
+		<position>phone-burger-menu-left</position>
+		<position>phone-burger-menu-right</position>
 		<position>phone-header-nav</position>
 		<position>phone-footer-nav</position>
 		<position>position-0</position>

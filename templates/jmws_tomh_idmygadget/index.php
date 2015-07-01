@@ -83,12 +83,14 @@ else
 	$jmwsIdMyGadget = new JmwsIdMyGadget( 'detect_mobile_browsers' );
 }
 //
-// If device is a phone, add in the jquery mobile css and library
+// If device is a phone, add in jquery mobile js and css and idMyGadget code
 //
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
+	$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
+//	$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/idMyGadget.js');
 }
 //
 // Initialize markup for the optional "phone-burger" menus,
@@ -133,7 +135,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	{
 		$logo =
 			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
-			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
+			'<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
 			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');

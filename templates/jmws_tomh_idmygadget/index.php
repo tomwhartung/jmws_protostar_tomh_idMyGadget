@@ -103,12 +103,12 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	}
 	if ($this->params->get('siteTitlePhone'))
 	{
-		$logo = '<h2 class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>';
+		$logo = '<a href="menu">Menu</a><h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
+			htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2><a href="logout">Log Out</a>';
 	}
 	if ($this->params->get('showSiteNamePhone'))
 	{
-		$logo = '<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>';
+		$logo = '<h2 class="site-title" title="' . $sitename . '"><a href="menu">Menu</a>' . $sitename . '<a href="logout">Log Out</a></h2>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');
@@ -257,7 +257,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 					<div>
 						<jdoc:include type="modules" name="phone-header-nav" style="none" />
 					</div>
-				<?php endif; ?>
+					<div class="header-inner clearfix">
+						<?php echo $logo; ?>
+					</div>
+				<?php else : ?>
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
@@ -269,6 +272,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
 				</div>
+				<?php endif; ?>
 			</header>
 			<?php if ($this->countModules('position-1')) : ?>
 				<nav class="navigation" role="navigation">

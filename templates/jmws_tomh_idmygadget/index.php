@@ -91,7 +91,27 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 }
 //
-// Logo file or site title param
+// Initialize markup for the optional "phone-burger" menus,
+//  depending on which ones, if any, are being used,
+//
+$phone_burger_menu_left = '';
+$phone_burger_menu_right = '';
+
+if ( $this->countModules('phone-burger-menu-left' ) )
+{
+	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" width="50" height="50">' .
+		'&nbsp;MenuL&nbsp;' . '</canvas>';
+}
+if ( $this->countModules('phone-burger-menu-right' ) )
+{
+	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" width="50" height="50">' .
+		'&nbsp;MenuR&nbsp;' . '</canvas>';
+}
+
+//
+// This is where we set variables equal to bits of device-specific markup
+// For example: the logo file or site title param, etc.
+//   Note that the logic differs from that used in protostar a bit
 //
 $logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
@@ -103,12 +123,18 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	}
 	if ($this->params->get('siteTitlePhone'))
 	{
-		$logo = '<a href="menu">Menu</a><h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
-			htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2><a href="logout">Log Out</a>';
+		$logo =
+			'<a href="pbm-left" class="phone-burger-left">' . $phone_burger_menu_left . '</a>' .
+			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
+				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
+			'<a href="pbm-right" class="phone-burger-right">' . $phone_burger_menu_right . '</a>';
 	}
 	if ($this->params->get('showSiteNamePhone'))
 	{
-		$logo = '<h2 class="site-title" title="' . $sitename . '"><a href="menu">Menu</a>' . $sitename . '<a href="logout">Log Out</a></h2>';
+		$logo =
+			'<a href="pbm-left" class="phone-burger-left">' . $phone_burger_menu_left . '</a>' .
+			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
+			'<a href="pbm-right" class="phone-burger-right">' . $phone_burger_menu_right . '</a>';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');
@@ -152,7 +178,8 @@ else   // default to/assume we are on a desktop browser
 	$fluidContainer = $params->get('fluidContainerDesktop');
 }
 //
-// Set data-role attributes to be used with jQuery Mobile
+// Set up the data-role attributes to be used specifically with jQuery Mobile
+// Initialize markup for the optional "phone-burger" menus, depending on which ones are being used,
 //
 $jqm_data_role_page = '';
 $jqm_data_role_header = '';

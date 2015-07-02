@@ -10,10 +10,12 @@
 {
 	$(document).ready(function()
 	{
-		var phoneBurgerMenuLeft = document.getElementById( 'phone-burger-menu-left' );
-		var phoneBurgerMenuRight = document.getElementById( 'phone-burger-menu-right' );
+		var phoneBurgerMenuLeftElt = document.getElementById( 'phone-burger-menu-left' );
+		var phoneBurgerMenuRightElt = document.getElementById( 'phone-burger-menu-right' );
 	//	console.log( 'The document is ready!' );
-		console.log( 'phoneBurgerMenuLeft: ' + phoneBurgerMenuLeft );
-		console.log( 'phoneBurgerMenuRight: ' + phoneBurgerMenuRight );
+		console.log( 'phoneBurgerMenuLeftElt: ' + phoneBurgerMenuLeftElt );
+		console.log( 'phoneBurgerMenuRightElt: ' + phoneBurgerMenuRightElt );
+		console.log( 'phoneBurgerMenuLeftColor: ' + phoneBurgerMenuLeftColor );
+		console.log( 'phoneBurgerMenuRightColor: ' + phoneBurgerMenuRightColor );
 	})
 })(jQuery);

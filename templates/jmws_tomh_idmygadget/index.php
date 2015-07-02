@@ -103,11 +103,13 @@ if ( $this->countModules('phone-burger-menu-left' ) )
 {
 	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" width="50" height="50">' .
 		'&nbsp;MenuL&nbsp;' . '</canvas>';
+	print '<script>var phoneBurgerMenuLeftColor = "blue";</script>';
 }
 if ( $this->countModules('phone-burger-menu-right' ) )
 {
 	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" width="50" height="50">' .
 		'&nbsp;MenuR&nbsp;' . '</canvas>';
+	print '<script>var phoneBurgerMenuRightColor = "red";</script>';
 }
 
 //

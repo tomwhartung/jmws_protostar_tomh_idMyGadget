@@ -90,7 +90,11 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 	$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
-	$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/idMyGadget.js');
+	if ( $this->countModules('phone-burger-menu-left') ||
+	     $this->countModules('phone-burger-menu-right') )
+	{
+		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/phoneBurgerMenu.js');
+	}
 }
 //
 // Initialize markup for the optional "phone-burger" menus,
@@ -99,13 +103,13 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 $phone_burger_menu_left = '';
 $phone_burger_menu_right = '';
 
-if ( $this->countModules('phone-burger-menu-left' ) )
+if ( $this->countModules('phone-burger-menu-left') )
 {
 	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" width="50" height="50">' .
 		'&nbsp;MenuL&nbsp;' . '</canvas>';
 	print '<script>var phoneBurgerMenuLeftColor = "blue";</script>';
 }
-if ( $this->countModules('phone-burger-menu-right' ) )
+if ( $this->countModules('phone-burger-menu-right') )
 {
 	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" width="50" height="50">' .
 		'&nbsp;MenuR&nbsp;' . '</canvas>';

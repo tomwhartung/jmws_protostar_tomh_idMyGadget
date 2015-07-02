@@ -107,13 +107,15 @@ if ( $this->countModules('phone-burger-menu-left') )
 {
 	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" width="50" height="50">' .
 		'&nbsp;MenuL&nbsp;' . '</canvas>';
-	print '<script>var phoneBurgerMenuLeftColor = "blue";</script>';
+	print '<script>var phoneBurgerMenuLeftColor = "' .
+		$this->params->get('phoneBurgerMenuLeftColor') . '";</script>';
 }
 if ( $this->countModules('phone-burger-menu-right') )
 {
 	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" width="50" height="50">' .
 		'&nbsp;MenuR&nbsp;' . '</canvas>';
-	print '<script>var phoneBurgerMenuRightColor = "red";</script>';
+	print '<script>var phoneBurgerMenuRightColor = "' .
+		$this->params->get('phoneBurgerMenuRightColor') . '";</script>';
 }
 
 //
@@ -124,12 +126,12 @@ if ( $this->countModules('phone-burger-menu-right') )
 $logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
-	if ($this->params->get('logoFilePhone'))
+	if ( $this->params->get('logoFilePhone') )
 	{
 		$logo = '<img src="' . JUri::root() . $this->params->get('logoFilePhone') .'" ' .
 			'alt="' . $sitename . '" />';
 	}
-	if ($this->params->get('siteTitlePhone'))
+	if ( $this->params->get('siteTitlePhone') )
 	{
 		$logo =
 			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
@@ -137,7 +139,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
 			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
 	}
-	if ($this->params->get('showSiteNamePhone'))
+	if ( $this->params->get('showSiteNamePhone') )
 	{
 		$logo =
 			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .

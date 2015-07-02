@@ -66,18 +66,6 @@
 					<option value="mobile_detect">Mobile Detect</option>
 					<option value="tera_wurfl">Tera Wurfl</option>
 				</field>
-				<field
-					name="jqm_data_theme"
-					type="list"
-					label="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_LABEL"
-					description="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_DESC">
-					<option value="none">none</option>
-					<option value="a">a</option>
-					<option value="b">b</option>
-					<option value="c">c</option>
-					<option value="d">d</option>
-					<option value="e">e</option>
-				</field>
 
 				<field type="spacer" name="spacerPhone" class="text"
 					label="TPL_IDMYGADGET_HEADER_PARAMS_PHONE" />
@@ -174,6 +162,27 @@
 					<option value="1">TPL_PROTOSTAR_FLUID</option>
 					<option value="0">TPL_PROTOSTAR_STATIC</option>
 				</field>
+			</fieldset>
+
+			<fieldset name="phonenav">
+				<field
+					name="jqm_data_theme"
+					type="list"
+					label="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_LABEL"
+					description="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_DESC">
+					<option value="none">none</option>
+					<option value="a">a</option>
+					<option value="b">b</option>
+					<option value="c">c</option>
+					<option value="d">d</option>
+					<option value="e">e</option>
+				</field>
+				<field name="phoneBurgerMenuLeftColor" class="" type="color" default="grey"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_DESC" />
+				<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_DESC" />
 			</fieldset>
 
 			<fieldset name="advanced">

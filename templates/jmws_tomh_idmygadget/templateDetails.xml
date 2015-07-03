@@ -181,10 +181,33 @@
 				</field>
 				<field type="spacer" name="spacerPhoneBurgerMenus" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENUS" />
+				<field
+					name="phoneBurgerMenuLeftSize"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_SIZE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_SIZE_DESC">
+					<option value="50">50x50</option>
+					<option value="30">30x30</option>
+					<option value="40">40x40</option>
+					<option value="60">60x60</option>
+					<option value="70">70x70</option>
+				</field>
 				<field name="phoneBurgerMenuLeftColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_DESC" />
-				<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
+
+				<field
+					name="phoneBurgerMenuRightSize"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_SIZE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_SIZE_DESC">
+					<option value="50">50x50</option>
+					<option value="30">30x30</option>
+					<option value="40">40x40</option>
+					<option value="60">60x60</option>
+					<option value="70">70x70</option>
+				</field>
+					<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_DESC" />
 			</fieldset>

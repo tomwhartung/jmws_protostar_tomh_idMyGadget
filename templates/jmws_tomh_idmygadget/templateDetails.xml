@@ -165,6 +165,8 @@
 			</fieldset>
 
 			<fieldset name="phonenav">
+				<field type="spacer" name="spacerHeaderFooterMenus" class="text"
+					label="TPL_IDMYGADGET_PHONE_HEADER_FOOTER_MENUS" />
 				<field
 					name="jqm_data_theme"
 					type="list"
@@ -177,6 +179,8 @@
 					<option value="d">d</option>
 					<option value="e">e</option>
 				</field>
+				<field type="spacer" name="spacerPhoneBurgerMenus" class="text"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENUS" />
 				<field name="phoneBurgerMenuLeftColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_DESC" />

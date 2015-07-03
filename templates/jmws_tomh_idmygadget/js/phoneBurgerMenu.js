@@ -22,10 +22,12 @@ phoneBurgerMenu.drawPhoneBurgerMenus = function () {
 
 	if ( typeof phoneBurgerMenuLeftColor !== 'undefined' ) {     // set in admin console
 		phoneBurgerMenu.drawMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
+		console.log( 'drawing left phone burger menu' );
 	}
 
-	if ( typeof phoneBurgerMenuRightColor === 'undefined' ) {     // set in admin console
+	if ( typeof phoneBurgerMenuRightColor !== 'undefined' ) {     // set in admin console
 		phoneBurgerMenu.drawMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
+		console.log( 'drawing right phone burger menu' );
 	}
 };
 

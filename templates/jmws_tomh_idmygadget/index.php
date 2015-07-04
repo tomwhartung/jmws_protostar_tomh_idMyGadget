@@ -108,7 +108,7 @@ if ( $this->countModules('phone-burger-menu-left') )
 	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" ' .
 		'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
-		'&nbsp;MenuL&nbsp;' . '</canvas>';
+		'&nbsp;Menu&nbsp;' . '</canvas>';
 	print '<script>var phoneBurgerMenuLeftColor = "' .
 		$this->params->get('phoneBurgerMenuLeftColor') . '";</script>';
 }
@@ -117,7 +117,7 @@ if ( $this->countModules('phone-burger-menu-right') )
 	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" ' .
 		'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
-		'&nbsp;MenuR&nbsp;' . '</canvas>';
+		'&nbsp;Menu&nbsp;' . '</canvas>';
 	print '<script>var phoneBurgerMenuRightColor = "' .
 		$this->params->get('phoneBurgerMenuRightColor') . '";</script>';
 }

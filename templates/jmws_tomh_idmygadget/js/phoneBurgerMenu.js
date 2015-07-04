@@ -22,16 +22,18 @@ phoneBurgerMenu.drawPhoneBurgerMenus = function () {
 
 	if ( typeof phoneBurgerMenuLeftColor !== 'undefined' ) {     // set in admin console
 	//	phoneBurgerMenu.drawThinSquarePhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
-		phoneBurgerMenu.drawFatSquarePhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
-	//	phoneBurgerMenu.drawRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
-		console.log( 'drawing left phone burger menu' );
+	//	phoneBurgerMenu.drawFatSquarePhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
+		phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
+	//	phoneBurgerMenu.drawFatRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
+	//	console.log( 'drawing left phone burger menu' );
 	}
 
 	if ( typeof phoneBurgerMenuRightColor !== 'undefined' ) {     // set in admin console
 	//	phoneBurgerMenu.drawThinSquarePhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
-		phoneBurgerMenu.drawFatSquarePhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
-	//	phoneBurgerMenu.drawRoundedPhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
-		console.log( 'drawing right phone burger menu' );
+	//	phoneBurgerMenu.drawFatSquarePhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
+		phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
+	//	phoneBurgerMenu.drawFatRoundedPhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );
+	//	console.log( 'drawing right phone burger menu' );
 	}
 };
 /**
@@ -43,7 +45,7 @@ phoneBurgerMenu.drawPhoneBurgerMenus = function () {
  */
 phoneBurgerMenu.drawThinSquarePhoneBurgerMenu = function ( canvasElement, menuColor ) {
 	if ( canvasElement === null ) {
-		console.log( 'phoneBurgerMenu.drawMenu error: passed-in canvasElement is null!' );
+		console.log( 'phoneBurgerMenu.drawThinSquarePhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
 
@@ -51,7 +53,7 @@ phoneBurgerMenu.drawThinSquarePhoneBurgerMenu = function ( canvasElement, menuCo
 	var canvasWidth = canvasElement.width;
 	var canvasHeight = canvasElement.height;
 	var barHeight = Math.round( canvasHeight / 7 );
-	var gapHeight = barHeight;   // for now...
+	var gapHeight = barHeight;
 	var marginWidth = Math.round( canvasWidth / 7 );
 	var barWidth = Math.round( canvasWidth - (marginWidth * 2) );
 
@@ -73,7 +75,7 @@ phoneBurgerMenu.drawThinSquarePhoneBurgerMenu = function ( canvasElement, menuCo
  */
 phoneBurgerMenu.drawFatSquarePhoneBurgerMenu = function ( canvasElement, menuColor ) {
 	if ( canvasElement === null ) {
-		console.log( 'phoneBurgerMenu.drawMenu error: passed-in canvasElement is null!' );
+		console.log( 'phoneBurgerMenu.drawFatSquarePhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
 
@@ -95,8 +97,61 @@ phoneBurgerMenu.drawFatSquarePhoneBurgerMenu = function ( canvasElement, menuCol
 
 };
 
+/**
+ * Thin Rounded: three rounded rectangles, each the same height as the two gaps,
+ *    and top and bottom margins as well
+ * @param {type} canvasElement
+ * @param {type} menuColor
+ * @returns {undefined}
+ */
+phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu = function ( canvasElement, menuColor ) {
+	if ( canvasElement === null ) {
+		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
+		return;
+	}
 
-phoneBurgerMenu.drawRoundedPhoneBurgerMenu = function ( canvasElement, menuColor ) {
+	var context = canvasElement.getContext( '2d' );
+	var canvasWidth = canvasElement.width;
+	var canvasHeight = canvasElement.height;
+	var barHeight = Math.round( canvasHeight / 7 );
+	var gapHeight = barHeight;   // for now...
+	var marginWidth = Math.round( canvasWidth / 7 );
+	var barWidth = Math.round( canvasWidth - (marginWidth * 2) );
+
+	console.log( 'ThinRounded, barHeight: ' + barHeight );
+	console.log( 'ThinRounded, barWidth: ' + barWidth );
+	console.log( 'ThinRounded, gapHeight: ' + gapHeight );
+
+	context.beginPath();
+	context.strokeStyle = menuColor;
+//	context.arcTo( marginWidth, barHeight, (marginWidth+barWidth), barHeight * 2, 3 );
+	context.moveTo( marginWidth, gapHeight );
+	context.lineTo( marginWidth+barWidth, gapHeight );
+	context.lineTo( marginWidth+barWidth, gapHeight+barHeight );
+//	context.arcTo( marginWidth, gapHeight+barHeight, marginWidth, gapHeight, 3 );
+//	context.arcTo ( marginWidth+barWidth, gapHeight, marginWidth+barWidth, gapHeight+barHeight, 3 );
+
+//	context.arcTo( marginWidth, gapHeight+barHeight, marginWidth, barHeight, 3 );
+
+//	context.arcTo( marginWidth, barHeight, (marginWidth+barWidth), barHeight * 2, 3 );
+	context.stroke();
+
+//	context.fillStyle = menuColor;
+//	context.fill();
+
+//	context.fillRect( marginWidth, barHeight * 3, barWidth, barHeight );
+//	context.fillRect( marginWidth, barHeight * 5, barWidth, barHeight );
+
+};
+
+
+/**
+ * Fat Rounded:
+ * @param {type} canvasElement
+ * @param {type} menuColor
+ * @returns {undefined}
+ */
+phoneBurgerMenu.drawFatRoundedPhoneBurgerMenu = function ( canvasElement, menuColor ) {
 	if ( canvasElement === null ) {
 		console.log( 'phoneBurgerMenu.drawMenu error: passed-in canvasElement is null!' );
 		return;
@@ -110,8 +165,8 @@ phoneBurgerMenu.drawRoundedPhoneBurgerMenu = function ( canvasElement, menuColor
 	var marginWidth = Math.round( canvasWidth / 7 );
 	var barWidth = Math.round( canvasWidth - (marginWidth * 2) );
 
-	console.log( 'canvasWidth: ' + canvasWidth );
-	console.log( 'canvasHeight: ' + canvasHeight );
+	console.log( 'FatRounded, barHeight: ' + barHeight );
+	console.log( 'FatRounded, gapHeight: ' + gapHeight );
 
 	context.fillStyle = menuColor;
 	context.fillRect( marginWidth, barHeight, barWidth, barHeight );
@@ -119,4 +174,3 @@ phoneBurgerMenu.drawRoundedPhoneBurgerMenu = function ( canvasElement, menuColor
 	context.fillRect( marginWidth, barHeight * 5, barWidth, barHeight );
 
 };
-

@@ -200,6 +200,24 @@
 				<field name="phoneBurgerMenuLeftColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_DESC" />
+				<field
+					name="phoneBurgerMenuLeftLineCap"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_CAP_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_CAP_DESC">
+					<option value="round">round</option>
+					<option value="square">square</option>
+					<option value="butt">butt</option>
+				</field>
+				<field
+					name="phoneBurgerMenuLeftLineSize"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_DESC">
+					<option value="fat">fat</option>
+					<option value="thin">thin</option>
+					<option value="normal">??normal??</option>
+				</field>
 
 				<field type="spacer" name="spacerPhoneBurgerMenuRight" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT" />
@@ -221,6 +239,24 @@
 					<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_DESC" />
+				<field
+					name="phoneBurgerMenuRightLineCap"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_CAP_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_CAP_DESC">
+					<option value="round">round</option>
+					<option value="square">square</option>
+					<option value="butt">butt</option>
+				</field>
+				<field
+					name="phoneBurgerMenuRightLineSize"
+					type="list"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_DESC">
+					<option value="fat">fat</option>
+					<option value="thin">thin</option>
+					<option value="normal">??normal??</option>
+				</field>
 			</fieldset>
 
 			<fieldset name="advanced">

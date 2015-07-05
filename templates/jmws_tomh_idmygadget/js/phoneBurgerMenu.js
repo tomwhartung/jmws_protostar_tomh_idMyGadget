@@ -33,17 +33,17 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
  * Thin Rounded: three rounded rectangles, each the same height as the two gaps,
  *    and top and bottom margins as well
  * @param {type} canvasElement
- * @param {type} phoneBurgerMenuOptions
+ * @param {type} phoneBurgerIconOptions
  * @returns {undefined}
  */
-phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerMenuOptions ) {
+phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerIconOptions ) {
 	if ( canvasElement === null ) {
 		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
 	var context;
 
-	phoneBurgerMenu.setPhoneBurgerIconDimensions( canvasElement, phoneBurgerMenuOptions );
+	phoneBurgerMenu.setPhoneBurgerIconDimensions( canvasElement, phoneBurgerIconOptions );
 	var barHeight = phoneBurgerMenu.barHeight;
 	var barWidth = phoneBurgerMenu.barWidth;
 	var gapHeight = phoneBurgerMenu.gapHeight;
@@ -57,8 +57,8 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerM
 	context = canvasElement.getContext( '2d' );
 	context.save();
 	context.beginPath();
-	context.strokeStyle = phoneBurgerMenuOptions.color;
-	context.lineCap = phoneBurgerMenuOptions.lineCap;
+	context.strokeStyle = phoneBurgerIconOptions.color;
+	context.lineCap = phoneBurgerIconOptions.lineCap;
 	context.lineWidth = barHeight;
 
 	context.moveTo( marginWidth, gapHeight );
@@ -74,7 +74,7 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerM
 	context.restore();
 };
 
-phoneBurgerMenu.setPhoneBurgerIconDimensions = function ( canvasElement, phoneBurgerMenuOptions ) {
+phoneBurgerMenu.setPhoneBurgerIconDimensions = function ( canvasElement, phoneBurgerIconOptions ) {
 	var canvasWidth = canvasElement.width;
 	var canvasHeight = canvasElement.height;
 

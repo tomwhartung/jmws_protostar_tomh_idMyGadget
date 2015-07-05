@@ -214,9 +214,9 @@
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_DESC">
+					<option value="normal">normal</option>
 					<option value="fat">fat</option>
 					<option value="thin">thin</option>
-					<option value="normal">??normal??</option>
 				</field>
 
 				<field type="spacer" name="spacerPhoneBurgerMenuRight" class="text"
@@ -253,9 +253,9 @@
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_DESC">
+					<option value="normal">normal</option>
 					<option value="fat">fat</option>
 					<option value="thin">thin</option>
-					<option value="normal">??normal??</option>
 				</field>
 			</fieldset>
 

@@ -125,11 +125,16 @@ phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu = function ( canvasElement, menuC
 	context.beginPath();
 	context.strokeStyle = menuColor;
 	context.lineWidth = barHeight;
+	context.lineCap = 'round';
+
 	context.moveTo( marginWidth, gapHeight );
 	context.lineTo( marginWidth+barWidth, gapHeight );
-//	context.fillRect( marginWidth, barHeight, barWidth, barHeight );
-//	context.fillRect( marginWidth, barHeight * 3, barWidth, barHeight );
-//	context.fillRect( marginWidth, barHeight * 5, barWidth, barHeight );
+
+	context.moveTo( marginWidth, barHeight+(gapHeight*2) );
+	context.lineTo( marginWidth+barWidth, barHeight+(gapHeight*2) );
+
+	context.moveTo( marginWidth, (barHeight*2)+(gapHeight*3) );
+	context.lineTo( marginWidth+barWidth, (barHeight*2)+(gapHeight*3) );
 
 	context.stroke();
 	context.restore();

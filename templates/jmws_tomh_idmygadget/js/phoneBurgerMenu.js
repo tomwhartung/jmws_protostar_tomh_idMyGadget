@@ -12,11 +12,11 @@ var phoneBurgerMenu = {};
 {
 	$(document).ready(function()
 	{
-		phoneBurgerMenu.drawPhoneBurgerMenus();
+		phoneBurgerMenu.drawPhoneBurgerMenuIcons();
 	})
 })(jQuery);
 
-phoneBurgerMenu.drawPhoneBurgerMenus = function () {
+phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
 	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-menu-left' );
 	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-menu-right' );
 
@@ -41,27 +41,25 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerM
 		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
+	var context;
 
-	var color = phoneBurgerMenuOptions.color;
-
-	var context = canvasElement.getContext( '2d' );
-	var canvasWidth = canvasElement.width;
-	var canvasHeight = canvasElement.height;
-	var barHeight = Math.round( canvasHeight / 7 );
-	var gapHeight = barHeight;
-	var marginWidth = Math.round( canvasWidth / 7 );
-	var barWidth = Math.round( canvasWidth - (marginWidth * 2) );
+	phoneBurgerMenu.setPhoneBurgerIconDimensions( canvasElement, phoneBurgerMenuOptions );
+	var barHeight = phoneBurgerMenu.barHeight;
+	var barWidth = phoneBurgerMenu.barWidth;
+	var gapHeight = phoneBurgerMenu.gapHeight;
+	var marginWidth = phoneBurgerMenu.marginWidth;
 
 	console.log( 'FINAL, barHeight: ' + barHeight );
 	console.log( 'FINAL, barWidth: ' + barWidth );
 	console.log( 'FINAL, gapHeight: ' + gapHeight );
+	console.log( 'FINAL, marginWidth: ' + marginWidth );
 
+	context = canvasElement.getContext( '2d' );
 	context.save();
 	context.beginPath();
-	context.strokeStyle = color;
-	context.lineWidth = barHeight;
-
+	context.strokeStyle = phoneBurgerMenuOptions.color;
 	context.lineCap = phoneBurgerMenuOptions.lineCap;
+	context.lineWidth = barHeight;
 
 	context.moveTo( marginWidth, gapHeight );
 	context.lineTo( marginWidth+barWidth, gapHeight );
@@ -74,7 +72,16 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerM
 
 	context.stroke();
 	context.restore();
+};
 
+phoneBurgerMenu.setPhoneBurgerIconDimensions = function ( canvasElement, phoneBurgerMenuOptions ) {
+	var canvasWidth = canvasElement.width;
+	var canvasHeight = canvasElement.height;
+
+	phoneBurgerMenu.barHeight = Math.round( canvasHeight / 7 );
+	phoneBurgerMenu.gapHeight = phoneBurgerMenu.barHeight;
+	phoneBurgerMenu.marginWidth = Math.round( canvasWidth / 7 );
+	phoneBurgerMenu.barWidth = Math.round( canvasWidth - (phoneBurgerMenu.marginWidth * 2) );
 };
 
 // ---------------------------------------------------------------------------------------------

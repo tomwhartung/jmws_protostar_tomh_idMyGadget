@@ -20,13 +20,76 @@ phoneBurgerMenu.drawPhoneBurgerMenus = function () {
 	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-menu-left' );
 	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-menu-right' );
 
-	if ( typeof phoneBurgerMenuLeftColor !== 'undefined' ) {     // set in admin console
+	if ( typeof phoneBurgerMenuLeftOptions !== 'undefined' ) {     // options are set in the admin console
+		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftOptions );
+	}
+	if ( typeof phoneBurgerMenuRightOptions !== 'undefined' ) {     // options are set in the admin console
+		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.rightElement, phoneBurgerMenuRightOptions );
+	}
+	// else { alert( 'Undefined?!?' ); }
+};
+
+/**
+ * Thin Rounded: three rounded rectangles, each the same height as the two gaps,
+ *    and top and bottom margins as well
+ * @param {type} canvasElement
+ * @param {type} phoneBurgerMenuOptions
+ * @returns {undefined}
+ */
+phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerMenuOptions ) {
+	if ( canvasElement === null ) {
+		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
+		return;
+	}
+
+	var color = phoneBurgerMenuOptions.color;
+
+	var context = canvasElement.getContext( '2d' );
+	var canvasWidth = canvasElement.width;
+	var canvasHeight = canvasElement.height;
+	var barHeight = Math.round( canvasHeight / 7 );
+	var gapHeight = barHeight;
+	var marginWidth = Math.round( canvasWidth / 7 );
+	var barWidth = Math.round( canvasWidth - (marginWidth * 2) );
+
+	console.log( 'FINAL, barHeight: ' + barHeight );
+	console.log( 'FINAL, barWidth: ' + barWidth );
+	console.log( 'FINAL, gapHeight: ' + gapHeight );
+
+	context.save();
+	context.beginPath();
+	context.strokeStyle = color;
+	context.lineWidth = barHeight;
+
+	context.lineCap = phoneBurgerMenuOptions.lineCap;
+
+	context.moveTo( marginWidth, gapHeight );
+	context.lineTo( marginWidth+barWidth, gapHeight );
+
+	context.moveTo( marginWidth, barHeight+(gapHeight*2) );
+	context.lineTo( marginWidth+barWidth, barHeight+(gapHeight*2) );
+
+	context.moveTo( marginWidth, (barHeight*2)+(gapHeight*3) );
+	context.lineTo( marginWidth+barWidth, (barHeight*2)+(gapHeight*3) );
+
+	context.stroke();
+	context.restore();
+
+};
+
+// ---------------------------------------------------------------------------------------------
+
+phoneBurgerMenu.drawPhoneBurgerMenusOld = function () {
+	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-menu-left' );
+	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-menu-right' );
+
+//	if ( typeof phoneBurgerMenuLeftColor !== 'undefined' ) {     // set in admin console
 	//	phoneBurgerMenu.drawThinSquarePhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
 	//	phoneBurgerMenu.drawFatSquarePhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
-		phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
+	//	phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
 	//	phoneBurgerMenu.drawFatRoundedPhoneBurgerMenu( phoneBurgerMenu.leftElement, phoneBurgerMenuLeftColor );
 	//	console.log( 'drawing left phone burger menu' );
-	}
+//	}
 
 	if ( typeof phoneBurgerMenuRightColor !== 'undefined' ) {     // set in admin console
 	//	phoneBurgerMenu.drawThinSquarePhoneBurgerMenu( phoneBurgerMenu.rightElement, phoneBurgerMenuRightColor );

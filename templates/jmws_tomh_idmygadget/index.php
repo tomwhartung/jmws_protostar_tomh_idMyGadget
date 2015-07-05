@@ -109,8 +109,13 @@ if ( $this->countModules('phone-burger-menu-left') )
 		'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
 		'&nbsp;Menu&nbsp;' . '</canvas>';
-	print '<script>var phoneBurgerMenuLeftColor = "' .
-		$this->params->get('phoneBurgerMenuLeftColor') . '";</script>';
+	print
+		'<script>' .
+			'var phoneBurgerMenuLeftOptions = {};' .
+			'phoneBurgerMenuLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
+			'phoneBurgerMenuLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
+			'phoneBurgerMenuLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
+		'</script>';
 }
 if ( $this->countModules('phone-burger-menu-right') )
 {
@@ -118,8 +123,12 @@ if ( $this->countModules('phone-burger-menu-right') )
 		'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
 		'&nbsp;Menu&nbsp;' . '</canvas>';
-	print '<script>var phoneBurgerMenuRightColor = "' .
-		$this->params->get('phoneBurgerMenuRightColor') . '";</script>';
+		'<script>' .
+			'var phoneBurgerMenuRightOptions = {};' .
+			'phoneBurgerMenuRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .
+			'phoneBurgerMenuRightOptions.lineCap = "' .$this->params->get('phoneBurgerMenuRightLineCap') . '";' .
+			'phoneBurgerMenuRightOptions.lineSize = "' .$this->params->get('phoneBurgerMenuRightLineSize') . '";' .
+		'</script>';
 }
 
 //

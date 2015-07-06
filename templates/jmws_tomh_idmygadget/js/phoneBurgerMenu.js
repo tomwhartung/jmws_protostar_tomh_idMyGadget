@@ -30,8 +30,7 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
 };
 
 /**
- * Thin Rounded: three rounded rectangles, each the same height as the two gaps,
- *    and top and bottom margins as well
+ * Draw three lines, using the options specified in the admin console
  * @param {type} canvasElement
  * @param {type} phoneBurgerIconOptions
  * @returns {undefined}
@@ -41,47 +40,72 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerI
 		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
-	var context;
 
 	phoneBurgerMenu.setPhoneBurgerIconDimensions( canvasElement, phoneBurgerIconOptions );
+	var leftMargin = phoneBurgerMenu.leftMargin;
+	var topMargin = phoneBurgerMenu.topMargin;
 	var barHeight = phoneBurgerMenu.barHeight;
 	var barWidth = phoneBurgerMenu.barWidth;
 	var gapHeight = phoneBurgerMenu.gapHeight;
-	var marginWidth = phoneBurgerMenu.marginWidth;
+	var firstBarMidpoint = topMargin;
+	var secondBarMidpoint = topMargin+barHeight+gapHeight;
+	var thirdBarMidpoint = topMargin + 2*(barHeight+gapHeight);
 
+	console.log( 'FINAL, leftMargin: ' + leftMargin );
+	console.log( 'FINAL, topMargin: ' + topMargin );
 	console.log( 'FINAL, barHeight: ' + barHeight );
 	console.log( 'FINAL, barWidth: ' + barWidth );
 	console.log( 'FINAL, gapHeight: ' + gapHeight );
-	console.log( 'FINAL, marginWidth: ' + marginWidth );
 
-	context = canvasElement.getContext( '2d' );
+	var context = canvasElement.getContext( '2d' );
 	context.save();
 	context.beginPath();
 	context.strokeStyle = phoneBurgerIconOptions.color;
 	context.lineCap = phoneBurgerIconOptions.lineCap;
 	context.lineWidth = barHeight;
 
-	context.moveTo( marginWidth, gapHeight );
-	context.lineTo( marginWidth+barWidth, gapHeight );
+	context.moveTo( leftMargin, firstBarMidpoint );
+	context.lineTo( leftMargin+barWidth, firstBarMidpoint );
 
-	context.moveTo( marginWidth, barHeight+(gapHeight*2) );
-	context.lineTo( marginWidth+barWidth, barHeight+(gapHeight*2) );
+	context.moveTo( leftMargin, secondBarMidpoint );
+	context.lineTo( leftMargin+barWidth, secondBarMidpoint );
 
-	context.moveTo( marginWidth, (barHeight*2)+(gapHeight*3) );
-	context.lineTo( marginWidth+barWidth, (barHeight*2)+(gapHeight*3) );
+	context.moveTo( leftMargin, thirdBarMidpoint );
+	context.lineTo( leftMargin+barWidth, thirdBarMidpoint );
 
 	context.stroke();
 	context.restore();
 };
 
 phoneBurgerMenu.setPhoneBurgerIconDimensions = function ( canvasElement, phoneBurgerIconOptions ) {
+	var topMargin;
+	var barHeight;
+	var gapHeight;
 	var canvasWidth = canvasElement.width;
 	var canvasHeight = canvasElement.height;
+	var oneEleventh = Math.round( canvasHeight / 11 );
 
-	phoneBurgerMenu.barHeight = Math.round( canvasHeight / 7 );
-	phoneBurgerMenu.gapHeight = phoneBurgerMenu.barHeight;
-	phoneBurgerMenu.marginWidth = Math.round( canvasWidth / 7 );
-	phoneBurgerMenu.barWidth = Math.round( canvasWidth - (phoneBurgerMenu.marginWidth * 2) );
+	if ( phoneBurgerIconOptions.lineSize === 'fat' ) {
+		barHeight = oneEleventh * 3;
+		gapHeight = oneEleventh;
+		topMargin = Math.ceil( barHeight / 2 );
+	}
+	else if ( phoneBurgerIconOptions.lineSize === 'normal' ) {
+		barHeight = oneEleventh * 2;
+		gapHeight = oneEleventh * 2;
+		topMargin = oneEleventh + Math.ceil( barHeight / 2 );
+	}
+	else {   // phoneBurgerIconOptions.lineSize === 'thin'
+		barHeight = oneEleventh;
+		gapHeight = oneEleventh * 2;
+		topMargin = (oneEleventh * 2) + Math.ceil( barHeight / 2 );
+	}
+
+	phoneBurgerMenu.topMargin = topMargin;
+	phoneBurgerMenu.barHeight = barHeight;
+	phoneBurgerMenu.gapHeight = gapHeight;
+	phoneBurgerMenu.leftMargin = Math.ceil( barHeight / 2 );
+	phoneBurgerMenu.barWidth = Math.round( canvasWidth - (barHeight*2) );
 };
 
 // ---------------------------------------------------------------------------------------------

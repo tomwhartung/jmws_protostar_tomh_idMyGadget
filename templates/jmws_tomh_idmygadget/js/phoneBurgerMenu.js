@@ -16,6 +16,10 @@ var phoneBurgerMenu = {};
 	})
 })(jQuery);
 
+/**
+ * Driver function to draw zero, one, or both menu icons, as appropriate
+ * @returns {undefined}
+ */
 phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
 	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-menu-left' );
 	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-menu-right' );
@@ -26,7 +30,6 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
 	if ( typeof phoneBurgerIconRightOptions !== 'undefined' ) {     // options are set in the admin console
 		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.rightElement, phoneBurgerIconRightOptions );
 	}
-	// else { alert( 'Undefined?!?' ); }
 };
 
 /**
@@ -76,7 +79,12 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerI
 	context.stroke();
 	context.restore();
 };
-
+/**
+ * Use the options specified in the admin console to set the dimensions of lines in the icon
+ * @param {type} canvasElement
+ * @param {type} phoneBurgerIconOptions
+ * @returns {undefined}
+ */
 phoneBurgerMenu.setPhoneBurgerIconDimensions = function ( canvasElement, phoneBurgerIconOptions ) {
 	var topMargin;
 	var barHeight;

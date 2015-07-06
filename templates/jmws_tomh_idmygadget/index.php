@@ -100,16 +100,18 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 // Initialize markup for the optional "phone-burger" menus,
 //  depending on which ones, if any, are being used,
 //
-$phone_burger_menu_left = '';
-$phone_burger_menu_right = '';
+$phone_burger_icon_canvas_left = '';
+$phone_burger_icon_canvas_right = '';
+$phone_burger_icon_js_left = '';
+$phone_burger_icon_js_right = '';
 
 if ( $this->countModules('phone-burger-menu-left') )
 {
-	$phone_burger_menu_left = '<canvas id = "phone-burger-menu-left" ' .
+	$phone_burger_icon_canvas_left = '<canvas id = "phone-burger-menu-left" ' .
 		'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
 		'&nbsp;Menu&nbsp;' . '</canvas>';
-	print
+	$phone_burger_icon_js_left .=
 		'<script>' .
 			'var phoneBurgerIconLeftOptions = {};' .
 			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
@@ -119,16 +121,16 @@ if ( $this->countModules('phone-burger-menu-left') )
 }
 if ( $this->countModules('phone-burger-menu-right') )
 {
-	$phone_burger_menu_right = '<canvas id = "phone-burger-menu-right" ' .
+	$phone_burger_icon_canvas_right = '<canvas id = "phone-burger-menu-right" ' .
 		'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
 		'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
 		'&nbsp;Menu&nbsp;' . '</canvas>';
+	$phone_burger_icon_js_right .=
 		'<script>' .
 			'var phoneBurgerIconRightOptions = {};' .
 			'phoneBurgerIconRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .
 			'phoneBurgerIconRightOptions.lineCap = "' .$this->params->get('phoneBurgerMenuRightLineCap') . '";' .
 			'phoneBurgerIconRightOptions.lineSize = "' .$this->params->get('phoneBurgerMenuRightLineSize') . '";' .
-			'alert("yo dude wtf srsly!");' .
 		'</script>';
 }
 
@@ -148,17 +150,25 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	if ( $this->params->get('siteTitlePhone') )
 	{
 		$logo =
-			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
+			'<a href="pbm-left" class="phone-burger-menu-left">' .
+				$phone_burger_icon_canvas_left . '</a>' .
+			$phone_burger_icon_js_left .
 			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
-			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
+			'<a href="pbm-right" class="phone-burger-menu-right">' .
+				$phone_burger_icon_canvas_right . '</a>' .
+			$phone_burger_icon_js_right;
 	}
 	if ( $this->params->get('showSiteNamePhone') )
 	{
 		$logo =
-			'<a href="pbm-left" class="phone-burger-menu-left">' . $phone_burger_menu_left . '</a>' .
+			'<a href="pbm-left" class="phone-burger-menu-left">' .
+				$phone_burger_icon_canvas_left . '</a>' .
+			$phone_burger_icon_js_left .
 			'<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
-			'<a href="pbm-right" class="phone-burger-menu-right">' . $phone_burger_menu_right . '</a>';
+			'<a href="pbm-right" class="phone-burger-menu-right">' .
+				$phone_burger_icon_canvas_right . '</a>' .
+			$phone_burger_icon_js_right;
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');

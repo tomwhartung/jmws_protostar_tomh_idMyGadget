@@ -418,11 +418,10 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			);
 		}
 	?>
-	<?php
-		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
-		{
-			print '</div> <!-- ' . $jqm_data_role_page . ' -->';
-		}
-	?>
+	<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+		</div> <!-- '<?php echo $jqm_data_role_page ?> -->
+		<jdoc:include type="modules" name="phone-burger-menu-left" style="none" />
+		<jdoc:include type="modules" name="phone-burger-menu-right" style="none" />
+	<?php endif;?>
 </body>
 </html>

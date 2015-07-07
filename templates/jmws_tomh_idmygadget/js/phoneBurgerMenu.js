@@ -21,8 +21,8 @@ var phoneBurgerMenu = {};
  * @returns {undefined}
  */
 phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
-	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-menu-left' );
-	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-menu-right' );
+	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-icon-left' );
+	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-icon-right' );
 
 	if ( typeof phoneBurgerIconLeftOptions !== 'undefined' ) {     // options are set in the admin console
 		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.leftElement, phoneBurgerIconLeftOptions );

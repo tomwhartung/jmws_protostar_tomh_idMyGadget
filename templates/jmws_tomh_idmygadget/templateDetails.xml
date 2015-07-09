@@ -144,7 +144,7 @@
 					label="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_LABEL"
 					description="TPL_PROTOSTAR_SITEDESCRIPTION_DESKTOP_DESC"
 					filter="string" />
-					<field name="showSiteNameDesktop"
+				<field name="showSiteNameDesktop"
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
@@ -164,24 +164,27 @@
 				</field>
 			</fieldset>
 
-			<fieldset name="phonenav">
-				<field type="spacer" name="spacerHeaderFooterMenus" class="text"
-					label="TPL_IDMYGADGET_PHONE_HEADER_FOOTER_MENUS" />
-				<field
-					name="jqm_data_theme"
-					type="list"
-					label="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_LABEL"
-					description="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_DESC">
-					<option value="none">none</option>
-					<option value="a">a</option>
-					<option value="b">b</option>
-					<option value="c">c</option>
-					<option value="d">d</option>
-					<option value="e">e</option>
-				</field>
-
+			<fieldset name="hamburgernav">
 				<field type="spacer" name="spacerPhoneBurgerMenuLeft" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT" />
+				<field name="phoneBurgerMenuLeftOnTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_TABLET_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_TABLET_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="phoneBurgerMenuLeftOnDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_DESKTOP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field
 					name="phoneBurgerMenuLeftSize"
 					type="list"
@@ -221,6 +224,24 @@
 
 				<field type="spacer" name="spacerPhoneBurgerMenuRight" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT" />
+				<field name="phoneBurgerMenuRightOnTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_TABLET_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_TABLET_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="phoneBurgerMenuRightOnDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_DESKTOP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field
 					name="phoneBurgerMenuRightSize"
 					type="list"
@@ -256,6 +277,23 @@
 					<option value="normal">normal</option>
 					<option value="fat">fat</option>
 					<option value="thin">thin</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="phonenav">
+				<field type="spacer" name="spacerHeaderFooterMenus" class="text"
+					label="TPL_IDMYGADGET_PHONE_HEADER_FOOTER_MENUS" />
+				<field
+					name="jqm_data_theme"
+					type="list"
+					label="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_LABEL"
+					description="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_DESC">
+					<option value="none">none</option>
+					<option value="a">a</option>
+					<option value="b">b</option>
+					<option value="c">c</option>
+					<option value="d">d</option>
+					<option value="e">e</option>
 				</field>
 			</fieldset>
 

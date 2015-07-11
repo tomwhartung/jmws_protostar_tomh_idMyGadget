@@ -72,15 +72,15 @@ $gadgetDetector = $this->params->get('gadgetDetector');
 
 if ( $gadgetDetector == 'mobile_detect' )
 {
-	$jmwsIdMyGadget = new JmwsIdMyGadget( 'mobile_detect' );
+	$jmwsIdMyGadget = new JmwsIdMyGadgetJoomla( 'mobile_detect' );
 }
 else if ( $gadgetDetector == 'tera_wurfl' )
 {
-	$jmwsIdMyGadget = new JmwsIdMyGadget( 'tera_wurfl' );
+	$jmwsIdMyGadget = new JmwsIdMyGadgetJoomla( 'tera_wurfl' );
 }
 else
 {
-	$jmwsIdMyGadget = new JmwsIdMyGadget( 'detect_mobile_browsers' );
+	$jmwsIdMyGadget = new JmwsIdMyGadgetJoomla( 'detect_mobile_browsers' );
 }
 //
 // The phone burger menu was originally intended for phones only, hence the name.

@@ -86,8 +86,8 @@ else
 // The phone burger menu was originally intended for phones only, hence the name.
 // Now we have options so that, if desired, we can use it on tablets and desktops as well.
 //
-$phone_burger_icon_this_device_left = FALSE;
-$phone_burger_icon_this_device_right = FALSE;
+$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = FALSE;
+$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 $phone_burger_icon_canvas_left = '';
 $phone_burger_icon_canvas_right = '';
 $phone_burger_icon_js_left = '';
@@ -97,11 +97,11 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 {
 	if ( $this->countModules('phone-burger-menu-left') )
 	{
-		$phone_burger_icon_this_device_left = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = TRUE;
 	}
 	if ( $this->countModules('phone-burger-menu-right') )
 	{
-		$phone_burger_icon_this_device_right = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}
 }
 else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
@@ -109,12 +109,12 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnTablet') )
 	{
-		$phone_burger_icon_this_device_left = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = TRUE;
 	}
 	if ( $this->countModules('phone-burger-menu-right') &&
 	     $this->params->get('phoneBurgerMenuRightOnTablet') )
 	{
-		$phone_burger_icon_this_device_right = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}
 }
 else
@@ -122,12 +122,12 @@ else
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnDesktop') )
 	{
-		$phone_burger_icon_this_device_left = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = TRUE;
 	}
 	if ( $this->countModules('phone-burger-menu-right') &&
 	     $this->params->get('phoneBurgerMenuRightOnDesktop') )
 	{
-		$phone_burger_icon_this_device_right = TRUE;
+		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}
 }
 //

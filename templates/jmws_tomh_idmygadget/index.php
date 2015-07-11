@@ -83,14 +83,58 @@ else
 	$jmwsIdMyGadget = new JmwsIdMyGadget( 'detect_mobile_browsers' );
 }
 //
-// If device is a phone,
-// o  Add in jquery mobile js and css and idMyGadget code
-// o  Create markup for the optional "phone-burger" menus,
+// The phone burger menu was originally intended for phones only, hence the name.
+// Now we have options so that, if desired, we can use it on tablets and desktops as well.
 //
+$phone_burger_icon_this_device_left = FALSE;
+$phone_burger_icon_this_device_right = FALSE;
 $phone_burger_icon_canvas_left = '';
 $phone_burger_icon_canvas_right = '';
 $phone_burger_icon_js_left = '';
 $phone_burger_icon_js_right = '';
+
+if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+{
+	if ( $this->countModules('phone-burger-menu-left') )
+	{
+		$phone_burger_icon_this_device_left = TRUE;
+	}
+	if ( $this->countModules('phone-burger-menu-right') )
+	{
+		$phone_burger_icon_this_device_right = TRUE;
+	}
+}
+else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
+{
+	if ( $this->countModules('phone-burger-menu-left') &&
+	     $this->params->get('phoneBurgerMenuLeftOnTablet') )
+	{
+		$phone_burger_icon_this_device_left = TRUE;
+	}
+	if ( $this->countModules('phone-burger-menu-right') &&
+	     $this->params->get('phoneBurgerMenuRightOnTablet') )
+	{
+		$phone_burger_icon_this_device_right = TRUE;
+	}
+}
+else
+{
+	if ( $this->countModules('phone-burger-menu-left') &&
+	     $this->params->get('phoneBurgerMenuLeftOnDesktop') )
+	{
+		$phone_burger_icon_this_device_left = TRUE;
+	}
+	if ( $this->countModules('phone-burger-menu-right') &&
+	     $this->params->get('phoneBurgerMenuRightOnDesktop') )
+	{
+		$phone_burger_icon_this_device_right = TRUE;
+	}
+}
+//
+// If device is a phone,
+// o  Add in jquery mobile js and css and idMyGadget code
+// o  Create markup for the optional "phone-burger" menus,
+//
 
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {

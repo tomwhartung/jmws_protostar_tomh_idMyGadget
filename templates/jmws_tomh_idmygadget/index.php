@@ -67,7 +67,7 @@ else
 //
 global $jmwsIdMyGadget;
 $jmwsIdMyGadget = null;
-require_once 'jmws_idMyGadget_for_joomla/JmwsIdMyGadget.php';
+require_once 'jmws_idMyGadget_for_joomla/JmwsIdMyGadgetJoomla.php';
 $gadgetDetector = $this->params->get('gadgetDetector');
 
 if ( $gadgetDetector == 'mobile_detect' )
@@ -135,7 +135,6 @@ else
 // o  Add in jquery mobile js and css and idMyGadget code
 // o  Create markup for the optional "phone-burger" menus,
 //
-
 if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );

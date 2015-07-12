@@ -344,18 +344,6 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			print '<div ' .$jqm_data_role_page . '>';
 		}
 	?>
-	<p>$this->countModules('phone-burger-menu-left') = "<?php echo $this->countModules('phone-burger-menu-left') ?>"</p>
-	<p>$this->countModules('phone-burger-menu-right') = "<?php echo $this->countModules('phone-burger-menu-right') ?>"</p>
-
-	<p>$this->params->get('phoneBurgerMenuLeftOnTablet')= "<?php echo $this->params->get('phoneBurgerMenuLeftOnTablet') ?>"</p>
-	<p>$this->params->get('phoneBurgerMenuRightOnTablet')= "<?php echo $this->params->get('phoneBurgerMenuRightOnTablet') ?>"</p>
-
-	<p>$this->params->get('phoneBurgerMenuLeftOnDesktop')= "<?php echo $this->params->get('phoneBurgerMenuLeftOnDesktop') ?>"</p>
-	<p>$this->params->get('phoneBurgerMenuRightOnDesktop')= "<?php echo $this->params->get('phoneBurgerMenuRightOnDesktop') ?>"</p>
-
-	<p>$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = "<?php echo $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ?>"</p>
-	<p>$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = "<?php echo $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight ?>"</p>
-
 	<!-- Body -->
 	<div class="body">
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">

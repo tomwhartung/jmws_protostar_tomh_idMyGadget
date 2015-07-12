@@ -140,39 +140,39 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 	$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
-	if ( $this->countModules('phone-burger-menu-left') ||
-	     $this->countModules('phone-burger-menu-right') )
-	{
-		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/phoneBurgerMenu.js');
-	}
-	if ( $this->countModules('phone-burger-menu-left') )
-	{
-		$phone_burger_icon_canvas_left = '<canvas id="phone-burger-icon-left" ' .
-			'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
-			'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
-			'&nbsp;Menu&nbsp;' . '</canvas>';
-		$phone_burger_icon_js_left .=
-			'<script>' .
-				'var phoneBurgerIconLeftOptions = {};' .
-				'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
-				'phoneBurgerIconLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
-				'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
-			'</script>';
-	}
-	if ( $this->countModules('phone-burger-menu-right') )
-	{
-		$phone_burger_icon_canvas_right = '<canvas id="phone-burger-icon-right" ' .
-			'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
-			'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
-			'&nbsp;Menu&nbsp;' . '</canvas>';
-		$phone_burger_icon_js_right .=
-			'<script>' .
-				'var phoneBurgerIconRightOptions = {};' .
-				'phoneBurgerIconRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .
-				'phoneBurgerIconRightOptions.lineCap = "' .$this->params->get('phoneBurgerMenuRightLineCap') . '";' .
-				'phoneBurgerIconRightOptions.lineSize = "' .$this->params->get('phoneBurgerMenuRightLineSize') . '";' .
-			'</script>';
-	}
+}
+if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ||
+     $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight   )
+{
+	$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/phoneBurgerMenu.js');
+}
+if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
+{
+	$phone_burger_icon_canvas_left = '<canvas id="phone-burger-icon-left" ' .
+		'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
+		'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
+		'&nbsp;Menu&nbsp;' . '</canvas>';
+	$phone_burger_icon_js_left .=
+		'<script>' .
+			'var phoneBurgerIconLeftOptions = {};' .
+			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
+			'phoneBurgerIconLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
+			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
+		'</script>';
+}
+if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
+{
+	$phone_burger_icon_canvas_right = '<canvas id="phone-burger-icon-right" ' .
+		'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+		'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
+		'&nbsp;Menu&nbsp;' . '</canvas>';
+	$phone_burger_icon_js_right .=
+		'<script>' .
+			'var phoneBurgerIconRightOptions = {};' .
+			'phoneBurgerIconRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .
+			'phoneBurgerIconRightOptions.lineCap = "' .$this->params->get('phoneBurgerMenuRightLineCap') . '";' .
+			'phoneBurgerIconRightOptions.lineSize = "' .$this->params->get('phoneBurgerMenuRightLineSize') . '";' .
+		'</script>';
 }
 
 //
@@ -348,6 +348,17 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			print '<div ' .$jqm_data_role_page . '>';
 		}
 	?>
+	<p>$this->countModules('phone-burger-menu-left') = "<?php echo $this->countModules('phone-burger-menu-left') ?>"</p>
+	<p>$this->countModules('phone-burger-menu-right') = "<?php echo $this->countModules('phone-burger-menu-right') ?>"</p>
+
+	<p>$this->params->get('phoneBurgerMenuLeftOnTablet')= "<?php echo $this->params->get('phoneBurgerMenuLeftOnTablet') ?>"</p>
+	<p>$this->params->get('phoneBurgerMenuRightOnTablet')= "<?php echo $this->params->get('phoneBurgerMenuRightOnTablet') ?>"</p>
+
+	<p>$this->params->get('phoneBurgerMenuLeftOnDesktop')= "<?php echo $this->params->get('phoneBurgerMenuLeftOnDesktop') ?>"</p>
+	<p>$this->params->get('phoneBurgerMenuRightOnDesktop')= "<?php echo $this->params->get('phoneBurgerMenuRightOnDesktop') ?>"</p>
+
+	<p>$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = "<?php echo $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ?>"</p>
+	<p>$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = "<?php echo $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight ?>"</p>
 
 	<!-- Body -->
 	<div class="body">
@@ -461,10 +472,17 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 			);
 		}
 	?>
-	<?php if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
-		</div> <!-- '<?php echo $jqm_data_role_page ?> -->
-		<jdoc:include type="modules" name="phone-burger-menu-left" style="none" />
-		<jdoc:include type="modules" name="phone-burger-menu-right" style="none" />
+	<?php
+		if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+		{
+			print '</div> <!-- ' . $jqm_data_role_page . ' -->';
+		}
+	?>
+	<?php
+		if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ||
+		     $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight ) : ?>
+			<jdoc:include type="modules" name="phone-burger-menu-left" style="none" />
+			<jdoc:include type="modules" name="phone-burger-menu-right" style="none" />
 	<?php endif;?>
 </body>
 </html>

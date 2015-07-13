@@ -134,7 +134,7 @@
 				<field type="spacer" name="spacerDesktop" class="text"
 					label="TPL_IDMYGADGET_HEADER_PARAMS_DESKTOP" />
 				<field name="logoFileDesktop" class="" type="media" default=""
-					label="TPL_PROTOSTAR_LOGO_FILE_DESKTOP_LABEL"
+					label="TPL_IDMYGADGET_LOGO_FILE_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_LOGO_FILE_DESKTOP_DESC" />
 				<field name="siteTitleDesktop"  type="text" default=""
 					label="TPL_PROTOSTAR_SITETITLE_DESKTOP_LABEL"

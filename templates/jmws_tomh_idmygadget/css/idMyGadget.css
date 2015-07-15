@@ -6,6 +6,10 @@
 h2.site-title {
 	display: inline;
 }
+/*
+ * Trying to fix bug causing the phone burger menu icon to not show up on phones.
+ * This didn't work and may be deleted * once the issue is solved.
+ */
 #phone-burger-icon-left, #phone-burger-icon-right {
 	z-index: 1;
 }

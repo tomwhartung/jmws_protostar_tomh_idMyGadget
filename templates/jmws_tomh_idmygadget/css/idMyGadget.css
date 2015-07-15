@@ -6,3 +6,6 @@
 h2.site-title {
 	display: inline;
 }
+#phone-burger-icon-left, #phone-burger-icon-right {
+	z-index: 1;
+}

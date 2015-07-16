@@ -157,21 +157,36 @@ $phone_burger_icon_canvas_left = '';
 $phone_burger_icon_canvas_right = '';
 $phone_burger_icon_js_left = '';
 $phone_burger_icon_js_right = '';
+$phone_burger_icon_file_name = JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIcon.jpg';
+if ( ! file_exists($phone_burger_icon_file_name) )
+{
+	$phone_burger_icon_file_name = '';
+}
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 {
+	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+	{
+
+	}
 	$phone_burger_icon_canvas_left =
 		'<a href="#phone-burger-menu-left" data-rel="dialog">' .
 			'<canvas id="phone-burger-icon-left" ' .
 				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 				'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>' . '</a>';
+				'&nbsp;Menu&nbsp;' . '</canvas>' .
+		'</a>';
 	$phone_burger_icon_js_left .=
 		'<script>' .
 			'var phoneBurgerIconLeftOptions = {};' .
 			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
 			'phoneBurgerIconLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
-			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
-		'</script>';
+			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";';
+	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+	{
+		$phone_burger_icon_js_left .=
+			'phoneBurgerIconLeftOptions.fileName = "' . $phone_burger_icon_file_name . '";';
+	}
+	$phone_burger_icon_js_left .= '</script>';
 }
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
@@ -180,7 +195,8 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 			'<canvas id="phone-burger-icon-right" ' .
 				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
 				'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>' . '</a>';
+				'&nbsp;Menu&nbsp;' . '</canvas>' .
+		'</a>';
 	$phone_burger_icon_js_right .=
 		'<script>' .
 			'var phoneBurgerIconRightOptions = {};' .

@@ -166,14 +166,13 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 {
 	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
-		$phone_burger_icon_file_name_left =
-			JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
-		if ( file_exists($phone_burger_icon_file_name_left) )
+		$phone_burger_icon_file_name_left = $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
+		if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_left) )
 		{
 			$phone_burger_icon_file_name_left_found = TRUE;
 			$phone_burger_icon_image_tag_left =
 				'<div style="display:none;">' .
-					'<img id="phone-burger-icon-image-left" src="' . $phone_burger_icon_file_name_left . '"></div>';
+					'<img id="phone-burger-icon-image-left" src="templates/' . $phone_burger_icon_file_name_left . '"></div>';
 		}
 	}
 	$phone_burger_icon_canvas_left =
@@ -199,14 +198,13 @@ $phone_burger_icon_file_name_right = '';
 $phone_burger_icon_image_tag_right = '';
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
-	$phone_burger_icon_file_name_right =
-		JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconRight.jpg';
-	if ( file_exists($phone_burger_icon_file_name_right) )
+	$phone_burger_icon_file_name_right = $this->template . '/images/phoneBurgerMenuIconRight.jpg';
+	if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_right) )
 	{
 		$phone_burger_icon_file_name_right_found = TRUE;
 		$phone_burger_icon_image_tag_right =
 			'<div style="display:none;">' .
-				'<img id="phone-burger-icon-image-right" src="' . $phone_burger_icon_file_name_right . '"></div>';
+				'<img id="phone-burger-icon-image-right" src="templates/' . $phone_burger_icon_file_name_right . '"></div>';
 	}
 	$phone_burger_icon_canvas_right =
 		$phone_burger_icon_image_tag_right .

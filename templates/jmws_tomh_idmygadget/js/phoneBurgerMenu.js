@@ -34,11 +34,16 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
 	phoneBurgerMenu.leftElement = document.getElementById( 'phone-burger-icon-left' );
 	phoneBurgerMenu.rightElement = document.getElementById( 'phone-burger-icon-right' );
 
+	var phoneBurgerIconImageLeft = document.getElementById( 'phone-burger-icon-image-left' );
+	var phoneBurgerIconImageRight = document.getElementById( 'phone-burger-icon-image-right' );
+
 	if ( typeof phoneBurgerIconLeftOptions !== 'undefined' ) {     // options are set in the admin console
-		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.leftElement, phoneBurgerIconLeftOptions );
+		phoneBurgerMenu.drawPhoneBurgerMenuIcon(
+			phoneBurgerMenu.leftElement, phoneBurgerIconLeftOptions, phoneBurgerIconImageLeft );
 	}
 	if ( typeof phoneBurgerIconRightOptions !== 'undefined' ) {     // options are set in the admin console
-		phoneBurgerMenu.drawPhoneBurgerMenuIcon( phoneBurgerMenu.rightElement, phoneBurgerIconRightOptions );
+		phoneBurgerMenu.drawPhoneBurgerMenuIcon(
+			phoneBurgerMenu.rightElement, phoneBurgerIconRightOptions, phoneBurgerIconImageRight );
 	}
 };
 
@@ -48,18 +53,21 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcons = function () {
  * @param {type} phoneBurgerIconOptions
  * @returns {undefined}
  */
-phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerIconOptions ) {
+phoneBurgerMenu.drawPhoneBurgerMenuIcon = function (
+		canvasElement, phoneBurgerIconOptions, phoneBurgerIconImage ) {
 	if ( canvasElement === null ) {
 		console.log( 'phoneBurgerMenu.drawThinRoundedPhoneBurgerMenu error: passed-in canvasElement is null!' );
 		return;
 	}
 
+	alert( 'phoneBurgerIconImage: ' + phoneBurgerIconImage );
+
 	var context = canvasElement.getContext( '2d' );
 
-	if ( typeof phoneBurgerIconOptions.fileName !== 'undefined' ) {
+	if ( phoneBurgerIconImage !== null ) {
 		var width = canvasElement.width;
 		var height = canvasElement.height;
-	//	context.drawImage( phoneBurgerIconOptions.fileName, 0, 0, width, height );
+		context.drawImage( phoneBurgerIconImage, 0, 0, width, height );
 		return;
 	}
 

@@ -60,8 +60,6 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function (
 		return;
 	}
 
-	alert( 'phoneBurgerIconImage: ' + phoneBurgerIconImage );
-
 	var context = canvasElement.getContext( '2d' );
 
 	if ( phoneBurgerIconImage !== null ) {

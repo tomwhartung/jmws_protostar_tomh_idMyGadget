@@ -54,6 +54,15 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerI
 		return;
 	}
 
+	var context = canvasElement.getContext( '2d' );
+
+	if ( typeof phoneBurgerIconOptions.fileName !== 'undefined' ) {
+		var width = canvasElement.width;
+		var height = canvasElement.height;
+	//	context.drawImage( phoneBurgerIconOptions.fileName, 0, 0, width, height );
+		return;
+	}
+
 	phoneBurgerMenu.setPhoneBurgerIconDimensions( canvasElement, phoneBurgerIconOptions );
 	var leftMargin = phoneBurgerMenu.leftMargin;
 	var topMargin = phoneBurgerMenu.topMargin;
@@ -70,7 +79,6 @@ phoneBurgerMenu.drawPhoneBurgerMenuIcon = function ( canvasElement, phoneBurgerI
 	console.log( 'FINAL, barWidth: ' + barWidth );
 	console.log( 'FINAL, gapHeight: ' + gapHeight );
 
-	var context = canvasElement.getContext( '2d' );
 	context.save();
 	context.beginPath();
 	context.strokeStyle = phoneBurgerIconOptions.color;

@@ -486,10 +486,6 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		}
 	?>
 
-	<p>$phone_burger_icon_file_name_left: <?php echo $phone_burger_icon_file_name_left ?></p>
-	<p>$phone_burger_icon_file_name_left_found: <?php echo $phone_burger_icon_file_name_left_found ?></p>
-	<p>$phone_burger_icon_file_name_right: <?php echo $phone_burger_icon_file_name_right ?></p>
-	<p>$phone_burger_icon_file_name_right_found: <?php echo $phone_burger_icon_file_name_right_found ?></p>
 
 	<footer <?php echo $footerAttributes; ?> >
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>

@@ -170,6 +170,7 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 			JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
 		if ( file_exists($phone_burger_icon_file_name_left) )
 		{
+			$phone_burger_icon_file_name_left_found = TRUE;
 			$phone_burger_icon_image_tag_left =
 				'<div style="display:none;">' .
 					'<img id="phone-burger-icon-image-left" src="' . $phone_burger_icon_file_name_left . '"></div>';
@@ -202,6 +203,7 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 		JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconRight.jpg';
 	if ( file_exists($phone_burger_icon_file_name_right) )
 	{
+		$phone_burger_icon_file_name_right_found = TRUE;
 		$phone_burger_icon_image_tag_right =
 			'<div style="display:none;">' .
 				'<img id="phone-burger-icon-image-right" src="' . $phone_burger_icon_file_name_right . '"></div>';
@@ -487,7 +489,9 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 	?>
 
 	<p>$phone_burger_icon_file_name_left: <?php echo $phone_burger_icon_file_name_left ?></p>
+	<p>$phone_burger_icon_file_name_left_found: <?php echo $phone_burger_icon_file_name_left_found ?></p>
 	<p>$phone_burger_icon_file_name_right: <?php echo $phone_burger_icon_file_name_right ?></p>
+	<p>$phone_burger_icon_file_name_right_found: <?php echo $phone_burger_icon_file_name_right_found ?></p>
 
 	<footer <?php echo $footerAttributes; ?> >
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>

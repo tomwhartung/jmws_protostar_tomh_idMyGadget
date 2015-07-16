@@ -149,26 +149,34 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
 	$doc->addScript( JmwsIdMyGadget::JQUERY_MOBILE_JS_URL );
 }
+
 //
 // If we are using one of the optional "phone-burger" menus,
 //    create markup and js code for them
+// Note: Everything that uses the phone burger icon file name is part of a hack we need
+//   because using the JS API to draw the phone burger menu is currently not working on phones
+//   except when we reload the page. It would be nice to be able to remove that someday....
 //
 $phone_burger_icon_canvas_left = '';
-$phone_burger_icon_canvas_right = '';
 $phone_burger_icon_js_left = '';
-$phone_burger_icon_js_right = '';
-$phone_burger_icon_file_name = JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIcon.jpg';
-if ( ! file_exists($phone_burger_icon_file_name) )
-{
-	$phone_burger_icon_file_name = '';
-}
+$phone_burger_icon_file_name_left = '';   // part of hack for phones
+$phone_burger_icon_image_tag_left = '';
+
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 {
 	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
-
+		$phone_burger_icon_file_name_left =
+			JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
+		if ( file_exists($phone_burger_icon_file_name_left) )
+		{
+			$phone_burger_icon_image_tag_left =
+				'<div style="display:none;">' .
+					'<img id="phone-burger-icon-image-left" src="' . $phone_burger_icon_file_name_left . '"></div>';
+		}
 	}
 	$phone_burger_icon_canvas_left =
+		$phone_burger_icon_image_tag_left .
 		'<a href="#phone-burger-menu-left" data-rel="dialog">' .
 			'<canvas id="phone-burger-icon-left" ' .
 				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
@@ -180,17 +188,26 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 			'var phoneBurgerIconLeftOptions = {};' .
 			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
 			'phoneBurgerIconLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
-			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";';
-	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
-	{
-		$phone_burger_icon_js_left .=
-			'phoneBurgerIconLeftOptions.fileName = "' . $phone_burger_icon_file_name . '";';
-	}
-	$phone_burger_icon_js_left .= '</script>';
+			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
+		'</script>';
 }
+
+$phone_burger_icon_canvas_right = '';
+$phone_burger_icon_js_right = '';
+$phone_burger_icon_file_name_right = '';
+$phone_burger_icon_image_tag_right = '';
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
+	$phone_burger_icon_file_name_right =
+		JPATH_THEMES . DS . $this->template . '/images/phoneBurgerMenuIconRight.jpg';
+	if ( file_exists($phone_burger_icon_file_name_right) )
+	{
+		$phone_burger_icon_image_tag_right =
+			'<div style="display:none;">' .
+				'<img id="phone-burger-icon-image-right" src="' . $phone_burger_icon_file_name_right . '"></div>';
+	}
 	$phone_burger_icon_canvas_right =
+		$phone_burger_icon_image_tag_right .
 		'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">' .
 			'<canvas id="phone-burger-icon-right" ' .
 				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
@@ -468,6 +485,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 			$footerAttributes = 'class="footer" role="contentinfo"';
 		}
 	?>
+
+	<p>$phone_burger_icon_file_name_left: <?php echo $phone_burger_icon_file_name_left ?></p>
+	<p>$phone_burger_icon_file_name_right: <?php echo $phone_burger_icon_file_name_right ?></p>
+
 	<footer <?php echo $footerAttributes; ?> >
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>
 			<jdoc:include type="modules" name="footer" style="none" />

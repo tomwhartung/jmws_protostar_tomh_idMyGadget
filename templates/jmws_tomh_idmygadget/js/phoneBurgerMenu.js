@@ -13,19 +13,8 @@ var phoneBurgerMenu = {};
 	$(document).ready(function()
 	{
 		phoneBurgerMenu.drawPhoneBurgerMenuIcons();
-	//	setInterval( 3000, phoneBurgerMenu.alertAndDrawPhoneBurgerMenuIcons() );
 	})
 })(jQuery);
-
-//
-// Trying to fix bug causing the phone burger menu icon to not show up on phones.
-// This didn't work and may be deleted * once the issue is solved.
-//
-phoneBurgerMenu.alertAndDrawPhoneBurgerMenuIcons = function() {
-//	alert( 'Redrawing icons!' );
-	phoneBurgerMenu.drawPhoneBurgerMenuIcons();
-};
-// -------------------------
 /**
  * Driver function to draw zero, one, or both menu icons, as appropriate
  * @returns {undefined}

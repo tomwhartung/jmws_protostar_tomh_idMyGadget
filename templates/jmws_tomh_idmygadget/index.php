@@ -157,11 +157,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 //   because using the JS API to draw the phone burger menu is currently not working on phones
 //   except when we reload the page. It would be nice to be able to remove that someday....
 //
-$phone_burger_icon_canvas_left = '';
+$phone_burger_icon_html_left = '';
 $phone_burger_icon_js_left = '';
-$phone_burger_icon_file_name_left = '';   // part of hack for phones
-$phone_burger_icon_image_tag_left = '';
-
+$phone_burger_icon_file_name_left = '';      // used for hack needed for phones
+$phone_burger_icon_left_use_image = FALSE;
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 {
 	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
@@ -169,21 +168,28 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 		$phone_burger_icon_file_name_left = $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
 		if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_left) )
 		{
-			$phone_burger_icon_file_name_left_found = TRUE;
-			$phone_burger_icon_image_tag_left =
-				'<div style="display:none;">' .
-					'<img id="phone-burger-icon-image-left" src="templates/' . $phone_burger_icon_file_name_left . '"></div>';
+			$phone_burger_icon_left_use_image = TRUE;
 		}
 	}
-	$phone_burger_icon_canvas_left =
-		$phone_burger_icon_image_tag_left .
-		'<a href="#phone-burger-menu-left" data-rel="dialog">' .
+	$phone_burger_icon_html_left = '<a href="#phone-burger-menu-left" data-rel="dialog">';
+	if ( $phone_burger_icon_left_use_image )
+	{
+		$phone_burger_icon_html_left .=
+			'<img id="phone-burger-icon-image-left" ' .
+				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
+				'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
+				'src="templates/' . $phone_burger_icon_file_name_left . '" />';
+	}
+	else
+	{
+		$phone_burger_icon_html_left .=
 			'<canvas id="phone-burger-icon-left" ' .
 				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 				'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>' .
-		'</a>';
-	$phone_burger_icon_js_left .=
+				'&nbsp;Menu&nbsp;' . '</canvas>';
+	}
+	$phone_burger_icon_html_left .= '</a>';
+	$phone_burger_icon_js_left =
 		'<script>' .
 			'var phoneBurgerIconLeftOptions = {};' .
 			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
@@ -192,21 +198,24 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 		'</script>';
 }
 
-$phone_burger_icon_canvas_right = '';
+$phone_burger_icon_html_right = '';
 $phone_burger_icon_js_right = '';
 $phone_burger_icon_file_name_right = '';
 $phone_burger_icon_image_tag_right = '';
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
-	$phone_burger_icon_file_name_right = $this->template . '/images/phoneBurgerMenuIconRight.jpg';
-	if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_right) )
+	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
-		$phone_burger_icon_file_name_right_found = TRUE;
-		$phone_burger_icon_image_tag_right =
-			'<div style="display:none;">' .
-				'<img id="phone-burger-icon-image-right" src="templates/' . $phone_burger_icon_file_name_right . '"></div>';
+		$phone_burger_icon_file_name_right = $this->template . '/images/phoneBurgerMenuIconRight.jpg';
+		if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_right) )
+		{
+			$phone_burger_icon_right_use_image = TRUE;
+			$phone_burger_icon_image_tag_right =
+				'<div style="display:none;">' .
+					'<img id="phone-burger-icon-image-right" src="templates/' . $phone_burger_icon_file_name_right . '"></div>';
+		}
 	}
-	$phone_burger_icon_canvas_right =
+	$phone_burger_icon_html_right =
 		$phone_burger_icon_image_tag_right .
 		'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">' .
 			'<canvas id="phone-burger-icon-right" ' .
@@ -233,25 +242,25 @@ if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE 
 	if ( $this->params->get('logoFilePhone') )
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<img src="' . JUri::root() . $this->params->get('logoFilePhone') .'" ' .
 				'alt="' . $sitename . '" />' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ( $this->params->get('showSiteNamePhone') )
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');
@@ -261,25 +270,25 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 	if ($this->params->get('logoFileTablet'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<img src="' . JUri::root() . $this->params->get('logoFileTablet') . '" ' .
 				'alt="' . $sitename . '" />' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<span class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitleTablet')) . '</span>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ($this->params->get('showSiteNameTablet'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
 	$fluidContainer = $params->get('fluidContainerTablet');
@@ -289,25 +298,25 @@ else   // default to/assume we are on a desktop browser
 	if ($this->params->get('logoFileDesktop'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
 				'alt="' . $sitename . '" />' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<span class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitleDesktop')) . '</span>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	if ($this->params->get('showSiteNameDesktop'))
 	{
 		$logo =
-			$phone_burger_icon_canvas_left . $phone_burger_icon_js_left .
+			$phone_burger_icon_html_left . $phone_burger_icon_js_left .
 			'<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>' .
-			$phone_burger_icon_canvas_right . $phone_burger_icon_js_right;
+			$phone_burger_icon_html_right . $phone_burger_icon_js_right;
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 	$fluidContainer = $params->get('fluidContainerDesktop');

@@ -200,8 +200,8 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 
 $phone_burger_icon_html_right = '';
 $phone_burger_icon_js_right = '';
-$phone_burger_icon_file_name_right = '';
-$phone_burger_icon_image_tag_right = '';
+$phone_burger_icon_file_name_right = '';      // used for hack needed for phones
+$phone_burger_icon_right_use_image = FALSE;
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
 	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
@@ -210,20 +210,28 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 		if ( file_exists(JPATH_THEMES . DS . $phone_burger_icon_file_name_right) )
 		{
 			$phone_burger_icon_right_use_image = TRUE;
-			$phone_burger_icon_image_tag_right =
-				'<div style="display:none;">' .
-					'<img id="phone-burger-icon-image-right" src="templates/' . $phone_burger_icon_file_name_right . '"></div>';
 		}
 	}
 	$phone_burger_icon_html_right =
-		$phone_burger_icon_image_tag_right .
-		'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">' .
+		'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">';
+	if ( $phone_burger_icon_right_use_image )
+	{
+		$phone_burger_icon_html_right .=
+			'<img id="phone-burger-icon-image-right"' .
+				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+				'height="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+				' src="templates/' . $phone_burger_icon_file_name_right . '" />';
+	}
+	else
+	{
+		$phone_burger_icon_html_right .=
 			'<canvas id="phone-burger-icon-right" ' .
 				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
 				'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>' .
-		'</a>';
-	$phone_burger_icon_js_right .=
+				'&nbsp;Menu&nbsp;' . '</canvas>';
+	}
+	$phone_burger_icon_html_right .= '</a>';
+	$phone_burger_icon_js_right =
 		'<script>' .
 			'var phoneBurgerIconRightOptions = {};' .
 			'phoneBurgerIconRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .

@@ -90,7 +90,7 @@ $jmwsIdMyGadget->usingJQueryMobile = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 
-if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	$jmwsIdMyGadget->usingJQueryMobile = TRUE;    // always use it on phones
 	if ( $this->countModules('phone-burger-menu-left') )
@@ -164,7 +164,7 @@ $phoneBurgerIconLeft->fileName = '';      // used for hack needed for phones
 $phoneBurgerIconLeft->useImage = FALSE;
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 {
-	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+	if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
 		$phoneBurgerIconLeft->fileName = $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
 		if ( file_exists(JPATH_THEMES . DS . $phoneBurgerIconLeft->fileName) )
@@ -193,9 +193,9 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 	$phoneBurgerIconLeft->js =
 		'<script>' .
 			'var phoneBurgerIconLeftOptions = {};' .
-			'phoneBurgerIconLeftOptions.color = "' .$this->params->get('phoneBurgerMenuLeftColor') . '";' .
-			'phoneBurgerIconLeftOptions.lineCap = "' .$this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
-			'phoneBurgerIconLeftOptions.lineSize = "' .$this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
+			'phoneBurgerIconLeftOptions.color = "' . $this->params->get('phoneBurgerMenuLeftColor') . '";' .
+			'phoneBurgerIconLeftOptions.lineCap = "' . $this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
+			'phoneBurgerIconLeftOptions.lineSize = "' . $this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
 		'</script>';
 }
 
@@ -206,7 +206,7 @@ $phoneBurgerIconRight->fileName = '';      // used for hack needed for phones
 $phoneBurgerIconRight->useImage = FALSE;
 if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 {
-	if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+	if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 	{
 		$phoneBurgerIconRight->fileName = $this->template . '/images/phoneBurgerMenuIconRight.jpg';
 		if ( file_exists(JPATH_THEMES . DS . $phoneBurgerIconRight->fileName) )
@@ -236,9 +236,9 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 	$phoneBurgerIconRight->js =
 		'<script>' .
 			'var phoneBurgerIconRightOptions = {};' .
-			'phoneBurgerIconRightOptions.color = "' .$this->params->get('phoneBurgerMenuRightColor') . '";' .
-			'phoneBurgerIconRightOptions.lineCap = "' .$this->params->get('phoneBurgerMenuRightLineCap') . '";' .
-			'phoneBurgerIconRightOptions.lineSize = "' .$this->params->get('phoneBurgerMenuRightLineSize') . '";' .
+			'phoneBurgerIconRightOptions.color = "' . $this->params->get('phoneBurgerMenuRightColor') . '";' .
+			'phoneBurgerIconRightOptions.lineCap = "' . $this->params->get('phoneBurgerMenuRightLineCap') . '";' .
+			'phoneBurgerIconRightOptions.lineSize = "' . $this->params->get('phoneBurgerMenuRightLineSize') . '";' .
 		'</script>';
 }
 //
@@ -247,7 +247,7 @@ if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
 //   Note that the logic differs from that used in protostar just a teensy little bit
 //
 $logo = '';
-if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_PHONE )
+if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	if ( $this->params->get('logoFilePhone') )
 	{

@@ -333,7 +333,6 @@ else   // default to/assume we are on a desktop browser
 }
 //
 // Set up the data-role attributes to be used specifically with jQuery Mobile
-// Initialize markup for the optional "phone-burger" menus, depending on which ones are being used,
 //
 $jqm_data_role_page = '';
 $jqm_data_role_header = '';

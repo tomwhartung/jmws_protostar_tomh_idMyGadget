@@ -68,6 +68,7 @@ else
 global $jmwsIdMyGadget;
 $jmwsIdMyGadget = null;
 require_once 'jmws_idMyGadget_for_joomla/JmwsIdMyGadgetJoomla.php';
+require_once 'jmws_idMyGadget_for_joomla/PhoneBurgerMenuIcon.php';
 $gadgetDetector = $this->params->get('gadgetDetector');
 
 if ( $gadgetDetector == 'mobile_detect' )
@@ -157,90 +158,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 //   because using the JS API to draw the phone burger menu is currently not working on phones
 //   except when we reload the page. It would be nice to be able to remove that someday....
 //
-$phoneBurgerIconLeft = new stdClass();
-$phoneBurgerIconLeft->html = '';
-$phoneBurgerIconLeft->js = '';
-$phoneBurgerIconLeft->fileName = '';      // used for hack needed for phones
-$phoneBurgerIconLeft->useImage = FALSE;
-if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
-{
-	if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
-	{
-		$phoneBurgerIconLeft->fileName = $this->template . '/images/phoneBurgerMenuIconLeft.jpg';
-		if ( file_exists(JPATH_THEMES . DS . $phoneBurgerIconLeft->fileName) )
-		{
-			$phoneBurgerIconLeft->useImage = TRUE;
-		}
-	}
-	$phoneBurgerIconLeft->html = '<a href="#phone-burger-menu-left" data-rel="dialog">';
-	if ( $phoneBurgerIconLeft->useImage )
-	{
-		$phoneBurgerIconLeft->html .=
-			'<img id="phone-burger-icon-image-left" ' .
-				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
-				'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
-				'src="templates/' . $phoneBurgerIconLeft->fileName . '" />';
-	}
-	else
-	{
-		$phoneBurgerIconLeft->html .=
-			'<canvas id="phone-burger-icon-left" ' .
-				'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
-				'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>';
-	}
-	$phoneBurgerIconLeft->html .= '</a>';
-	$phoneBurgerIconLeft->js =
-		'<script>' .
-			'var phoneBurgerIconLeftOptions = {};' .
-			'phoneBurgerIconLeftOptions.color = "' . $this->params->get('phoneBurgerMenuLeftColor') . '";' .
-			'phoneBurgerIconLeftOptions.lineCap = "' . $this->params->get('phoneBurgerMenuLeftLineCap') . '";' .
-			'phoneBurgerIconLeftOptions.lineSize = "' . $this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
-		'</script>';
-}
-
-$phoneBurgerIconRight = new stdClass();
-$phoneBurgerIconRight->html = '';
-$phoneBurgerIconRight->js = '';
-$phoneBurgerIconRight->fileName = '';      // used for hack needed for phones
-$phoneBurgerIconRight->useImage = FALSE;
-if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
-{
-	if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
-	{
-		$phoneBurgerIconRight->fileName = $this->template . '/images/phoneBurgerMenuIconRight.jpg';
-		if ( file_exists(JPATH_THEMES . DS . $phoneBurgerIconRight->fileName) )
-		{
-			$phoneBurgerIconRight->useImage = TRUE;
-		}
-	}
-	$phoneBurgerIconRight->html =
-		'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">';
-	if ( $phoneBurgerIconRight->useImage )
-	{
-		$phoneBurgerIconRight->html .=
-			'<img id="phone-burger-icon-image-right"' .
-				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
-				'height="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
-				' src="templates/' . $phoneBurgerIconRight->fileName . '" />';
-	}
-	else
-	{
-		$phoneBurgerIconRight->html .=
-			'<canvas id="phone-burger-icon-right" ' .
-				'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
-				'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
-				'&nbsp;Menu&nbsp;' . '</canvas>';
-	}
-	$phoneBurgerIconRight->html .= '</a>';
-	$phoneBurgerIconRight->js =
-		'<script>' .
-			'var phoneBurgerIconRightOptions = {};' .
-			'phoneBurgerIconRightOptions.color = "' . $this->params->get('phoneBurgerMenuRightColor') . '";' .
-			'phoneBurgerIconRightOptions.lineCap = "' . $this->params->get('phoneBurgerMenuRightLineCap') . '";' .
-			'phoneBurgerIconRightOptions.lineSize = "' . $this->params->get('phoneBurgerMenuRightLineSize') . '";' .
-		'</script>';
-}
+$phoneBurgerIconLeft = new PhoneBurgerMenuIcon(
+		PhoneBurgerMenuIcon::LEFT, $this->template, $this->params, $jmwsIdMyGadget );
+$phoneBurgerIconRight = new PhoneBurgerMenuIcon(
+		PhoneBurgerMenuIcon::RIGHT, $this->template, $this->params, $jmwsIdMyGadget );
 //
 // This is where we set variables equal to bits of device-specific markup
 // For example: the logo file or site title param, etc.
@@ -546,7 +467,8 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 	?>
 	<?php
 		if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ||
-		     $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight ) : ?>
+		     $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight ) :
+		?>
 			<jdoc:include type="modules" name="phone-burger-menu-left" style="none" />
 			<jdoc:include type="modules" name="phone-burger-menu-right" style="none" />
 	<?php endif;?>

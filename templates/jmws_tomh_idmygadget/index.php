@@ -156,9 +156,9 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 //    create markup and js code for them
 //
 $phoneBurgerIconLeft = new PhoneBurgerMenuIcon(
-		PhoneBurgerMenuIcon::LEFT, $this->template, $this->params, $jmwsIdMyGadget );
+		PhoneBurgerMenuIcon::LEFT, $this->params, $jmwsIdMyGadget, $this->template );
 $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
-		PhoneBurgerMenuIcon::RIGHT, $this->template, $this->params, $jmwsIdMyGadget );
+		PhoneBurgerMenuIcon::RIGHT, $this->params, $jmwsIdMyGadget, $this->template );
 //
 // This is where we set variables equal to bits of device-specific markup
 // For example: the logo file or site title param, etc.

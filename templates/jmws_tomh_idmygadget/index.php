@@ -65,11 +65,13 @@ else
 //
 // Initialize Device Detection
 //
-global $jmwsIdMyGadget;
-$jmwsIdMyGadget = null;
+set_include_path( get_include_path() . PATH_SEPARATOR .
+	JPATH_LIBRARIES . DIRECTORY_SEPARATOR . 'vendor' );
 require_once 'jmws_idMyGadget_for_joomla/JmwsIdMyGadgetJoomla.php';
 require_once 'jmws_idMyGadget_for_joomla/PhoneBurgerMenuIcon.php';
 $gadgetDetector = $this->params->get('gadgetDetector');
+global $jmwsIdMyGadget;
+$jmwsIdMyGadget = null;
 
 if ( $gadgetDetector == 'mobile_detect' )
 {
@@ -422,6 +424,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		}
 	?>
 
+	<p><?php echo ''; ?></p>
 
 	<footer <?php echo $footerAttributes; ?> >
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>

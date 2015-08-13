@@ -166,17 +166,15 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 // For example: the logo file or site title param, etc.
 //   Note that the logic differs from that used in protostar just a teensy little bit
 //
-$img_tag = '';
+$logo_image = '';
 $logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 {
 	if ( $this->params->get('logoFilePhone') )
 	{
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<img src="' . JUri::root() . $this->params->get('logoFilePhone') .'" ' .
-				'alt="' . $sitename . '" />' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$logo_image = '<div class="site-logo">' .
+			'<img src="' . JUri::root() . $this->params->get('logoFilePhone') . '" ' .
+				'alt="' . $sitename . '" /></div>';
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
@@ -200,11 +198,9 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 {
 	if ($this->params->get('logoFileTablet'))
 	{
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+		$logo_image = '<div class="site-logo">' .
 			'<img src="' . JUri::root() . $this->params->get('logoFileTablet') . '" ' .
-				'alt="' . $sitename . '" />' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+				'alt="' . $sitename . '" /></div>';
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
@@ -228,15 +224,14 @@ else   // default to/assume we are on a desktop browser
 {
 	if ($this->params->get('logoFileDesktop'))
 	{
-		$img_tag =
+		$logo_image = '<div class="site-logo">' .
 			'<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
-				'class="site-logo" alt="' . $sitename . '" />';
+				'alt="' . $sitename . '" /></div>';
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			$img_tag .
 			'<span class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitleDesktop')) . '</span>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
@@ -358,6 +353,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
+					<?php echo $logo_image ?>
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
 						<?php if ($siteDescription) : ?>

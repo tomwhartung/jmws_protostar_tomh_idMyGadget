@@ -3,7 +3,13 @@
  * in the protostar theme.
  *
  */
-img.site-logo {
+// #phone-burger-menu-left (
+//	clear: both;
+// }
+// #phone-burger-menu-right (
+//	clear: both;
+// }
+div.site-logo {
 	display: block;
 }
 h2.site-title {

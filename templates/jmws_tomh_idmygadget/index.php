@@ -356,22 +356,20 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					<div>
 						<jdoc:include type="modules" name="phone-header-nav" style="none" />
 					</div>
-					<div class="header-inner clearfix">
-						<?php echo $logo; ?>
-					</div>
-				<?php else : ?>
+				<?php endif; ?>
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
 						<?php if ($siteDescription) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($siteDescription) . '</div>'; ?>
+							<div class="site-description">
+								<?php echo htmlspecialchars($siteDescription); ?>
+							</div>
 						<?php endif; ?>
 					</a>
 					<div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
 				</div>
-				<?php endif; ?>
 			</header>
 			<?php if ($this->countModules('position-1')) : ?>
 				<nav class="navigation" role="navigation">

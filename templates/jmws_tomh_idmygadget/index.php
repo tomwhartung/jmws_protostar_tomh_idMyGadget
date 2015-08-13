@@ -172,9 +172,9 @@ if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE
 {
 	if ( $this->params->get('logoFilePhone') )
 	{
-		$logo_image = '<div class="site-logo">' .
+		$logo_image =
 			'<img src="' . JUri::root() . $this->params->get('logoFilePhone') . '" ' .
-				'alt="' . $sitename . '" /></div>';
+				'alt="' . $sitename . '" />';
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
@@ -198,9 +198,9 @@ else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_T
 {
 	if ($this->params->get('logoFileTablet'))
 	{
-		$logo_image = '<div class="site-logo">' .
+		$logo_image =
 			'<img src="' . JUri::root() . $this->params->get('logoFileTablet') . '" ' .
-				'alt="' . $sitename . '" /></div>';
+				'alt="' . $sitename . '" />';
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
@@ -224,9 +224,9 @@ else   // default to/assume we are on a desktop browser
 {
 	if ($this->params->get('logoFileDesktop'))
 	{
-		$logo_image = '<div class="site-logo">' .
+		$logo_image =
 			'<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
-				'alt="' . $sitename . '" /></div>';
+				'alt="' . $sitename . '" />';
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
@@ -353,15 +353,17 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
-					<?php echo $logo_image ?>
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+					<div class="site-logo">
+						<a href="<?php echo $this->baseurl; ?>/">
+							<?php echo $logo_image ?>
+						</a>
+					</div>
 						<?php echo $logo; ?>
-						<?php if ($siteDescription) : ?>
-							<div class="site-description">
-								<?php echo htmlspecialchars($siteDescription); ?>
-							</div>
-						<?php endif; ?>
-					</a>
+					<?php if ($siteDescription) : ?>
+						<div class="site-description">
+							<?php echo htmlspecialchars($siteDescription); ?>
+						</div>
+					<?php endif; ?>
 					<div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>

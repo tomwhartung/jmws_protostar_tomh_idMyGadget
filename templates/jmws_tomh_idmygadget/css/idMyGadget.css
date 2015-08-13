@@ -3,6 +3,9 @@
  * in the protostar theme.
  *
  */
+img.site-logo {
+	display: block;
+}
 h2.site-title {
 	display: inline;
 }

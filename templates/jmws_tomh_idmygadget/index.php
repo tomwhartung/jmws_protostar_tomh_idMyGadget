@@ -137,16 +137,16 @@ else
 }
 //
 // If it's been decided we are using jQuery mobile,
-//    add in the appropriate idMyGadget and jQuery mobile js and css code
+//    add in the appropriate jQuery mobile js and css code
 // Note that it's best to add in our customizations before adding in jQuery mobile:
 //    http://demos.jquerymobile.com/1.0/docs/api/globalconfig.html
 //
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
 if ( $jmwsIdMyGadget->usingJQueryMobile )
 {
 	if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ||
 	     $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight   )
 	{
-		$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
 		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/phoneBurgerMenu.js');
 	}
 	$doc->addStyleSheet( JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
@@ -166,6 +166,7 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 // For example: the logo file or site title param, etc.
 //   Note that the logic differs from that used in protostar just a teensy little bit
 //
+$img_tag = '';
 $logo = '';
 if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
 {
@@ -227,16 +228,15 @@ else   // default to/assume we are on a desktop browser
 {
 	if ($this->params->get('logoFileDesktop'))
 	{
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+		$img_tag =
 			'<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
-				'alt="' . $sitename . '" />' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+				'class="site-logo" alt="' . $sitename . '" />';
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+			$img_tag .
 			'<span class="site-title" title="' . $sitename . '">' .
 				htmlspecialchars($this->params->get('siteTitleDesktop')) . '</span>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;

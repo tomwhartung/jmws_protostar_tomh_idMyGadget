@@ -16,10 +16,10 @@ Fret not, however!  You can accomplish much of this by running one or more "git 
 
 For information on how to install this required code, see the jmws_idMyGadget_for_joomla README.md file.
 
-### Optional but Recommended: jmws_mod_menu_idMyGadget
+### Highly Recommended: jmws_mod_menu_idMyGadget
 For best results, install the jmws_mod_menu_idMyGadget module.
 
-I believe this is required for the hamburger (aka "PhoneBurger") menu to work, but it has been awhile since I set all that up, and it's pretty complicated, so just install it to be safe.
+This is required for the hamburger (aka "PhoneBurger") menu to work, and your joomla site will probably whitescreen if you try to create a Hamburger Menu and this module is not present.
 
 ## Differences From jmws_protostar_idMyGadget 
 Unless noted here, the documentation for jmws_protostar_idMyGadget applies equally here.
@@ -29,6 +29,8 @@ Unless noted here, the documentation for jmws_protostar_idMyGadget applies equal
 * The options for this template reflect this difference 
 
 * Because I added site description parameters for phones, tablets, and desktops, I changed the case slightly, from sitedescription to siteDescriptionPhone, etc.
+
+* Cause the template to display a custom image instead of using the HTML5 canvas element to draw the menu icon by putting the files in the templates/jmws_tomh_idmygadget/images/idMyGadget/ directory (rather than the templates/jmws_protostar_idmygadget/images/idMyGadget/ directory as described in that README.md).
 
 ## Status
 The initial version is pretty much complete, with the following exceptions:

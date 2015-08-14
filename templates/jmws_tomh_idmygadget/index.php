@@ -393,12 +393,30 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					<jdoc:include type="modules" name="position-2" style="none" />
 					<!-- End Content -->
 				</main>
-				<?php if ($this->countModules('position-7')) : ?>
-					<div id="aside" class="span3">
-						<!-- Begin Right Sidebar -->
-						<jdoc:include type="modules" name="position-7" style="well" />
-						<!-- End Right Sidebar -->
-					</div>
+				<?php if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+					<?php if ($this->countModules('position-7-phone')) : ?>
+						<div id="aside" class="span3">
+							<!-- Begin Right Sidebar -->
+							<jdoc:include type="modules" name="position-7-phone" style="well" />
+							<!-- End Right Sidebar -->
+						</div>
+					<?php endif; ?>
+				<?php elseif ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_TABLET ) : ?>
+					<?php if ($this->countModules('position-7-tablet')) : ?>
+						<div id="aside" class="span3">
+							<!-- Begin Right Sidebar -->
+							<jdoc:include type="modules" name="position-7-tablet" style="well" />
+							<!-- End Right Sidebar -->
+						</div>
+					<?php endif; ?>
+				<?php else : ?>
+					<?php if ($this->countModules('position-7')) : ?>
+						<div id="aside" class="span3">
+							<!-- Begin Right Sidebar -->
+							<jdoc:include type="modules" name="position-7" style="well" />
+							<!-- End Right Sidebar -->
+						</div>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->

@@ -1,6 +1,6 @@
 /**
- * @package     jmws_tomh_idMyGadget
- * @subpackage  Templates.jmws_tomh_idMyGadget; Modules.jmws_mod_menu_idMyGadget
+ * @package     jmws_protostar_tomh_idMyGadget
+ * @subpackage  Templates.jmws_protostar_tomh_idMyGadget; Modules.jmws_mod_menu_idMyGadget
  * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @since       3.2

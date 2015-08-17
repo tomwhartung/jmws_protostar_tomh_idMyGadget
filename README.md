@@ -1,4 +1,4 @@
-# jmws_tomh_idMyGadget
+# jmws_protostar_tomh_idMyGadget
 This repo integrates the default joomla template protostar with idMyGadget.  It is very similar to jmws_protostar_idMyGadget, but contains a very few additional changes that I just "felt" like making. 
 
 ## Overview
@@ -30,7 +30,7 @@ Unless noted here, the documentation for jmws_protostar_idMyGadget applies equal
 
 * Because I added site description parameters for phones, tablets, and desktops, I changed the case slightly, from sitedescription to siteDescriptionPhone, etc.
 
-* Cause the template to display a custom image instead of using the HTML5 canvas element to draw the menu icon by putting the files in the templates/jmws_tomh_idmygadget/images/idMyGadget/ directory (rather than the templates/jmws_protostar_idmygadget/images/idMyGadget/ directory as described in that README.md).
+* Cause the template to display a custom image instead of using the HTML5 canvas element to draw the menu icon by putting the files in the templates/jmws_protostar_tomh_idMyGadget/images/idMyGadget/ directory (rather than the templates/jmws_protostar_idmygadget/images/idMyGadget/ directory as described in that README.md).
 
 ## Status
 The initial version is pretty much complete, with the following exceptions:

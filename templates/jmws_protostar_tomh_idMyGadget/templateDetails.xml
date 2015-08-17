@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site">
-	<name>jmws_tomh_idmygadget</name>
+	<name>jmws_protostar_tomh_idMyGadget</name>
 	<version>1.0</version>
 	<creationDate>6/20/2015</creationDate>
 	<author>Kyle Ledbetter, Tom Hartung</author>
@@ -52,8 +52,8 @@
 		<position>footer</position>
 	</positions>
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.tpl_jmws_tomh_idmygadget.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_jmws_tomh_idmygadget.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_jmws_protostar_tomh_idMyGadget.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_jmws_protostar_tomh_idMyGadget.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">

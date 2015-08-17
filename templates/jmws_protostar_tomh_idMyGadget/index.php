@@ -93,7 +93,7 @@ $jmwsIdMyGadget->usingJQueryMobile = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 
-if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
+if ( $jmwsIdMyGadget->isPhone() )
 {
 	$jmwsIdMyGadget->usingJQueryMobile = TRUE;    // always use it on phones
 	if ( $this->countModules('phone-burger-menu-left') )
@@ -105,7 +105,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE
 		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}
 }
-else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
+else if ( $jmwsIdMyGadget->isTablet() )
 {
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnTablet') )
@@ -168,7 +168,7 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 //
 $logo_image = '';
 $logo = '';
-if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
+if ( $jmwsIdMyGadget->isPhone() )
 {
 	if ( $this->params->get('logoFilePhone') )
 	{
@@ -194,7 +194,7 @@ if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');
 }
-else if ( $jmwsIdMyGadget->getGadgetString() === JmwsIdMyGadget::GADGET_STRING_TABLET )
+else if ( $jmwsIdMyGadget->isTablet() )
 {
 	if ($this->params->get('logoFileTablet'))
 	{
@@ -393,7 +393,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					<jdoc:include type="modules" name="position-2" style="none" />
 					<!-- End Content -->
 				</main>
-				<?php if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE ) : ?>
+				<?php if ( $jmwsIdMyGadget->isPhone() ) : ?>
 					<?php if ($this->countModules('position-7-phone')) : ?>
 						<div id="aside" class="span3">
 							<!-- Begin Right Sidebar -->
@@ -401,7 +401,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 							<!-- End Right Sidebar -->
 						</div>
 					<?php endif; ?>
-				<?php elseif ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_TABLET ) : ?>
+				<?php elseif ( $jmwsIdMyGadget->isTablet() ) : ?>
 					<?php if ($this->countModules('position-7-tablet')) : ?>
 						<div id="aside" class="span3">
 							<!-- Begin Right Sidebar -->

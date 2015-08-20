@@ -78,7 +78,22 @@
 					label="TPL_IDMYGADGET_SITETITLE_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
 					filter="string" />
-				<field name="siteDescriptionPhone"  type="text" default=""
+
+				<field
+					name="siteTitleHtmlPhone"
+					label="TPL_IDMYGADGET_SITETITLE_HTML_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_HTML_PHONE_DESC"
+					type="list">
+					<option value="div">&lt;div class="site-title-phone"&gt;</option>
+					<option value="h1">&lt;h1 class="site-title-phone"&gt;</option>
+					<option value="h2">&lt;h2 class="site-title-phone"&gt;</option>
+					<option value="h3">&lt;h3 class="site-title-phone"&gt;</option>
+					<option value="h4">&lt;h4 class="site-title-phone"&gt;</option>
+					<option value="h5">&lt;h5 class="site-title-phone"&gt;</option>
+					<option value="h6">&lt;h6 class="site-title-phone"&gt;</option>
+				</field>
+
+					<field name="siteDescriptionPhone"  type="text" default=""
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_DESC"
 					filter="string" />

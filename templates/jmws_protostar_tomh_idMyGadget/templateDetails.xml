@@ -80,8 +80,8 @@
 					filter="string" />
 				<field
 					name="siteTitleHtmlPhone"
-					label="TPL_IDMYGADGET_SITETITLE_HTML_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITETITLE_HTML_PHONE_DESC"
+					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-title-phone"&gt;</option>
 					<option value="h1">&lt;h1 class="site-title-phone"&gt;</option>
@@ -97,8 +97,8 @@
 					filter="string" />
 				<field
 					name="siteDescriptionHtmlPhone"
-					label="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_PHONE_DESC"
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-description-phone"&gt;</option>
 					<option value="h1">&lt;h1 class="site-description-phone"&gt;</option>
@@ -119,8 +119,8 @@
 				</field>
 				<field
 					name="siteNameHtmlPhone"
-					label="TPL_IDMYGADGET_SITE_NAME_HTML_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITE_NAME_HTML_PHONE_DESC"
+					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-name-phone"&gt;</option>
 					<option value="h1">&lt;h1 class="site-name-phone"&gt;</option>
@@ -152,8 +152,8 @@
 
 				<field
 					name="siteTitleHtmlTablet"
-					label="TPL_IDMYGADGET_SITETITLE_HTML_TABLET_LABEL"
-					description="TPL_IDMYGADGET_SITETITLE_HTML_TABLET_DESC"
+					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-title-tablet"&gt;</option>
 					<option value="h1">&lt;h1 class="site-title-tablet"&gt;</option>
@@ -171,8 +171,8 @@
 
 				<field
 					name="siteDescriptionHtmlTablet"
-					label="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_TABLET_LABEL"
-					description="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_TABLET_DESC"
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-description-tablet"&gt;</option>
 					<option value="h1">&lt;h1 class="site-description-tablet"&gt;</option>
@@ -195,8 +195,8 @@
 
 				<field
 					name="siteNameHtmlTablet"
-					label="TPL_IDMYGADGET_SITE_NAME_HTML_TABLET_LABEL"
-					description="TPL_IDMYGADGET_SITE_NAME_HTML_TABLET_DESC"
+					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-name-tablet"&gt;</option>
 					<option value="h1">&lt;h1 class="site-name-tablet"&gt;</option>
@@ -229,8 +229,8 @@
 
 				<field
 					name="siteTitleHtmlDesktop"
-					label="TPL_IDMYGADGET_SITETITLE_HTML_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_SITETITLE_HTML_DESKTOP_DESC"
+					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-title-desktop"&gt;</option>
 					<option value="h1">&lt;h1 class="site-title-desktop"&gt;</option>
@@ -248,8 +248,8 @@
 
 				<field
 					name="siteDescriptionHtmlDesktop"
-					label="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_SITEDESCRIPTION_HTML_DESKTOP_DESC"
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-description-desktop"&gt;</option>
 					<option value="h1">&lt;h1 class="site-description-desktop"&gt;</option>
@@ -272,8 +272,8 @@
 
 				<field
 					name="siteNameHtmlDesktop"
-					label="TPL_IDMYGADGET_SITE_NAME_HTML_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_SITE_NAME_HTML_DESKTOP_DESC"
+					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_DESC"
 					type="list">
 					<option value="div">&lt;div class="site-name-desktop"&gt;</option>
 					<option value="h1">&lt;h1 class="site-name-desktop"&gt;</option>

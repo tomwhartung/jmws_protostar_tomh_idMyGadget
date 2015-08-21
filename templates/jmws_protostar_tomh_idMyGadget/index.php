@@ -168,6 +168,9 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 //
 $logo_image = '';
 $logo = '';
+$siteDescription = '';
+$siteDescriptionElement = '';
+$siteDescriptionHtml = '';
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	if ( $this->params->get('logoFilePhone') )
@@ -192,6 +195,7 @@ if ( $jmwsIdMyGadget->isPhone() )
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
+	$siteDescriptionElement = $this->params->get('siteDescriptionElementPhone');
 	$fluidContainer = $params->get('fluidContainerPhone');
 }
 else if ( $jmwsIdMyGadget->isTablet() )
@@ -218,6 +222,7 @@ else if ( $jmwsIdMyGadget->isTablet() )
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
+	$siteDescriptionElement = $this->params->get('siteDescriptionElementTablet');
 	$fluidContainer = $params->get('fluidContainerTablet');
 }
 else   // default to/assume we are on a desktop browser
@@ -244,7 +249,15 @@ else   // default to/assume we are on a desktop browser
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
+	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
 	$fluidContainer = $params->get('fluidContainerDesktop');
+}
+if ( $siteDescription )
+{
+	$siteDescriptionHtml =
+		'<' . $siteDescriptionElement . ' class="site-description">' .
+			htmlspecialchars($siteDescription) .
+			'</' . $siteDescriptionElement .'>';
 }
 //
 // Set up the data-role attributes to be used specifically with jQuery Mobile
@@ -360,9 +373,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					</div>
 						<?php echo $logo; ?>
 					<?php if ($siteDescription) : ?>
-						<div class="site-description">
-							<?php echo htmlspecialchars($siteDescription); ?>
-						</div>
+						<?php echo $siteDescriptionHtml; ?>
 					<?php endif; ?>
 					<div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
@@ -438,7 +449,21 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		}
 	?>
 
-	<p><?php echo ''; ?></p>
+	<p></p>
+	<p>$this->params->get('siteTitleElementPhone'): <?php echo $this->params->get('siteTitleElementPhone') ?></p>
+	<p>$this->params->get('siteTitleElementTablet'): <?php echo $this->params->get('siteTitleElementTablet') ?></p>
+	<p>$this->params->get('siteTitleElementDesktop'): <?php echo $this->params->get('siteTitleElementDesktop') ?></p>
+	<p>$siteTitleElement: <?php echo $siteTitleElement; ?></p>
+	<p></p>
+	<p>$this->params->get('siteNameElementPhone'): <?php echo $this->params->get('siteNameElementPhone') ?></p>
+	<p>$this->params->get('siteNameElementTablet'): <?php echo $this->params->get('siteNameElementTablet') ?></p>
+	<p>$this->params->get('siteNameElementDesktop'): <?php echo $this->params->get('siteNameElementDesktop') ?></p>
+	<p>$siteNameElement: <?php echo $siteNameElement; ?></p>
+	<p></p>
+	<p>$this->params->get('siteDescriptionElementPhone'): <?php echo $this->params->get('siteDescriptionElementPhone') ?></p>
+	<p>$this->params->get('siteDescriptionElementTablet'): <?php echo $this->params->get('siteDescriptionElementTablet') ?></p>
+	<p>$this->params->get('siteDescriptionElementDesktop'): <?php echo $this->params->get('siteDescriptionElementDesktop') ?></p>
+	<p>$siteDescriptionElement: <?php echo $siteDescriptionElement; ?></p>
 
 	<footer <?php echo $footerAttributes; ?> >
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>

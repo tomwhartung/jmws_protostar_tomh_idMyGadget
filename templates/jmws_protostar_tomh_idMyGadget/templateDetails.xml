@@ -79,34 +79,34 @@
 					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
 					filter="string" />
 				<field
-					name="siteTitleHtmlPhone"
+					name="siteTitleElementPhone"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-title-phone"&gt;</option>
-					<option value="h1">&lt;h1 class="site-title-phone"&gt;</option>
-					<option value="h2">&lt;h2 class="site-title-phone"&gt;</option>
-					<option value="h3">&lt;h3 class="site-title-phone"&gt;</option>
-					<option value="h4">&lt;h4 class="site-title-phone"&gt;</option>
-					<option value="h5">&lt;h5 class="site-title-phone"&gt;</option>
-					<option value="h6">&lt;h6 class="site-title-phone"&gt;</option>
+					<option value="div">div class="site-title-phone"</option>
+					<option value="h1">h1 class="site-title-phone"</option>
+					<option value="h2">h2 class="site-title-phone"</option>
+					<option value="h3">h3 class="site-title-phone"</option>
+					<option value="h4">h4 class="site-title-phone"</option>
+					<option value="h5">h5 class="site-title-phone"</option>
+					<option value="h6">h6 class="site-title-phone"</option>
 				</field>
 				<field name="siteDescriptionPhone"  type="text" default=""
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_DESC"
 					filter="string" />
 				<field
-					name="siteDescriptionHtmlPhone"
+					name="siteDescriptionElementPhone"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-description-phone"&gt;</option>
-					<option value="h1">&lt;h1 class="site-description-phone"&gt;</option>
-					<option value="h2">&lt;h2 class="site-description-phone"&gt;</option>
-					<option value="h3">&lt;h3 class="site-description-phone"&gt;</option>
-					<option value="h4">&lt;h4 class="site-description-phone"&gt;</option>
-					<option value="h5">&lt;h5 class="site-description-phone"&gt;</option>
-					<option value="h6">&lt;h6 class="site-description-phone"&gt;</option>
+					<option value="div">div class="site-description-phone"</option>
+					<option value="h1">h1 class="site-description-phone"</option>
+					<option value="h2">h2 class="site-description-phone"</option>
+					<option value="h3">h3 class="site-description-phone"</option>
+					<option value="h4">h4 class="site-description-phone"</option>
+					<option value="h5">h5 class="site-description-phone"</option>
+					<option value="h6">h6 class="site-description-phone"</option>
 				</field>
 				<field name="showSiteNamePhone"
 					type="radio"
@@ -118,17 +118,17 @@
 					<option value="0">JNO</option>
 				</field>
 				<field
-					name="siteNameHtmlPhone"
+					name="siteNameElementPhone"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-name-phone"&gt;</option>
-					<option value="h1">&lt;h1 class="site-name-phone"&gt;</option>
-					<option value="h2">&lt;h2 class="site-name-phone"&gt;</option>
-					<option value="h3">&lt;h3 class="site-name-phone"&gt;</option>
-					<option value="h4">&lt;h4 class="site-name-phone"&gt;</option>
-					<option value="h5">&lt;h5 class="site-name-phone"&gt;</option>
-					<option value="h6">&lt;h6 class="site-name-phone"&gt;</option>
+					<option value="div">div class="site-name-phone"</option>
+					<option value="h1">h1 class="site-name-phone"</option>
+					<option value="h2">h2 class="site-name-phone"</option>
+					<option value="h3">h3 class="site-name-phone"</option>
+					<option value="h4">h4 class="site-name-phone"</option>
+					<option value="h5">h5 class="site-name-phone"</option>
+					<option value="h6">h6 class="site-name-phone"</option>
 				</field>
 				<field name="fluidContainerPhone"
 					type="radio"
@@ -151,17 +151,17 @@
 					filter="string" />
 
 				<field
-					name="siteTitleHtmlTablet"
+					name="siteTitleElementTablet"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-title-tablet"&gt;</option>
-					<option value="h1">&lt;h1 class="site-title-tablet"&gt;</option>
-					<option value="h2">&lt;h2 class="site-title-tablet"&gt;</option>
-					<option value="h3">&lt;h3 class="site-title-tablet"&gt;</option>
-					<option value="h4">&lt;h4 class="site-title-tablet"&gt;</option>
-					<option value="h5">&lt;h5 class="site-title-tablet"&gt;</option>
-					<option value="h6">&lt;h6 class="site-title-tablet"&gt;</option>
+					<option value="div">div class="site-title-tablet"</option>
+					<option value="h1">h1 class="site-title-tablet"</option>
+					<option value="h2">h2 class="site-title-tablet"</option>
+					<option value="h3">h3 class="site-title-tablet"</option>
+					<option value="h4">h4 class="site-title-tablet"</option>
+					<option value="h5">h5 class="site-title-tablet"</option>
+					<option value="h6">h6 class="site-title-tablet"</option>
 				</field>
 
 				<field name="siteDescriptionTablet"  type="text" default=""
@@ -170,17 +170,17 @@
 					filter="string" />
 
 				<field
-					name="siteDescriptionHtmlTablet"
+					name="siteDescriptionElementTablet"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-description-tablet"&gt;</option>
-					<option value="h1">&lt;h1 class="site-description-tablet"&gt;</option>
-					<option value="h2">&lt;h2 class="site-description-tablet"&gt;</option>
-					<option value="h3">&lt;h3 class="site-description-tablet"&gt;</option>
-					<option value="h4">&lt;h4 class="site-description-tablet"&gt;</option>
-					<option value="h5">&lt;h5 class="site-description-tablet"&gt;</option>
-					<option value="h6">&lt;h6 class="site-description-tablet"&gt;</option>
+					<option value="div">div class="site-description-tablet"</option>
+					<option value="h1">h1 class="site-description-tablet"</option>
+					<option value="h2">h2 class="site-description-tablet"</option>
+					<option value="h3">h3 class="site-description-tablet"</option>
+					<option value="h4">h4 class="site-description-tablet"</option>
+					<option value="h5">h5 class="site-description-tablet"</option>
+					<option value="h6">h6 class="site-description-tablet"</option>
 				</field>
 
 				<field name="showSiteNameTablet"
@@ -194,17 +194,17 @@
 				</field>
 
 				<field
-					name="siteNameHtmlTablet"
+					name="siteNameElementTablet"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-name-tablet"&gt;</option>
-					<option value="h1">&lt;h1 class="site-name-tablet"&gt;</option>
-					<option value="h2">&lt;h2 class="site-name-tablet"&gt;</option>
-					<option value="h3">&lt;h3 class="site-name-tablet"&gt;</option>
-					<option value="h4">&lt;h4 class="site-name-tablet"&gt;</option>
-					<option value="h5">&lt;h5 class="site-name-tablet"&gt;</option>
-					<option value="h6">&lt;h6 class="site-name-tablet"&gt;</option>
+					<option value="div">div class="site-name-tablet"</option>
+					<option value="h1">h1 class="site-name-tablet"</option>
+					<option value="h2">h2 class="site-name-tablet"</option>
+					<option value="h3">h3 class="site-name-tablet"</option>
+					<option value="h4">h4 class="site-name-tablet"</option>
+					<option value="h5">h5 class="site-name-tablet"</option>
+					<option value="h6">h6 class="site-name-tablet"</option>
 				</field>
 
 				<field name="fluidContainerTablet"
@@ -228,17 +228,17 @@
 					filter="string" />
 
 				<field
-					name="siteTitleHtmlDesktop"
+					name="siteTitleElementDesktop"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-title-desktop"&gt;</option>
-					<option value="h1">&lt;h1 class="site-title-desktop"&gt;</option>
-					<option value="h2">&lt;h2 class="site-title-desktop"&gt;</option>
-					<option value="h3">&lt;h3 class="site-title-desktop"&gt;</option>
-					<option value="h4">&lt;h4 class="site-title-desktop"&gt;</option>
-					<option value="h5">&lt;h5 class="site-title-desktop"&gt;</option>
-					<option value="h6">&lt;h6 class="site-title-desktop"&gt;</option>
+					<option value="div">div class="site-title-desktop"</option>
+					<option value="h1">h1 class="site-title-desktop"</option>
+					<option value="h2">h2 class="site-title-desktop"</option>
+					<option value="h3">h3 class="site-title-desktop"</option>
+					<option value="h4">h4 class="site-title-desktop"</option>
+					<option value="h5">h5 class="site-title-desktop"</option>
+					<option value="h6">h6 class="site-title-desktop"</option>
 				</field>
 
 				<field name="siteDescriptionDesktop"  type="text" default=""
@@ -247,17 +247,17 @@
 					filter="string" />
 
 				<field
-					name="siteDescriptionHtmlDesktop"
+					name="siteDescriptionElementDesktop"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-description-desktop"&gt;</option>
-					<option value="h1">&lt;h1 class="site-description-desktop"&gt;</option>
-					<option value="h2">&lt;h2 class="site-description-desktop"&gt;</option>
-					<option value="h3">&lt;h3 class="site-description-desktop"&gt;</option>
-					<option value="h4">&lt;h4 class="site-description-desktop"&gt;</option>
-					<option value="h5">&lt;h5 class="site-description-desktop"&gt;</option>
-					<option value="h6">&lt;h6 class="site-description-desktop"&gt;</option>
+					<option value="div">div class="site-description-desktop"</option>
+					<option value="h1">h1 class="site-description-desktop"</option>
+					<option value="h2">h2 class="site-description-desktop"</option>
+					<option value="h3">h3 class="site-description-desktop"</option>
+					<option value="h4">h4 class="site-description-desktop"</option>
+					<option value="h5">h5 class="site-description-desktop"</option>
+					<option value="h6">h6 class="site-description-desktop"</option>
 				</field>
 
 				<field name="showSiteNameDesktop"
@@ -271,17 +271,17 @@
 				</field>
 
 				<field
-					name="siteNameHtmlDesktop"
+					name="siteNameElementDesktop"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_DESC"
 					type="list">
-					<option value="div">&lt;div class="site-name-desktop"&gt;</option>
-					<option value="h1">&lt;h1 class="site-name-desktop"&gt;</option>
-					<option value="h2">&lt;h2 class="site-name-desktop"&gt;</option>
-					<option value="h3">&lt;h3 class="site-name-desktop"&gt;</option>
-					<option value="h4">&lt;h4 class="site-name-desktop"&gt;</option>
-					<option value="h5">&lt;h5 class="site-name-desktop"&gt;</option>
-					<option value="h6">&lt;h6 class="site-name-desktop"&gt;</option>
+					<option value="div">div class="site-name-desktop"</option>
+					<option value="h1">h1 class="site-name-desktop"</option>
+					<option value="h2">h2 class="site-name-desktop"</option>
+					<option value="h3">h3 class="site-name-desktop"</option>
+					<option value="h4">h4 class="site-name-desktop"</option>
+					<option value="h5">h5 class="site-name-desktop"</option>
+					<option value="h6">h6 class="site-name-desktop"</option>
 				</field>
 
 				<field name="fluidContainerDesktop"

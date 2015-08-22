@@ -41,6 +41,7 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/template
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -141,7 +142,6 @@ else
 // Note that it's best to add in our customizations before adding in jQuery mobile:
 //    http://demos.jquerymobile.com/1.0/docs/api/globalconfig.html
 //
-$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idMyGadget.css');
 if ( $jmwsIdMyGadget->usingJQueryMobile )
 {
 	if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft ||
@@ -170,6 +170,7 @@ $logo_image = '';
 $logo = '';
 $siteDescription = '';
 $siteDescriptionElement = '';
+$siteDescriptionCssClass = 'site-description-desktop';
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	if ( $this->params->get('logoFilePhone') )
@@ -183,7 +184,7 @@ if ( $jmwsIdMyGadget->isPhone() )
 		$siteTitleElement = $this->params->get('siteTitleElementPhone');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' style="display: inline;" class="site-title" title="' . $sitename . '">' .
+			'<' . $siteTitleElement . ' style="display: inline;" class="site-title-phone" title="' . $sitename . '">' .
 				htmlspecialchars( $this->params->get('siteTitlePhone') ) .
 			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
@@ -193,13 +194,14 @@ if ( $jmwsIdMyGadget->isPhone() )
 		$siteNameElement = $this->params->get('siteNameElementPhone');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' .
+			'<' . $siteNameElement . ' class="site-name-phone" title="' . $sitename . '">' .
 				htmlspecialchars( $sitename ) .
 			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementPhone');
+	$siteDescriptionCssClass = 'site-description-phone';
 	$fluidContainer = $params->get('fluidContainerPhone');
 }
 else if ( $jmwsIdMyGadget->isTablet() )
@@ -215,7 +217,7 @@ else if ( $jmwsIdMyGadget->isTablet() )
 		$siteTitleElement = $this->params->get('siteTitleElementTablet');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title" title="' . $sitename . '">' .
+			'<' . $siteTitleElement . ' class="site-title-tablet" title="' . $sitename . '">' .
 				htmlspecialchars( $this->params->get('siteTitleTablet') ) .
 			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
@@ -225,13 +227,14 @@ else if ( $jmwsIdMyGadget->isTablet() )
 		$siteNameElement = $this->params->get('siteNameElementTablet');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' .
+			'<' . $siteNameElement . ' class="site-name-tablet" title="' . $sitename . '">' .
 				htmlspecialchars( $sitename ) .
 			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementTablet');
+	$siteDescriptionCssClass = 'site-description-tablet';
 	$fluidContainer = $params->get('fluidContainerTablet');
 }
 else   // default to/assume we are on a desktop browser
@@ -247,7 +250,7 @@ else   // default to/assume we are on a desktop browser
 		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title" title="' . $sitename . '">' .
+			'<' . $siteTitleElement . ' class="site-title-desktop" title="' . $sitename . '">' .
 				htmlspecialchars( $this->params->get('siteTitleDesktop') ) .
 			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
@@ -257,13 +260,14 @@ else   // default to/assume we are on a desktop browser
 		$siteNameElement = $this->params->get('siteNameElementDesktop');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' . 
+			'<' . $siteNameElement . ' class="site-name-desktop" title="' . $sitename . '">' .
 				htmlspecialchars( $sitename ) .
 			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
+	$siteDescriptionCssClass = 'site-description-desktop';
 	$fluidContainer = $params->get('fluidContainerDesktop');
 }
 //
@@ -273,7 +277,7 @@ $siteDescriptionHtml = '';
 if ( $siteDescription )
 {
 	$siteDescriptionHtml =
-		'<' . $siteDescriptionElement . ' class="site-description">' .
+		'<' . $siteDescriptionElement . ' class="' . $siteDescriptionCssClass . '">' .
 			htmlspecialchars($siteDescription) .
 			'</' . $siteDescriptionElement .'>';
 }

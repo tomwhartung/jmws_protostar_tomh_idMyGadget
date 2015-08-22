@@ -170,7 +170,6 @@ $logo_image = '';
 $logo = '';
 $siteDescription = '';
 $siteDescriptionElement = '';
-$siteDescriptionHtml = '';
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	if ( $this->params->get('logoFilePhone') )
@@ -181,17 +180,21 @@ if ( $jmwsIdMyGadget->isPhone() )
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
+		$siteTitleElement = $this->params->get('siteTitleElementPhone');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<h2 style="display: inline;" class="site-title" title="' . $sitename . '">' .
-				htmlspecialchars($this->params->get('siteTitlePhone')) . '</h2>' .
+			'<' . $siteTitleElement . ' style="display: inline;" class="site-title" title="' . $sitename . '">' .
+				htmlspecialchars($this->params->get('siteTitlePhone')) .
+			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	if ( $this->params->get('showSiteNamePhone') )
 	{
+		$siteNameElement = $this->params->get('siteNameElementPhone');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<h2 class="site-title" title="' . $sitename . '">' . $sitename . '</h2>' .
+			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' . $sitename .
+			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
@@ -208,17 +211,21 @@ else if ( $jmwsIdMyGadget->isTablet() )
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
+		$siteTitleElement = $this->params->get('siteTitleElementTablet');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<span class="site-title" title="' . $sitename . '">' .
-				htmlspecialchars($this->params->get('siteTitleTablet')) . '</span>' .
+			'<' . $siteTitleElement . ' class="site-title" title="' . $sitename . '">' .
+				htmlspecialchars($this->params->get('siteTitleTablet')) .
+			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	if ($this->params->get('showSiteNameTablet'))
 	{
+		$siteNameElement = $this->params->get('siteNameElementTablet');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>' .
+			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' . $sitename .
+			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
@@ -235,23 +242,31 @@ else   // default to/assume we are on a desktop browser
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
+		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<span class="site-title" title="' . $sitename . '">' .
-				htmlspecialchars($this->params->get('siteTitleDesktop')) . '</span>' .
+			'<' . $siteTitleElement . ' class="site-title" title="' . $sitename . '">' .
+				htmlspecialchars($this->params->get('siteTitleDesktop')) .
+			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	if ($this->params->get('showSiteNameDesktop'))
 	{
+		$siteNameElement = $this->params->get('siteNameElementDesktop');
 		$logo =
 			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>' .
+			'<' . $siteNameElement . ' class="site-name" title="' . $sitename . '">' . $sitename .
+			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
 	$fluidContainer = $params->get('fluidContainerDesktop');
 }
+//
+// If the user set a value for the site description (tag line), create the html for it.
+//
+$siteDescriptionHtml = '';
 if ( $siteDescription )
 {
 	$siteDescriptionHtml =

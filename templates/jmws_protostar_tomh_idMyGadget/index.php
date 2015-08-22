@@ -168,9 +168,11 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 //
 $logo_image = '';
 $logo = '';
+$siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set
+$siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set
 $siteDescription = '';
 $siteDescriptionElement = '';
-$siteDescriptionCssClass = 'site-description-desktop';
+$siteDescriptionCssClass = '';
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	if ( $this->params->get('logoFilePhone') )
@@ -473,18 +475,19 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 
 	<p></p>
 	<p>$this->params->get('siteTitleElementPhone'): <?php echo $this->params->get('siteTitleElementPhone') ?></p>
-	<p>$this->params->get('siteTitleElementTablet'): <?php echo $this->params->get('siteTitleElementTablet') ?></p>
-	<p>$this->params->get('siteTitleElementDesktop'): <?php echo $this->params->get('siteTitleElementDesktop') ?></p>
-	<p>$siteTitleElement: <?php echo $siteTitleElement; ?></p>
-	<p></p>
 	<p>$this->params->get('siteNameElementPhone'): <?php echo $this->params->get('siteNameElementPhone') ?></p>
-	<p>$this->params->get('siteNameElementTablet'): <?php echo $this->params->get('siteNameElementTablet') ?></p>
-	<p>$this->params->get('siteNameElementDesktop'): <?php echo $this->params->get('siteNameElementDesktop') ?></p>
-	<p>$siteNameElement: <?php echo $siteNameElement; ?></p>
-	<p></p>
 	<p>$this->params->get('siteDescriptionElementPhone'): <?php echo $this->params->get('siteDescriptionElementPhone') ?></p>
+	<p></p>
+	<p>$this->params->get('siteTitleElementTablet'): <?php echo $this->params->get('siteTitleElementTablet') ?></p>
+	<p>$this->params->get('siteNameElementTablet'): <?php echo $this->params->get('siteNameElementTablet') ?></p>
 	<p>$this->params->get('siteDescriptionElementTablet'): <?php echo $this->params->get('siteDescriptionElementTablet') ?></p>
+	<p></p>
+	<p>$this->params->get('siteTitleElementDesktop'): <?php echo $this->params->get('siteTitleElementDesktop') ?></p>
+	<p>$this->params->get('siteNameElementDesktop'): <?php echo $this->params->get('siteNameElementDesktop') ?></p>
 	<p>$this->params->get('siteDescriptionElementDesktop'): <?php echo $this->params->get('siteDescriptionElementDesktop') ?></p>
+	<p></p>
+	<p>$siteTitleElement: <?php echo $siteTitleElement; ?></p>
+	<p>$siteNameElement: <?php echo $siteNameElement; ?></p>
 	<p>$siteDescriptionElement: <?php echo $siteDescriptionElement; ?></p>
 
 	<footer <?php echo $footerAttributes; ?> >

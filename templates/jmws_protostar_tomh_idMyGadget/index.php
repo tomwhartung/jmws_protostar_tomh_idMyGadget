@@ -166,21 +166,18 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 // For example: the logo file or site title param, etc.
 //   Note that the logic differs from that used in protostar just a teensy little bit
 //
-$logo_image = '';
-$logo = '';
-$siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set
-$siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set
+$logoFile = '';
+
+$logo = '';   // want to replace this with more logical(ly named) variables and markup
+
+$siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set for the device
+$siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set for the device
 $siteDescription = '';
 $siteDescriptionElement = '';
 $siteDescriptionCssClass = '';
 if ( $jmwsIdMyGadget->isPhone() )
 {
-	if ( $this->params->get('logoFilePhone') )
-	{
-		$logo_image =
-			'<img src="' . JUri::root() . $this->params->get('logoFilePhone') . '" ' .
-				'alt="' . $sitename . '" />';
-	}
+	$logoFile = $this->params->get('logoFilePhone');
 	if ( $this->params->get('siteTitlePhone') )
 	{
 		$siteTitleElement = $this->params->get('siteTitleElementPhone');
@@ -208,12 +205,7 @@ if ( $jmwsIdMyGadget->isPhone() )
 }
 else if ( $jmwsIdMyGadget->isTablet() )
 {
-	if ($this->params->get('logoFileTablet'))
-	{
-		$logo_image =
-			'<img src="' . JUri::root() . $this->params->get('logoFileTablet') . '" ' .
-				'alt="' . $sitename . '" />';
-	}
+	$logoFile = $this->params->get('logoFileTablet');
 	if ($this->params->get('siteTitleTablet'))
 	{
 		$siteTitleElement = $this->params->get('siteTitleElementTablet');
@@ -241,12 +233,7 @@ else if ( $jmwsIdMyGadget->isTablet() )
 }
 else   // default to/assume we are on a desktop browser
 {
-	if ($this->params->get('logoFileDesktop'))
-	{
-		$logo_image =
-			'<img src="' . JUri::root() . $this->params->get('logoFileDesktop') . '" ' .
-				'alt="' . $sitename . '" />';
-	}
+	$logoFile = $this->params->get('logoFileDesktop');
 	if ($this->params->get('siteTitleDesktop'))
 	{
 		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
@@ -271,6 +258,14 @@ else   // default to/assume we are on a desktop browser
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
 	$siteDescriptionCssClass = 'site-description-desktop';
 	$fluidContainer = $params->get('fluidContainerDesktop');
+}
+//
+// If a logo file is set, create the image tag
+//
+$logoImageHtml = '';
+if ( $logoFile )
+{
+	$logoImageHtml = '<img src="' . JUri::root() . $logoFile . '" alt="' . $sitename . '" />';
 }
 //
 // If the user set a value for the site description (tag line), create the html for it.
@@ -392,10 +387,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 				<div class="header-inner clearfix">
 					<div class="site-logo">
 						<a href="<?php echo $this->baseurl; ?>/">
-							<?php echo $logo_image ?>
+							<?php echo $logoImageHtml ?>
 						</a>
 					</div>
-						<?php echo $logo; ?>
+					<?php echo $logo; ?>
 					<?php if ($siteDescription) : ?>
 						<?php echo $siteDescriptionHtml; ?>
 					<?php endif; ?>

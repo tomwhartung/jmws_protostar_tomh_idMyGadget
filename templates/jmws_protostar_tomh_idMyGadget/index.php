@@ -206,13 +206,9 @@ else if ( $jmwsIdMyGadget->isTablet() )
 	$logoFile = $this->params->get('logoFileTablet');
 	if ($this->params->get('showSiteNameTablet'))
 	{
+		$showSiteName = TRUE;
 		$siteNameElement = $this->params->get('siteNameElementTablet');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name-tablet" title="' . $sitename . '">' .
-				htmlspecialchars( $sitename ) .
-			'</' . $siteNameElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$siteNameCssClass = 'site-name-tablet';
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
@@ -234,13 +230,9 @@ else   // default to/assume we are on a desktop browser
 	$logoFile = $this->params->get('logoFileDesktop');
 	if ($this->params->get('showSiteNameDesktop'))
 	{
+		$showSiteName = TRUE;
 		$siteNameElement = $this->params->get('siteNameElementDesktop');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name-desktop" title="' . $sitename . '">' .
-				htmlspecialchars( $sitename ) .
-			'</' . $siteNameElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$siteNameCssClass = 'site-name-desktop';
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{

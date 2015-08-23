@@ -3,15 +3,44 @@
  * in the protostar theme.
  *
  */
-// #phone-burger-menu-left (
-//	clear: both;
-// }
-// #phone-burger-menu-right (
-//	clear: both;
-// }
+
+/* #phone-burger-menu-left (
+ *	clear: both;
+ * }
+ * #phone-burger-menu-right (
+ *	clear: both;
+ * }
+ */
 div.site-logo {
 	display: block;
 }
-h2.site-title {
+.site-title {
 	display: inline;
 }
+/*
+ * Copied from site-title class from style.css
+ * (not sure we want it but am pretty sure it's what we are used to seeing....)
+ */
+.site-name,
+.site-name-phone, .site-name-tablet, .site-name-desktop {
+	font-size: 40px;
+	line-height: 48px;
+	font-weight: bold;
+}
+/*
+ * For playing around with when testing a bit...
+ */
+.site-title-phone, .site-title-tablet, .site-title-desktop {
+	color: red;
+	font-weight: bold;
+}
+.site-name-phone, .site-name-tablet, .site-name-desktop {
+	color: green;
+	display: inline;
+	font-style: oblique;
+}
+.site-description-phone, .site-description-tablet, .site-description-desktop {
+	color: blue;
+	font-style: italic;
+}
+

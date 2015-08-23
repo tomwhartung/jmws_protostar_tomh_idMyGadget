@@ -167,10 +167,12 @@ $phoneBurgerIconRight = new PhoneBurgerMenuIcon(
 //   Note that the logic differs from that used in protostar just a teensy little bit
 //
 $logoFile = '';
+$showSiteName = FALSE;
+$siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set for the device
+$siteNameCssClass = '';
 
 $logo = '';   // want to replace this with more logical(ly named) variables and markup
 
-$siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set for the device
 $siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set for the device
 $siteDescription = '';
 $siteDescriptionElement = '';
@@ -178,6 +180,12 @@ $siteDescriptionCssClass = '';
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	$logoFile = $this->params->get('logoFilePhone');
+	if ( $this->params->get('showSiteNamePhone') )
+	{
+		$showSiteName = TRUE;
+		$siteNameElement = $this->params->get('siteNameElementPhone');
+		$siteNameCssClass = 'site-name-phone';
+	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
 		$siteTitleElement = $this->params->get('siteTitleElementPhone');
@@ -188,16 +196,6 @@ if ( $jmwsIdMyGadget->isPhone() )
 			'</' . $siteTitleElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
-	if ( $this->params->get('showSiteNamePhone') )
-	{
-		$siteNameElement = $this->params->get('siteNameElementPhone');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteNameElement . ' class="site-name-phone" title="' . $sitename . '">' .
-				htmlspecialchars( $sitename ) .
-			'</' . $siteNameElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
-	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementPhone');
 	$siteDescriptionCssClass = 'site-description-phone';
@@ -206,16 +204,6 @@ if ( $jmwsIdMyGadget->isPhone() )
 else if ( $jmwsIdMyGadget->isTablet() )
 {
 	$logoFile = $this->params->get('logoFileTablet');
-	if ($this->params->get('siteTitleTablet'))
-	{
-		$siteTitleElement = $this->params->get('siteTitleElementTablet');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title-tablet" title="' . $sitename . '">' .
-				htmlspecialchars( $this->params->get('siteTitleTablet') ) .
-			'</' . $siteTitleElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
-	}
 	if ($this->params->get('showSiteNameTablet'))
 	{
 		$siteNameElement = $this->params->get('siteNameElementTablet');
@@ -226,6 +214,16 @@ else if ( $jmwsIdMyGadget->isTablet() )
 			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
+	if ($this->params->get('siteTitleTablet'))
+	{
+		$siteTitleElement = $this->params->get('siteTitleElementTablet');
+		$logo =
+			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+			'<' . $siteTitleElement . ' class="site-title-tablet" title="' . $sitename . '">' .
+				htmlspecialchars( $this->params->get('siteTitleTablet') ) .
+			'</' . $siteTitleElement . '>' .
+			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementTablet');
 	$siteDescriptionCssClass = 'site-description-tablet';
@@ -234,16 +232,6 @@ else if ( $jmwsIdMyGadget->isTablet() )
 else   // default to/assume we are on a desktop browser
 {
 	$logoFile = $this->params->get('logoFileDesktop');
-	if ($this->params->get('siteTitleDesktop'))
-	{
-		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title-desktop" title="' . $sitename . '">' .
-				htmlspecialchars( $this->params->get('siteTitleDesktop') ) .
-			'</' . $siteTitleElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
-	}
 	if ($this->params->get('showSiteNameDesktop'))
 	{
 		$siteNameElement = $this->params->get('siteNameElementDesktop');
@@ -254,23 +242,42 @@ else   // default to/assume we are on a desktop browser
 			'</' . $siteNameElement . '>' .
 			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 	}
+	if ($this->params->get('siteTitleDesktop'))
+	{
+		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
+		$logo =
+			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+			'<' . $siteTitleElement . ' class="site-title-desktop" title="' . $sitename . '">' .
+				htmlspecialchars( $this->params->get('siteTitleDesktop') ) .
+			'</' . $siteTitleElement . '>' .
+			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
 	$siteDescriptionCssClass = 'site-description-desktop';
 	$fluidContainer = $params->get('fluidContainerDesktop');
 }
 //
-// If a logo file is set, create the image tag
+// Based on the parameters set and processed above,
+//   create the image tag (as appropriate)
+//   create the site name html (as appropriate)
+//   create the site title and hamburger menu html (as appropriate)
+//   create the site description (tag line) html (as appropriate)
 //
 $logoImageHtml = '';
+$siteNameHtml = '';
+$siteDescriptionHtml = '';
 if ( $logoFile )
 {
 	$logoImageHtml = '<img src="' . JUri::root() . $logoFile . '" alt="' . $sitename . '" />';
 }
-//
-// If the user set a value for the site description (tag line), create the html for it.
-//
-$siteDescriptionHtml = '';
+if ( $showSiteName )
+{
+	$siteNameHtml =
+		'<' . $siteNameElement . ' class="' . $siteNameCssClass  . '" title="' . $sitename . '">' .
+			htmlspecialchars( $sitename ) .
+		'</' . $siteNameElement . '>';
+}
 if ( $siteDescription )
 {
 	$siteDescriptionHtml =
@@ -388,6 +395,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					<div class="site-logo">
 						<a href="<?php echo $this->baseurl; ?>/">
 							<?php echo $logoImageHtml ?>
+							<?php echo $siteNameHtml ?>
 						</a>
 					</div>
 					<?php echo $logo; ?>

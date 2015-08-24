@@ -17,23 +17,48 @@ div.site-logo {
 }
 
 .site-name-phone, .site-name-tablet, .site-name-desktop {
-	color: #202020;
+	color: black;
 	display: inline;
 	font-weight: bold;
+	text-decoration: underline;
+}
+
+.site-name-phone {
+}
+.site-name-tablet {
+	color: green;
+}
+.site-name-desktop {
 }
 
 .site-title-phone, .site-title-tablet, .site-title-desktop {
-	color: blue;
+	color: black;
 	display: inline;
 	font-weight: bold;
+	margin-left: 0.5em;
 }
 
-.site-title {
-	display: inline;
+.site-title-phone {
+	color: blue;
+}
+.site-title-tablet {
+	color: green;
+}
+.site-title-desktop {
 }
 
 .site-description-phone, .site-description-tablet, .site-description-desktop {
-	color: blue;
+	color: black;
 	font-style: italic;
+	margin-left: 0.5em;
+}
+
+.site-description-phone {
+	color: red;
+}
+.site-description-tablet {
+}
+.site-description-desktop {
+	color: blue;
 }
 

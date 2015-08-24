@@ -20,6 +20,7 @@ div.site-logo {
 	color: black;
 	display: inline;
 	font-weight: bold;
+	margin-left: 0.5em;
 	text-decoration: underline;
 }
 
@@ -27,6 +28,7 @@ div.site-logo {
 }
 .site-name-tablet {
 	color: green;
+	font-size: 50px;
 }
 .site-name-desktop {
 }
@@ -57,6 +59,7 @@ div.site-logo {
 	color: red;
 }
 .site-description-tablet {
+	color: green;
 }
 .site-description-desktop {
 	color: blue;

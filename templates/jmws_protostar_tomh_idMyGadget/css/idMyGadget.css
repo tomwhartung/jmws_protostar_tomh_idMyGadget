@@ -23,21 +23,15 @@ div.site-logo {
 }
 
 .site-title-phone, .site-title-tablet, .site-title-desktop {
-	color: red;
+	color: blue;
 	display: inline;
+	font-weight: bold;
 }
 
 .site-title {
 	display: inline;
 }
 
-/*
- * For playing around with when testing a bit...
- */
-.site-title-phone, .site-title-tablet, .site-title-desktop {
-	color: red;
-	font-weight: bold;
-}
 .site-description-phone, .site-description-tablet, .site-description-desktop {
 	color: blue;
 	font-style: italic;

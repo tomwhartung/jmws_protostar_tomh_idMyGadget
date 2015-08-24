@@ -171,9 +171,12 @@ $showSiteName = FALSE;
 $siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set for the device
 $siteNameCssClass = '';
 
+$siteTitle = '';
+$siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set for the device
+$siteTitleCssClass = '';
+
 $logo = '';   // want to replace this with more logical(ly named) variables and markup
 
-$siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set for the device
 $siteDescription = '';
 $siteDescriptionElement = '';
 $siteDescriptionCssClass = '';
@@ -188,13 +191,9 @@ if ( $jmwsIdMyGadget->isPhone() )
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
+		$siteTitle = $this->params->get('siteTitlePhone');
 		$siteTitleElement = $this->params->get('siteTitleElementPhone');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' style="display: inline;" class="site-title-phone" title="' . $sitename . '">' .
-				htmlspecialchars( $this->params->get('siteTitlePhone') ) .
-			'</' . $siteTitleElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$siteTitleCssClass = 'site-title-phone';
 	}
 	$siteDescription = $this->params->get('siteDescriptionPhone');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementPhone');
@@ -212,13 +211,9 @@ else if ( $jmwsIdMyGadget->isTablet() )
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
+		$siteTitle = $this->params->get('siteTitleTablet');
 		$siteTitleElement = $this->params->get('siteTitleElementTablet');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title-tablet" title="' . $sitename . '">' .
-				htmlspecialchars( $this->params->get('siteTitleTablet') ) .
-			'</' . $siteTitleElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$siteTitleCssClass = 'site-title-tablet';
 	}
 	$siteDescription = $this->params->get('siteDescriptionTablet');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementTablet');
@@ -236,13 +231,9 @@ else   // default to/assume we are on a desktop browser
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
+		$siteTitle = $this->params->get('siteTitleDesktop');
 		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
-		$logo =
-			$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-			'<' . $siteTitleElement . ' class="site-title-desktop" title="' . $sitename . '">' .
-				htmlspecialchars( $this->params->get('siteTitleDesktop') ) .
-			'</' . $siteTitleElement . '>' .
-			$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+		$siteTitleCssClass = 'site-title-desktop';
 	}
 	$siteDescription = $this->params->get('siteDescriptionDesktop');
 	$siteDescriptionElement = $this->params->get('siteDescriptionElementDesktop');
@@ -270,6 +261,14 @@ if ( $showSiteName )
 			htmlspecialchars( $sitename ) .
 		'</' . $siteNameElement . '>';
 }
+
+$logo =
+	$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
+	'<' . $siteTitleElement . ' class="' . $siteTitleCssClass . '" title="' . $sitename . '">' .
+		htmlspecialchars( $siteTitle ) .
+	'</' . $siteTitleElement . '>' .
+	$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+
 if ( $siteDescription )
 {
 	$siteDescriptionHtml =

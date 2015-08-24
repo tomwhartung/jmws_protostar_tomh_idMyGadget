@@ -384,12 +384,12 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
-					<div class="site-logo">
-						<a href="<?php echo $this->baseurl; ?>/">
-							<?php echo $logoImageHtml ?>
-							<?php echo $siteNameHtml ?>
-						</a>
-					</div>
+					<?php if ( $logoImageHtml || $siteNameHtml ) : ?>
+						<div class="site-logo">
+							<a href="<?php echo $this->baseurl; ?>/"><?php echo $logoImageHtml ?></a>
+							<a href="<?php echo $this->baseurl; ?>/"><?php echo $siteNameHtml ?></a>
+						</div>
+					<?php endif; ?>
 					<?php echo $logo; ?>
 					<?php if ($siteDescription) : ?>
 						<?php echo $siteDescriptionHtml; ?>

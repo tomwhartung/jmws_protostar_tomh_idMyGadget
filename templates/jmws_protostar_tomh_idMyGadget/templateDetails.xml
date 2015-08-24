@@ -74,44 +74,16 @@
 				<field name="logoFilePhone" class="" type="media" default=""
 					label="TPL_IDMYGADGET_LOGO_FILE_PHONE_LABEL"
 					description="TPL_IDMYGADGET_LOGO_FILE_PHONE_DESC" />
-				<field name="siteTitlePhone"  type="text" default=""
-					label="TPL_IDMYGADGET_SITETITLE_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
-					filter="string" />
-				<field
-					name="siteTitleElementPhone"
-					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_DESC"
-					type="list">
-					<option value="h1">h1 class="site-title-phone"</option>
-					<option value="h2">h2 class="site-title-phone"</option>
-					<option value="h3">h3 class="site-title-phone"</option>
-					<option value="h4">h4 class="site-title-phone"</option>
-					<option value="h5">h5 class="site-title-phone"</option>
-					<option value="h6">h6 class="site-title-phone"</option>
-					<option value="p">p class="site-title-phone"</option>
-					<option value="div">div class="site-title-phone"</option>
-					<option value="span">span class="site-title-phone"</option>
+				<field name="fluidContainerPhone"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_IDMYGADGET_FLUID_PHONE_LABEL"
+					description="TPL_IDMYGADGET_FLUID_PHONE_DESC">
+					<option value="1">TPL_PROTOSTAR_FLUID</option>
+					<option value="0">TPL_PROTOSTAR_STATIC</option>
 				</field>
-				<field name="siteDescriptionPhone"  type="text" default=""
-					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_DESC"
-					filter="string" />
-				<field
-					name="siteDescriptionElementPhone"
-					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_LABEL"
-					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_DESC"
-					type="list">
-					<option value="h1">h1 class="site-description-phone"</option>
-					<option value="h2">h2 class="site-description-phone"</option>
-					<option value="h3">h3 class="site-description-phone"</option>
-					<option value="h4">h4 class="site-description-phone"</option>
-					<option value="h5">h5 class="site-description-phone"</option>
-					<option value="h6">h6 class="site-description-phone"</option>
-					<option value="p">p class="site-description-phone"</option>
-					<option value="div">div class="site-description-phone"</option>
-					<option value="span">span class="site-description-phone"</option>
-				</field>
+
 				<field name="showSiteNamePhone"
 					type="radio"
 					class="btn-group btn-group-yesno"
@@ -136,14 +108,45 @@
 					<option value="div">div class="site-name-phone"</option>
 					<option value="span">span class="site-name-phone"</option>
 				</field>
-				<field name="fluidContainerPhone"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="0"
-					label="TPL_IDMYGADGET_FLUID_PHONE_LABEL"
-					description="TPL_IDMYGADGET_FLUID_PHONE_DESC">
-					<option value="1">TPL_PROTOSTAR_FLUID</option>
-					<option value="0">TPL_PROTOSTAR_STATIC</option>
+
+				<field name="siteTitlePhone"  type="text" default=""
+					label="TPL_IDMYGADGET_SITETITLE_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
+					filter="string" />
+				<field
+					name="siteTitleElementPhone"
+					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_DESC"
+					type="list">
+					<option value="h1">h1 class="site-title-phone"</option>
+					<option value="h2">h2 class="site-title-phone"</option>
+					<option value="h3">h3 class="site-title-phone"</option>
+					<option value="h4">h4 class="site-title-phone"</option>
+					<option value="h5">h5 class="site-title-phone"</option>
+					<option value="h6">h6 class="site-title-phone"</option>
+					<option value="p">p class="site-title-phone"</option>
+					<option value="div">div class="site-title-phone"</option>
+					<option value="span">span class="site-title-phone"</option>
+				</field>
+
+				<field name="siteDescriptionPhone"  type="text" default=""
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_DESC"
+					filter="string" />
+				<field
+					name="siteDescriptionElementPhone"
+					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_LABEL"
+					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_DESC"
+					type="list">
+					<option value="h1">h1 class="site-description-phone"</option>
+					<option value="h2">h2 class="site-description-phone"</option>
+					<option value="h3">h3 class="site-description-phone"</option>
+					<option value="h4">h4 class="site-description-phone"</option>
+					<option value="h5">h5 class="site-description-phone"</option>
+					<option value="h6">h6 class="site-description-phone"</option>
+					<option value="p">p class="site-description-phone"</option>
+					<option value="div">div class="site-description-phone"</option>
+					<option value="span">span class="site-description-phone"</option>
 				</field>
 
 				<field type="spacer" name="spacerTablet" class="text"
@@ -151,11 +154,45 @@
 				<field name="logoFileTablet" class="" type="media" default=""
 					label="TPL_IDMYGADGET_LOGO_FILE_TABLET_LABEL"
 					description="TPL_IDMYGADGET_LOGO_FILE_TABLET_DESC" />
+				<field name="fluidContainerTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_IDMYGADGET_FLUID_TABLET_LABEL"
+					description="TPL_IDMYGADGET_FLUID_TABLET_DESC">
+					<option value="1">TPL_PROTOSTAR_FLUID</option>
+					<option value="0">TPL_PROTOSTAR_STATIC</option>
+				</field>
+
+				<field name="showSiteNameTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="siteNameElementTablet"
+					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_LABEL"
+					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_DESC"
+					type="list">
+					<option value="h1">h1 class="site-name-tablet"</option>
+					<option value="h2">h2 class="site-name-tablet"</option>
+					<option value="h3">h3 class="site-name-tablet"</option>
+					<option value="h4">h4 class="site-name-tablet"</option>
+					<option value="h5">h5 class="site-name-tablet"</option>
+					<option value="h6">h6 class="site-name-tablet"</option>
+					<option value="p">p class="site-name-tablet"</option>
+					<option value="div">div class="site-name-tablet"</option>
+					<option value="span">span class="site-name-tablet"</option>
+				</field>
+
 				<field name="siteTitleTablet"  type="text" default=""
 					label="TPL_IDMYGADGET_SITETITLE_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_TABLET_DESC"
 					filter="string" />
-
 				<field
 					name="siteTitleElementTablet"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_LABEL"
@@ -176,7 +213,6 @@
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_DESC"
 					filter="string" />
-
 				<field
 					name="siteDescriptionElementTablet"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_LABEL"
@@ -193,52 +229,51 @@
 					<option value="span">span class="site-description-tablet"</option>
 				</field>
 
-				<field name="showSiteNameTablet"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="1"
-					label="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_LABEL"
-					description="TPL_IDMYGADGET_SHOW_SITE_NAME_TABLET_DESC">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-
-				<field
-					name="siteNameElementTablet"
-					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_LABEL"
-					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_DESC"
-					type="list">
-					<option value="h1">h1 class="site-name-tablet"</option>
-					<option value="h2">h2 class="site-name-tablet"</option>
-					<option value="h3">h3 class="site-name-tablet"</option>
-					<option value="h4">h4 class="site-name-tablet"</option>
-					<option value="h5">h5 class="site-name-tablet"</option>
-					<option value="h6">h6 class="site-name-tablet"</option>
-					<option value="p">p class="site-name-tablet"</option>
-					<option value="div">div class="site-name-tablet"</option>
-					<option value="span">span class="site-name-tablet"</option>
-				</field>
-
-				<field name="fluidContainerTablet"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="0"
-					label="TPL_IDMYGADGET_FLUID_TABLET_LABEL"
-					description="TPL_IDMYGADGET_FLUID_TABLET_DESC">
-					<option value="1">TPL_PROTOSTAR_FLUID</option>
-					<option value="0">TPL_PROTOSTAR_STATIC</option>
-				</field>
 
 				<field type="spacer" name="spacerDesktop" class="text"
 					label="TPL_IDMYGADGET_HEADER_PARAMS_DESKTOP" />
 				<field name="logoFileDesktop" class="" type="media" default=""
 					label="TPL_IDMYGADGET_LOGO_FILE_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_LOGO_FILE_DESKTOP_DESC" />
-				<field name="siteTitleDesktop"  type="text" default=""
+				<field name="fluidContainerDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_IDMYGADGET_FLUID_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_FLUID_DESKTOP_DESC">
+					<option value="1">TPL_PROTOSTAR_FLUID</option>
+					<option value="0">TPL_PROTOSTAR_STATIC</option>
+				</field>
+
+				<field name="showSiteNameDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="siteNameElementDesktop"
+					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_DESC"
+					type="list">
+					<option value="h1">h1 class="site-name-desktop"</option>
+					<option value="h2">h2 class="site-name-desktop"</option>
+					<option value="h3">h3 class="site-name-desktop"</option>
+					<option value="h4">h4 class="site-name-desktop"</option>
+					<option value="h5">h5 class="site-name-desktop"</option>
+					<option value="h6">h6 class="site-name-desktop"</option>
+					<option value="p">p class="site-name-desktop"</option>
+					<option value="div">div class="site-name-desktop"</option>
+					<option value="span">span class="site-name-desktop"</option>
+				</field>
+
+					<field name="siteTitleDesktop"  type="text" default=""
 					label="TPL_IDMYGADGET_SITETITLE_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_DESKTOP_DESC"
 					filter="string" />
-
 				<field
 					name="siteTitleElementDesktop"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_LABEL"
@@ -259,7 +294,6 @@
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_DESKTOP_DESC"
 					filter="string" />
-
 				<field
 					name="siteDescriptionElementDesktop"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_LABEL"
@@ -274,42 +308,6 @@
 					<option value="p">p class="site-description-desktop"</option>
 					<option value="div">div class="site-description-desktop"</option>
 					<option value="span">span class="site-description-desktop"</option>
-				</field>
-
-				<field name="showSiteNameDesktop"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="1"
-					label="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_SHOW_SITE_NAME_DESKTOP_DESC">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-
-				<field
-					name="siteNameElementDesktop"
-					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_DESC"
-					type="list">
-					<option value="h1">h1 class="site-name-desktop"</option>
-					<option value="h2">h2 class="site-name-desktop"</option>
-					<option value="h3">h3 class="site-name-desktop"</option>
-					<option value="h4">h4 class="site-name-desktop"</option>
-					<option value="h5">h5 class="site-name-desktop"</option>
-					<option value="h6">h6 class="site-name-desktop"</option>
-					<option value="p">p class="site-name-desktop"</option>
-					<option value="div">div class="site-name-desktop"</option>
-					<option value="span">span class="site-name-desktop"</option>
-				</field>
-
-				<field name="fluidContainerDesktop"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="0"
-					label="TPL_IDMYGADGET_FLUID_DESKTOP_LABEL"
-					description="TPL_IDMYGADGET_FLUID_DESKTOP_DESC">
-					<option value="1">TPL_PROTOSTAR_FLUID</option>
-					<option value="0">TPL_PROTOSTAR_STATIC</option>
 				</field>
 			</fieldset>
 

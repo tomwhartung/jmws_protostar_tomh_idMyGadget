@@ -171,15 +171,15 @@ $showSiteName = FALSE;
 $siteNameElement = '(none)';   // used only if showSiteNameXXX parameter is set for the device
 $siteNameCssClass = '';
 
+$showSiteTitle = FALSE;
 $siteTitle = '';
 $siteTitleElement = '(none)';  // used only if siteTitleXXX parameter is set for the device
 $siteTitleCssClass = '';
 
-$logo = '';   // want to replace this with more logical(ly named) variables and markup
-
 $siteDescription = '';
 $siteDescriptionElement = '';
 $siteDescriptionCssClass = '';
+
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	$logoFile = $this->params->get('logoFilePhone');
@@ -191,6 +191,7 @@ if ( $jmwsIdMyGadget->isPhone() )
 	}
 	if ( $this->params->get('siteTitlePhone') )
 	{
+		$showSiteTitle = TRUE;
 		$siteTitle = $this->params->get('siteTitlePhone');
 		$siteTitleElement = $this->params->get('siteTitleElementPhone');
 		$siteTitleCssClass = 'site-title-phone';
@@ -211,6 +212,7 @@ else if ( $jmwsIdMyGadget->isTablet() )
 	}
 	if ($this->params->get('siteTitleTablet'))
 	{
+		$showSiteTitle = TRUE;
 		$siteTitle = $this->params->get('siteTitleTablet');
 		$siteTitleElement = $this->params->get('siteTitleElementTablet');
 		$siteTitleCssClass = 'site-title-tablet';
@@ -231,6 +233,7 @@ else   // default to/assume we are on a desktop browser
 	}
 	if ($this->params->get('siteTitleDesktop'))
 	{
+		$showSiteTitle = TRUE;
 		$siteTitle = $this->params->get('siteTitleDesktop');
 		$siteTitleElement = $this->params->get('siteTitleElementDesktop');
 		$siteTitleCssClass = 'site-title-desktop';
@@ -262,12 +265,15 @@ if ( $showSiteName )
 		'</' . $siteNameElement . '>';
 }
 
-$logo =
-	$phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js .
-	'<' . $siteTitleElement . ' class="' . $siteTitleCssClass . '" title="' . $sitename . '">' .
-		htmlspecialchars( $siteTitle ) .
-	'</' . $siteTitleElement . '>' .
-	$phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
+$siteTitleHtml = $phoneBurgerIconLeft->html . $phoneBurgerIconLeft->js;
+if ( $showSiteTitle )
+{
+	$siteTitleHtml .=
+		'<' . $siteTitleElement . ' class="' . $siteTitleCssClass . '" title="' . $sitename . '">' .
+			htmlspecialchars( $siteTitle ) .
+		'</' . $siteTitleElement . '>';
+}
+$siteTitleHtml .= $phoneBurgerIconRight->html . $phoneBurgerIconRight->js;
 
 if ( $siteDescription )
 {
@@ -389,7 +395,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 							<a href="<?php echo $this->baseurl; ?>/"><?php echo $siteNameHtml ?></a>
 						</div>
 					<?php endif; ?>
-					<?php echo $logo; ?>
+					<?php echo $siteTitleHtml; ?>
 					<?php if ($siteDescription) : ?>
 						<?php echo $siteDescriptionHtml; ?>
 					<?php endif; ?>

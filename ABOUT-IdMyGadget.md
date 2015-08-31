@@ -16,7 +16,7 @@ To see IdMyGadget&copy; in action (without Joomla!), see my resume:
 
 Note that this is not responsive design, so you cannot simply shrink the window to see how the page looks on a mobile device.
 
-In other words, **to see the power of device detection,** (in this case, when coupled with jQuery Mobile), **be sure to visit the site using both a mobile phone and a desktop PC!**
+In other words, **to see the power of device detection,** in this case, when coupled with jQuery Mobile, **be sure to visit the site using both a mobile phone and a desktop PC!**
 
 Note that the source for my resume is in github here:
 * https://github.com/tomwhartung/resume

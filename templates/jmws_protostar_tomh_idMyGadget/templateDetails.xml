@@ -323,6 +323,15 @@
 			<fieldset name="hamburgernav">
 				<field type="spacer" name="spacerPhoneBurgerMenuLeft" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT" />
+				<field name="phoneBurgerMenuLeftOnPhone"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_PHONE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_ON_PHONE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field name="phoneBurgerMenuLeftOnTablet"
 					type="radio"
 					class="btn-group btn-group-yesno"
@@ -380,6 +389,15 @@
 
 				<field type="spacer" name="spacerPhoneBurgerMenuRight" class="text"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT" />
+				<field name="phoneBurgerMenuRightOnPhone"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_PHONE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_ON_PHONE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field name="phoneBurgerMenuRightOnTablet"
 					type="radio"
 					class="btn-group btn-group-yesno"

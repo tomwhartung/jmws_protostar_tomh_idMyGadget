@@ -96,12 +96,14 @@ $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 
 if ( $jmwsIdMyGadget->isPhone() )
 {
-	$jmwsIdMyGadget->usingJQueryMobile = TRUE;    // always use it on phones
-	if ( $this->countModules('phone-burger-menu-left') )
+	$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+	if ( $this->countModules('phone-burger-menu-left') &&
+	     $this->params->get('phoneBurgerMenuLeftOnPhone') )
 	{
 		$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = TRUE;
 	}
-	if ( $this->countModules('phone-burger-menu-right') )
+	if ( $this->countModules('phone-burger-menu-right') &&
+	     $this->params->get('phoneBurgerMenuLeftOnPhone') )
 	{
 		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}

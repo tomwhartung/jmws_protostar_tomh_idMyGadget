@@ -103,7 +103,7 @@ if ( $jmwsIdMyGadget->isPhone() )
 		$jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = TRUE;
 	}
 	if ( $this->countModules('phone-burger-menu-right') &&
-	     $this->params->get('phoneBurgerMenuLeftOnPhone') )
+	     $this->params->get('phoneBurgerMenuRightOnPhone') )
 	{
 		$jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = TRUE;
 	}

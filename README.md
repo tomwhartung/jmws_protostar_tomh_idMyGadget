@@ -7,6 +7,9 @@ This repo differs from jmws_protostar_idMyGadget in that I have added a few addi
 ## Dependencies
 To function properly, this code requires installation of code in other reqpos.
 
+### TODO:
+Look into using Joomla Composer to manage these dependencies.
+
 ### Required: jmws_idMyGadget_for_joomla
 For this template to work properly, the jmws_idMyGadget_for_joomla must be installed.
 
@@ -19,7 +22,7 @@ For information on how to install this required code, see the jmws_idMyGadget_fo
 ### Highly Recommended: jmws_mod_menu_idMyGadget
 For best results, install the jmws_mod_menu_idMyGadget module.
 
-This is required for the hamburger (aka "PhoneBurger") menu to work, and your joomla site will probably whitescreen if you try to create a Hamburger Menu and this module is not present.
+This is required for the hamburger (aka. "PhoneBurger") and phone header and footer menus to work. Your joomla site may even whitescreen if you try to create a Hamburger Menu and this module is not present.
 
 ## Differences From jmws_protostar_idMyGadget 
 Unless noted here, the documentation for jmws_protostar_idMyGadget applies equally here.

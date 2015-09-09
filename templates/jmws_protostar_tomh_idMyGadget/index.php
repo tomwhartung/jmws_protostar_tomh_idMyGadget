@@ -421,10 +421,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner"
-				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme_attribute ?> >Where's my header nav 1?
+				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme_attribute ?> >
 				<?php if ( $jmwsIdMyGadget->usingJQueryMobile && $jmwsIdMyGadget->phoneHeaderNavThisDevice ) : ?>
-					<div>My header nav is here:
-						<jdoc:include type="modules" name="phone-header-nav" style="none" />:My header nav was there
+					<div>
+						<jdoc:include type="modules" name="phone-header-nav" style="none" />
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
@@ -512,9 +512,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		}
 	?>
 
-	<p>$jmwsIdMyGadget->usingJQueryMobile: <?php echo $jmwsIdMyGadget->usingJQueryMobile; ?></p>
-	<p>$jmwsIdMyGadget->phoneHeaderNavThisDevice: <?php echo $jmwsIdMyGadget->phoneHeaderNavThisDevice; ?></p>
-	<p>$jmwsIdMyGadget->phoneFooterNavThisDevice: <?php echo $jmwsIdMyGadget->phoneFooterNavThisDevice; ?></p>
+	<p></p>
 
 	<footer <?php echo $footerAttributes; ?> >Where's my footer nav 0
 		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>Where's my footer nav 1?

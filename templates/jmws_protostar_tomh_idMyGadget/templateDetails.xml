@@ -469,6 +469,33 @@
 					<option value="d">d</option>
 					<option value="e">e</option>
 				</field>
+				<field name="phoneNavOnPhone"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_PHONE_LABEL"
+					description="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_PHONE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="phoneNavOnTablet"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_TABLET_LABEL"
+					description="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_TABLET_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="phoneNavOnDesktop"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_DESKTOP_LABEL"
+					description="TPL_IDMYGADGET_PHONE_NAV_MENU_ON_DESKTOP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 			</fieldset>
 
 			<fieldset name="advanced">

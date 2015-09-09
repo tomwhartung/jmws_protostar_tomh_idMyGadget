@@ -97,6 +97,17 @@ $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 if ( $jmwsIdMyGadget->isPhone() )
 {
 	$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+	if ( $this->params->get('phoneNavOnPhone') )
+	{
+		if ( $this->countModules('phone-header-nav') )
+		{
+			$jmwsIdMyGadget->phoneHeaderNavThisDevice = TRUE;
+		}
+		if ( $this->countModules('phone-footer-nav') )
+		{
+			$jmwsIdMyGadget->phoneFooterNavThisDevice = TRUE;
+		}
+	}
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnPhone') )
 	{
@@ -110,6 +121,19 @@ if ( $jmwsIdMyGadget->isPhone() )
 }
 else if ( $jmwsIdMyGadget->isTablet() )
 {
+	if ( $this->params->get('phoneNavOnTablet') )
+	{
+		if ( $this->countModules('phone-header-nav') )
+		{
+			$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+			$jmwsIdMyGadget->phoneHeaderNavThisDevice = TRUE;
+		}
+		if ( $this->countModules('phone-footer-nav') )
+		{
+			$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+			$jmwsIdMyGadget->phoneFooterNavThisDevice = TRUE;
+		}
+	}
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnTablet') )
 	{
@@ -125,6 +149,19 @@ else if ( $jmwsIdMyGadget->isTablet() )
 }
 else
 {
+	if ( $this->params->get('phoneNavOnDesktop') )
+	{
+		if ( $this->countModules('phone-header-nav') )
+		{
+			$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+			$jmwsIdMyGadget->phoneHeaderNavThisDevice = TRUE;
+		}
+		if ( $this->countModules('phone-footer-nav') )
+		{
+			$jmwsIdMyGadget->usingJQueryMobile = TRUE;
+			$jmwsIdMyGadget->phoneFooterNavThisDevice = TRUE;
+		}
+	}
 	if ( $this->countModules('phone-burger-menu-left') &&
 	     $this->params->get('phoneBurgerMenuLeftOnDesktop') )
 	{
@@ -300,8 +337,8 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 	$jqm_data_role_content = 'data-role="content"';
 	$jqm_data_role_footer = 'data-role="footer"';
 
-	if ( $this->countModules('phone-header-nav') ||
-	     $this->countModules('phone-footer-nav')   )
+	if ( $jmwsIdMyGadget->phoneHeaderNavThisDevice ||
+	     $jmwsIdMyGadget->phoneFooterNavThisDevice   )
 	{
 		$jqm_data_theme_template = $this->params->get('jqm_data_theme');
 		if ( $jqm_data_theme_template == 'none' )
@@ -384,10 +421,10 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner"
-				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme_attribute ?> >
-				<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>
-					<div>
-						<jdoc:include type="modules" name="phone-header-nav" style="none" />
+				<?php echo $jqm_data_role_header . ' ' . $jqm_data_theme_attribute ?> >Where's my header nav 1?
+				<?php if ( $jmwsIdMyGadget->usingJQueryMobile && $jmwsIdMyGadget->phoneHeaderNavThisDevice ) : ?>
+					<div>My header nav is here:
+						<jdoc:include type="modules" name="phone-header-nav" style="none" />:My header nav was there
 					</div>
 				<?php endif; ?>
 				<div class="header-inner clearfix">
@@ -464,7 +501,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		if ( $jmwsIdMyGadget->usingJQueryMobile )
 		{
 			$footerAttributes = $jqm_data_role_footer . ' ' . $jqm_data_theme_attribute;
-			if ( $this->countModules('phone-footer-nav') )
+			if ( $jmwsIdMyGadget->phoneFooterNavThisDevice )
 			{
 				$footerAttributes .= 'class="ui-bar" data-position="fixed" ';
 			}
@@ -475,12 +512,16 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 		}
 	?>
 
-	<p></p>
+	<p>$jmwsIdMyGadget->usingJQueryMobile: <?php echo $jmwsIdMyGadget->usingJQueryMobile; ?></p>
+	<p>$jmwsIdMyGadget->phoneHeaderNavThisDevice: <?php echo $jmwsIdMyGadget->phoneHeaderNavThisDevice; ?></p>
+	<p>$jmwsIdMyGadget->phoneFooterNavThisDevice: <?php echo $jmwsIdMyGadget->phoneFooterNavThisDevice; ?></p>
 
-	<footer <?php echo $footerAttributes; ?> >
-		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>
+	<footer <?php echo $footerAttributes; ?> >Where's my footer nav 0
+		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>Where's my footer nav 1?
 			<jdoc:include type="modules" name="footer" style="none" />
-			<jdoc:include type="modules" name="phone-footer-nav" style="none" />
+			<?php if ( $jmwsIdMyGadget->phoneFooterNavThisDevice ) : ?>My footer nav is here:
+				<jdoc:include type="modules" name="phone-footer-nav" style="none" />:My footer nav was there
+			<?php endif; ?>
 		<?php else : ?>
 			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
 				<hr />

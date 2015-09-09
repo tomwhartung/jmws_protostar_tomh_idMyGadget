@@ -46,23 +46,6 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/idM
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
 
-// Adjusting content width
-if ($this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span6";
-}
-elseif ($this->countModules('position-7') && !$this->countModules('position-8'))
-{
-	$span = "span9";
-}
-elseif (!$this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span9";
-}
-else
-{
-	$span = "span12";
-}
 //
 // Initialize Device Detection
 //
@@ -85,6 +68,39 @@ else if ( $gadgetDetector == 'tera_wurfl' )
 else
 {
 	$jmwsIdMyGadget = new JmwsIdMyGadgetJoomla( 'detect_mobile_browsers' );
+}
+//
+// Adjusting content width, adding in module counts for device-specific position-7-* positions
+//
+$modulesCountPosition7ThisDevice = $this->countModules('position-7');
+if ( $jmwsIdMyGadget->isPhone() )
+{
+	$modulesCountPosition7ThisDevice += $this->countModules('position-7-phone');
+}
+else if ( $jmwsIdMyGadget->isTablet() )
+{
+	$modulesCountPosition7ThisDevice += $this->countModules('position-7-tablet');
+}
+else
+{
+	$modulesCountPosition7ThisDevice += $this->countModules('position-7-desktop');
+}
+
+if ( $modulesCountPosition7ThisDevice && $this->countModules('position-8') )
+{
+	$span = "span6";
+}
+elseif ( $modulesCountPosition7ThisDevice && !$this->countModules('position-8') )
+{
+	$span = "span9";
+}
+elseif ( ! $modulesCountPosition7ThisDevice && $this->countModules('position-8') )
+{
+	$span = "span9";
+}
+else
+{
+	$span = "span12";
 }
 //
 // The phone burger menu was originally intended for phones only, hence the name.
@@ -467,30 +483,27 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 					<jdoc:include type="modules" name="position-2" style="none" />
 					<!-- End Content -->
 				</main>
-				<?php if ( $jmwsIdMyGadget->isPhone() ) : ?>
-					<?php if ($this->countModules('position-7-phone')) : ?>
-						<div id="aside" class="span3">
-							<!-- Begin Right Sidebar -->
-							<jdoc:include type="modules" name="position-7-phone" style="well" />
-							<!-- End Right Sidebar -->
-						</div>
-					<?php endif; ?>
-				<?php elseif ( $jmwsIdMyGadget->isTablet() ) : ?>
-					<?php if ($this->countModules('position-7-tablet')) : ?>
-						<div id="aside" class="span3">
-							<!-- Begin Right Sidebar -->
-							<jdoc:include type="modules" name="position-7-tablet" style="well" />
-							<!-- End Right Sidebar -->
-						</div>
-					<?php endif; ?>
-				<?php else : ?>
-					<?php if ($this->countModules('position-7')) : ?>
-						<div id="aside" class="span3">
-							<!-- Begin Right Sidebar -->
+				<?php if ( $modulesCountPosition7ThisDevice ) : ?>
+					<div id="aside" class="span3">
+						<!-- Begin Right Sidebar -->
+						<?php if ( $jmwsIdMyGadget->isPhone() ) : ?>
+							<?php if ($this->countModules('position-7-phone')) : ?>
+								<jdoc:include type="modules" name="position-7-phone" style="well" />
+							<?php endif; ?>
+						<?php elseif ( $jmwsIdMyGadget->isTablet() ) : ?>
+							<?php if ($this->countModules('position-7-tablet')) : ?>
+								<jdoc:include type="modules" name="position-7-tablet" style="well" />
+							<?php endif; ?>
+						<?php else : ?>
+							<?php if ($this->countModules('position-7-desktop')) : ?>
+								<jdoc:include type="modules" name="position-7-desktop" style="well" />
+							<?php endif; ?>
+						<?php endif; ?>
+						<?php if ($this->countModules('position-7')) : ?>
 							<jdoc:include type="modules" name="position-7" style="well" />
-							<!-- End Right Sidebar -->
-						</div>
-					<?php endif; ?>
+						<?php endif; ?>
+						<!-- End Right Sidebar -->
+					</div> <!-- #aside -->
 				<?php endif; ?>
 			</div> <!-- .row-fluid -->
 		</div> <!-- .container or .container-fluid -->

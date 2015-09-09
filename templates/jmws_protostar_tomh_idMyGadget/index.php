@@ -514,11 +514,11 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 
 	<p></p>
 
-	<footer <?php echo $footerAttributes; ?> >Where's my footer nav 0
-		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>Where's my footer nav 1?
+	<footer <?php echo $footerAttributes; ?> >
+		<?php if ( $jmwsIdMyGadget->usingJQueryMobile ) : ?>
 			<jdoc:include type="modules" name="footer" style="none" />
-			<?php if ( $jmwsIdMyGadget->phoneFooterNavThisDevice ) : ?>My footer nav is here:
-				<jdoc:include type="modules" name="phone-footer-nav" style="none" />:My footer nav was there
+			<?php if ( $jmwsIdMyGadget->phoneFooterNavThisDevice ) : ?>
+				<jdoc:include type="modules" name="phone-footer-nav" style="none" />
 			<?php endif; ?>
 		<?php else : ?>
 			<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">

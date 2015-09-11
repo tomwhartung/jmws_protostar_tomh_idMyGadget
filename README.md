@@ -24,6 +24,25 @@ For best results, install the jmws_mod_menu_idMyGadget module.
 
 This is required for the hamburger (aka. "PhoneBurger") and phone header and footer menus to work. Your joomla site may even whitescreen if you try to create a Hamburger Menu and this module is not present.
 
+## Status
+The initial version of this is complete, and I am using it as the default template for my site (JooMooWebSites.Com)[http://joomoowebsites.com/]
+
+### Future Work
+The goal of this project is to integrate IdMYGadget with the protostar default Joomla template, and add any other changes I just "felt" like making.
+
+Right now that goal is accomplished, so additional work on this is on hold for now.
+
+### Self-Promotion Alert:
+I'd certainly be happy to do customize this template to your needs, for a "small price!"  ;-)
+
+## Installation:
+
+Installation of all jmws_* joomla extensions is the same.
+For details, see the following documents in the [Jmws Accoutrements Repo on github](https://github.com/tomwhartung/jmws_accoutrements/):
+
+* [Installing Jmws Joomla Extensions document](https://github.com/tomwhartung/jmws_accoutrements/blob/master/doc/joomla/install.md)
+* [Jmws Github Strategy document](https://github.com/tomwhartung/jmws_accoutrements/blob/master/doc/devops/cms_github_strategy.md)
+
 ## Differences From jmws_protostar_idMyGadget 
 Unless noted here, the documentation for jmws_protostar_idMyGadget applies equally here.
 
@@ -34,17 +53,6 @@ Unless noted here, the documentation for jmws_protostar_idMyGadget applies equal
 * Because I added site description parameters for phones, tablets, and desktops, I changed the case slightly, from sitedescription to siteDescriptionPhone, etc.
 
 * Cause the template to display a custom image instead of using the HTML5 canvas element to draw the menu icon by putting the files in the templates/jmws_protostar_tomh_idMyGadget/images/idMyGadget/ directory (rather than the templates/jmws_protostar_idmygadget/images/idMyGadget/ directory as described in that README.md).
-
-## Status
-The initial version of this is pretty much complete, and I am using it as the default template for my site (JooMooWebSites.Com)[http://joomoowebsites.com/]
-
-## Installation:
-
-Installation of all jmws_* joomla extensions is the same.
-
-For details, see the following documents in the [Jmws Accoutrements Repo on github](https://github.com/tomwhartung/jmws_accoutrements/):
-* [Installing Jmws Joomla Extensions document](https://github.com/tomwhartung/jmws_accoutrements/blob/master/doc/joomla/install.md)
-* [Jmws Github Strategy document](https://github.com/tomwhartung/jmws_accoutrements/blob/master/doc/devops/cms_github_strategy.md)
 
 ## Specific Changes Made to Protostar
 For a list of most of these changes, see the [jmws_protostar_idMyGadget README.md file](https://github.com/tomwhartung/jmws_protostar_idMyGadget/blob/master/README.md) .

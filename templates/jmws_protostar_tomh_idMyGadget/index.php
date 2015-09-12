@@ -486,6 +486,9 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 				<?php if ( $modulesCountPosition7ThisDevice ) : ?>
 					<div id="aside" class="span3">
 						<!-- Begin Right Sidebar -->
+						<?php if ($this->countModules('position-7')) : ?>
+							<jdoc:include type="modules" name="position-7" style="well" />
+						<?php endif; ?>
 						<?php if ( $jmwsIdMyGadget->isPhone() ) : ?>
 							<?php if ($this->countModules('position-7-phone')) : ?>
 								<jdoc:include type="modules" name="position-7-phone" style="well" />
@@ -498,9 +501,6 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 							<?php if ($this->countModules('position-7-desktop')) : ?>
 								<jdoc:include type="modules" name="position-7-desktop" style="well" />
 							<?php endif; ?>
-						<?php endif; ?>
-						<?php if ($this->countModules('position-7')) : ?>
-							<jdoc:include type="modules" name="position-7" style="well" />
 						<?php endif; ?>
 						<!-- End Right Sidebar -->
 					</div> <!-- #aside -->

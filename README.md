@@ -146,8 +146,8 @@ Clicking on the Hamburger Nav tab reveals the following options unique to this t
 * Show on Phones - option is specific to this template only
 
 ##### Hamburger Menu Icon Params, Left Side
-* Show on tablets - menus placed in the **phone-burger-menu-left** position always appear on phones, pick yes to have this also display on tablets
-* Show on desktops - menus placed in the **phone-burger-menu-left** position always appear on phones, pick yes to have this also display on desktops
+* Show on tablets - pick yes to have this menu icon display on tablets
+* Show on desktops - pick yes to have this menu icon display on desktops
 * Left Hamburger Menu Size - choose one of the available values (in pixels)
 * Left Hamburger Menu Color - use the color picker or type in a hexadecimal RGB value
 * Left Hamburger Line Cap - select round, square, or butt
@@ -157,8 +157,8 @@ Clicking on the Hamburger Nav tab reveals the following options unique to this t
 * Show on Phones - option is specific to this template only
 
 ##### Hamburger Menu Icon Params, Right Side
-* Show on tablets - menus placed in the **phone-burger-menu-right** position always appear on phones, pick yes to have this also display on tablets
-* Show on desktops - menus placed in the **phone-burger-menu-right** position always appear on phones, pick yes to have this also display on desktops
+* Show on tablets - pick yes to have this menu icon display on tablets
+* Show on desktops - pick yes to have this menu icon display on desktops
 * Right Hamburger Menu Size - choose one of the available values (in pixels)
 * Right Hamburger Menu Color - use the color picker or type in a hexadecimal RGB value
 * Right Hamburger Line Cap - select round, square, or butt
@@ -169,7 +169,7 @@ To make this work, you need to define an appropriate joomla menu and assign it t
 
 This template uses the jQuery Mobile JavaScript Library to display a mobile-friendly pop-up menu.  This may not be the best look, feel, and behavior on desktop browsers!
 
-###### Demo Article Has Complete Setup Instructions
+##### Demo Article Has Complete Setup Instructions
 
 The [Hamburger Nav Demo](http://joomoowebsites.com/index.php/demos/demos-joomla/joomla-modules/idmygadget-menus/hamburger-nav) article gives step-by-step instructions on how to set up these menus.
 
@@ -191,9 +191,11 @@ phoneBurgerMenuIconRightDesktop | Right | Desktop
 
 For up-to-date information about compatibility with respect to all of this functionality, see the latest articles on [joomoowebsites.com](http://joomoowebsites.com).
 
+#### New Tab: Phone Nav
 
+Clicking on the Phone Nav tab reveals the following options unique to this template:
 
-#### Phone Nav Tab
+* Theme for Nav on Phones - value is passed to jQuery Mobile, which has customizable themes (but not many "out of the box")
 * Show phone nav on phones - option is specific to this template only
 * Show phone nav on tablets - option is specific to this template only
 * Show phone nav on desktops - option is specific to this template only
@@ -201,7 +203,19 @@ For up-to-date information about compatibility with respect to all of this funct
 
 ### Changes to Template Positions
 
+Positions were added, and one was enhanced, but none were harmed in the making of this template.
+
+#### New Positions
+
+The following positions appear in this template, but not in protostar:
+
+* phone-header-nav
+* phone-footer-nav
+* phone-burger-menu-left
+* phone-burger-menu-right
+
 #### position-7
+
 Modules placed in the protostar template's existing position-7 appear on all devices
 
 * To make a module appear in position-7 on phones only, put it in position-7-phone .
@@ -210,13 +224,11 @@ Modules placed in the protostar template's existing position-7 appear on all dev
 
 Note that the protostar idMyGadget template does *not* have a position-7-desktop  making it slightly different.
 
-#### New Positions
-The following positions appear in this template, but not in protostar:
+## Requests for Enhancements
 
-* phone-header-nav
-* phone-footer-nav
-* phone-burger-menu-left
-* phone-burger-menu-right
+I am open to doing additional work on this project.
+
+Note however that I have invested a considerable amount of my own time on this, and depending on the nature of your request(s), I may request some sort of compensation.
 
 ## About IdMyGadget:
 

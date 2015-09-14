@@ -1,8 +1,17 @@
 # jmws_protostar_tomh_idMyGadget
-This repo integrates the default joomla template protostar with idMyGadget.  It is very similar to jmws_protostar_idMyGadget, but contains a very few additional changes that I just "felt" like making. 
+This repo contains a Joomla! template that integrates the default Joomla! template protostar with IdMyGadget&copy; to, among other things, incorporate jQuery Mobile menus when content is served to Phones.  It is very similar to jmws_protostar_idMyGadget, but contains some additional changes that I just "felt" like making. 
 
 ## Overview
 This repo differs from jmws_protostar_idMyGadget in that I have added a few additional changes that I just "felt" like doing, but wanted to keep the changes made to protostar to a minimum in jmws_protostar_idMyGadget.
+
+## Status
+The initial version of this is complete, and I am using it as the default template for my site [JooMooWebSites.Com](http://joomoowebsites.com/)
+
+#### Demo Site
+This is the default template for [JooMooWebSites.Com](http://joomoowebsites.com/).
+
+#### Demo Article
+The [Protostar Tomh Demo](http://joomoowebsites.com/index.php/demos/demos-joomla/joomla-templates/demo-protostar-tomh-idmygadget) article on [JooMooWebSites.Com](http://joomoowebsites.com) shows how mobile-friendly menus look on Desktops.
 
 ## Dependencies
 To function properly, this code requires installation of code in other repos.
@@ -23,16 +32,10 @@ For best results, install the jmws_mod_menu_idMyGadget module.
 
 This is required for the hamburger (aka. "PhoneBurger") and phone header and footer menus to work. Your joomla site may even whitescreen if you try to create a Hamburger Menu and this module is not present.
 
-## Status
-The initial version of this is complete, and I am using it as the default template for my site [JooMooWebSites.Com](http://joomoowebsites.com/)
-
 #### Future Work
 The goal of this project is to integrate IdMYGadget with the protostar default Joomla template, and add any other changes I just "felt" like making.
 
 Right now that goal is accomplished, so additional work on this is on hold for now.
-
-#### Demo Site
-This is the default template for [JooMooWebSites.Com](http://joomoowebsites.com/)
 
 #### Self-Promotion Alert!
 I'd certainly be happy to do customize this template to your needs, for a "small price!"  ;-)

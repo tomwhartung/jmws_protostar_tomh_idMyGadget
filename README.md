@@ -32,14 +32,6 @@ For best results, install the jmws_mod_menu_idMyGadget module.
 
 This is required for the hamburger (aka. "PhoneBurger") and phone header and footer menus to work. Your joomla site may even whitescreen if you try to create a Hamburger Menu and this module is not present.
 
-#### Future Work
-The goal of this project is to integrate IdMYGadget with the protostar default Joomla template, and add any other changes I just "felt" like making.
-
-Right now that goal is accomplished, so additional work on this is on hold for now.
-
-#### Self-Promotion Alert!
-I'd certainly be happy to do customize this template to your needs, for a "small price!"  ;-)
-
 ## Installation:
 
 Installation of all jmws_* joomla extensions is the same.
@@ -232,6 +224,14 @@ Note that the protostar idMyGadget template does *not* have a position-7-desktop
 I am open to doing additional work on this project.
 
 Note however that I have invested a considerable amount of my own time on this, and depending on the nature of your request(s), I may request some sort of compensation.
+
+#### Future Work
+The goal of this project is to integrate IdMYGadget with the protostar default Joomla template, and add any other changes I just "felt" like making.
+
+Right now that goal is accomplished, so additional work on this is on hold for now.
+
+#### Self-Promotion Alert!
+I'd certainly be happy to do customize this template to your needs, for a "small price!"  ;-)
 
 ## About IdMyGadget:
 

@@ -97,8 +97,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field
-					name="siteNameElementPhone"
+				<field name="siteNameElementPhone"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_PHONE_DESC"
 					type="list">
@@ -117,8 +116,7 @@
 					label="TPL_IDMYGADGET_SITETITLE_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_PHONE_DESC"
 					filter="string" />
-				<field
-					name="siteTitleElementPhone"
+				<field name="siteTitleElementPhone"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_PHONE_DESC"
 					type="list">
@@ -137,8 +135,7 @@
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_PHONE_DESC"
 					filter="string" />
-				<field
-					name="siteDescriptionElementPhone"
+				<field name="siteDescriptionElementPhone"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_PHONE_DESC"
 					type="list">
@@ -180,8 +177,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field
-					name="siteNameElementTablet"
+				<field name="siteNameElementTablet"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_TABLET_DESC"
 					type="list">
@@ -200,8 +196,7 @@
 					label="TPL_IDMYGADGET_SITETITLE_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_TABLET_DESC"
 					filter="string" />
-				<field
-					name="siteTitleElementTablet"
+				<field name="siteTitleElementTablet"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_TABLET_DESC"
 					type="list">
@@ -220,8 +215,7 @@
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_TABLET_DESC"
 					filter="string" />
-				<field
-					name="siteDescriptionElementTablet"
+				<field name="siteDescriptionElementTablet"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_TABLET_DESC"
 					type="list">
@@ -263,8 +257,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field
-					name="siteNameElementDesktop"
+				<field name="siteNameElementDesktop"
 					label="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITE_NAME_ELEMENT_DESKTOP_DESC"
 					type="list">
@@ -279,12 +272,11 @@
 					<option value="span">span class="site-name-desktop"</option>
 				</field>
 
-					<field name="siteTitleDesktop"  type="text" default=""
+				<field name="siteTitleDesktop"  type="text" default=""
 					label="TPL_IDMYGADGET_SITETITLE_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_DESKTOP_DESC"
 					filter="string" />
-				<field
-					name="siteTitleElementDesktop"
+				<field name="siteTitleElementDesktop"
 					label="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITETITLE_ELEMENT_DESKTOP_DESC"
 					type="list">
@@ -303,8 +295,7 @@
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_DESKTOP_DESC"
 					filter="string" />
-				<field
-					name="siteDescriptionElementDesktop"
+				<field name="siteDescriptionElementDesktop"
 					label="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_LABEL"
 					description="TPL_IDMYGADGET_SITEDESCRIPTION_ELEMENT_DESKTOP_DESC"
 					type="list">
@@ -350,8 +341,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field
-					name="phoneBurgerMenuLeftSize"
+				<field name="phoneBurgerMenuLeftSize"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_SIZE_DESC">
@@ -368,8 +358,7 @@
 				<field name="phoneBurgerMenuLeftColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_COLOR_DESC" />
-				<field
-					name="phoneBurgerMenuLeftLineCap"
+				<field name="phoneBurgerMenuLeftLineCap"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_CAP_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_CAP_DESC">
@@ -377,8 +366,7 @@
 					<option value="square">square</option>
 					<option value="butt">butt</option>
 				</field>
-				<field
-					name="phoneBurgerMenuLeftLineSize"
+				<field name="phoneBurgerMenuLeftLineSize"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_LEFT_LINE_SIZE_DESC">
@@ -416,8 +404,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field
-					name="phoneBurgerMenuRightSize"
+				<field name="phoneBurgerMenuRightSize"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_SIZE_DESC">
@@ -431,11 +418,10 @@
 					<option value="77">77x77</option>
 					<option value="88">88x88</option>
 				</field>
-					<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
+				<field name="phoneBurgerMenuRightColor" class="" type="color" default="grey"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_COLOR_DESC" />
-				<field
-					name="phoneBurgerMenuRightLineCap"
+				<field name="phoneBurgerMenuRightLineCap"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_CAP_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_CAP_DESC">
@@ -443,8 +429,7 @@
 					<option value="square">square</option>
 					<option value="butt">butt</option>
 				</field>
-				<field
-					name="phoneBurgerMenuRightLineSize"
+				<field name="phoneBurgerMenuRightLineSize"
 					type="list"
 					label="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_LABEL"
 					description="TPL_IDMYGADGET_PHONE_BURGER_MENU_RIGHT_LINE_SIZE_DESC">
@@ -457,8 +442,7 @@
 			<fieldset name="phonenav">
 				<field type="spacer" name="spacerHeaderFooterMenus" class="text"
 					label="TPL_IDMYGADGET_PHONE_HEADER_FOOTER_MENUS" />
-				<field
-					name="jqm_data_theme"
+				<field name="jqm_data_theme"
 					type="list"
 					label="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_LABEL"
 					description="TPL_IDMYGADGET_FIELD_JQM_DATA_THEME_DESC">

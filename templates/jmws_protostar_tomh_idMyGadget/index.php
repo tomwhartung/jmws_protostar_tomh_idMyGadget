@@ -107,6 +107,8 @@ else
 // Now we have options so that, if desired, we can use it on tablets and desktops as well.
 //
 $jmwsIdMyGadget->usingJQueryMobile = FALSE;
+$jmwsIdMyGadget->phoneHeaderNavThisDevice = FALSE;
+$jmwsIdMyGadget->phoneFooterNavThisDevice = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft = FALSE;
 $jmwsIdMyGadget->phoneBurgerIconThisDeviceRight = FALSE;
 

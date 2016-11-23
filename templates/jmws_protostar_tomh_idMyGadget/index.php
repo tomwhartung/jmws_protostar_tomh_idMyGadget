@@ -435,6 +435,7 @@ if ( $jmwsIdMyGadget->usingJQueryMobile )
 			print '<div ' .$jqm_data_role_page . '>';
 		}
 	?>
+	<?php include_once("google_analytics.php") ?>
 	<!-- Body -->
 	<div class="body">
 		<div class="container<?php echo ($fluidContainer ? '-fluid' : ''); ?>">
